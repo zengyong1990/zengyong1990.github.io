@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container{
+            margin:0 auto;
+            position:relative;
+        }
+        ul li{
+            list-style:none;
+            float:left;
+            padding-left:10px;
+            padding-top:10px;
+        }
+        img{
+            width: 165px;
+            padding: 5px;
+            border-radius:5px;
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li><img src="img/0.jpg" alt=""></li>
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/5.jpg" alt=""></li>
+            <li><img src="img/6.jpg" alt=""></li>
+            <li><img src="img/7.jpg" alt=""></li>
+            <li><img src="img/8.jpg" alt=""></li>
+            <li><img src="img/9.jpg" alt=""></li>
+            <li><img src="img/10.jpg" alt=""></li>
+            <li><img src="img/11.jpg" alt=""></li>
+            <li><img src="img/12.jpg" alt=""></li>
+            <li><img src="img/13.jpg" alt=""></li>
+            <li><img src="img/14.jpg" alt=""></li>
+            <li><img src="img/15.jpg" alt=""></li>
+            <li><img src="img/16.jpg" alt=""></li>
+            <li><img src="img/17.jpg" alt=""></li>
+            <li><img src="img/18.jpg" alt=""></li>
+            <li><img src="img/19.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        window.onresize = window.onload = function(){
+            var container = document.getElementById('container');
+            var ul =document.getElementsByTagName('ul')[0];
+            var lis = ul.children;
+//            计算屏幕宽度，并求出每行显示的图片数
+            setStyle(lis,container);
+
+
+        }
+        function setStyle(lis,container){
+            var num = 0;
+            var screenW = document.documentElement.clientWidth||document.body.clientWidth;
+            var liWidth = lis[0].offsetWidth;
+            num = parseInt(screenW/liWidth);
+//          1.计算出对应num的大盒子宽度
+            container.style.width =num*liWidth+'px';
+
+            //2.计算出第一行中所有的盒子的高度，并动态算出最矮的图片
+            var heightArr = [];
+            for(var i = 0;i<lis.length;i++){
+                if(i<num){
+                    heightArr.push(lis[i].offsetHeight);
+                    lis[i].style.position = 'static';
+                }else{
+                    lis[i].style.position = 'absolute';
+                    var minIndex = getArr(heightArr).minIndex;
+                    var minHeight = getArr(heightArr).minWidth;
+                    console.log(minIndex,minHeight);
+                    lis[i].style.left = minIndex*liWidth+'px';
+                    lis[i].style.top = minHeight+'px';
+                    heightArr[minIndex]+=lis[i].offsetHeight;
+                }
+            }
+        }
+//        监听滚动，加载图片
+        window.onscroll = function(){
+            var flag = true;
+//            创建预定义图片
+            var imgJson = [{
+                src:'img/0.jpg'
+            },{
+                src:'img/1.jpg'
+            },{
+                src:'img/2.jpg'
+            },{
+                src:'img/3.jpg'
+            },{
+                src:'img/4.jpg'
+            },{
+                src:'img/5.jpg'
+            },{
+                src:'img/6.jpg'
+            },{
+                src:'img/7.jpg'
+            },{
+                src:'img/8.jpg'
+            },{
+                src:'img/9.jpg'
+            },{
+                src:'img/6.jpg'
+            },{
+                src:'img/7.jpg'
+            },{
+                src:'img/8.jpg'
+            }
+            ];
+            if(getImg()&&flag){
+                flag =false;
+//                创建li,img dom节点
+                var ul = document.getElementsByTagName('ul')[0];
+                for(var i = 0;i<imgJson.length;i++){
+                    var li = document.createElement('li');
+                    ul.appendChild(li);
+                    var img =document.createElement("img");
+                    img.setAttribute('src',imgJson[i].src);
+                    li.appendChild(img);
+                }
+                var lis = ul.children;
+                var container = document.getElementById('container');
+                setStyle(lis,container);
+            }
+        }
+
+//        检测加载图片
+        function getImg(){
+            var ul =document.getElementsByTagName('ul')[0];
+            var lis = ul.children;
+//         当滚动条+屏幕高>最后一张图片的offsettop时进行加载
+            var scrollT = document.documentElement.scrollTop||document.body.scrollTop;
+            var clientH = document.documentElement.clientHeight||document.body.clientHeight;
+            var lastImgTop = lis[lis.length-1].offsetTop;
+            return scrollT+clientH>lastImgTop;
+        }
+
+
+//        计算数组中最矮的盒子，并且返回索引值
+        function getArr(arr){
+            var minWidth = arr[0];
+            var minIndex = 0;
+            for(var i=0;i<arr.length;i++){
+                if(minWidth>arr[i]){
+                    minWidth = arr[i];
+                    minIndex = i;
+                }
+            }
+            return {
+                minIndex: minIndex,
+                minWidth: minWidth
+            }
+        }
+    </script>
+</body>
+</html>

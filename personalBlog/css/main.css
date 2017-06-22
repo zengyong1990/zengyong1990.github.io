@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+/*nav*/
+html,body{
+    width: 100%;
+    /*height: 100%;*/
+    overflow-x: hidden;
+    background-color: #000;
+}
+*{
+    font-family: '微软雅黑';
+}
+#navBg{
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+    z-index:9999;
+}
+#navBg a{
+     color:white;
+ }
+#nav-list li{
+    margin-left:50px;
+}
+
+/*轮播区域*/
+#banner{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#banner .banner-text{
+    position:absolute;
+    top:15%;
+}
+#banner .banner-text p{
+    line-height:40px;
+    font-size:14px;
+}
+#banner .banner-text a{
+    display: inline-block;
+    margin-top:190px;
+    border:1px solid #fff;
+    padding:5px 15px;
+    border-radius:10px;
+    color:snow;
+}
+#banner .banner-text a:hover{
+    color:#000;
+    background-color: #fff;
+    text-decoration: none;
+    color:#f00;
+}
+
+
+/*时间轴说明*/
+#timer-contain ul{
+    margin:0 auto;
+    margin-top: 42px;
+    width: 80px;
+    /*margin-bottom:42px;*/
+}
+#timer-contain ul li{
+    margin-top:31px;
+}
+#timer-contain ul li:last-child{
+    margin-bottom:44px;
+}
+
+#timer-contain ul#nav-star::after{
+    border:none;
+}
+#timer-contain ul li a{
+    height:80px;
+    width:80px;
+    line-height:30px;
+    text-align: center;
+    overflow: hidden;
+    border-radius:50%;
+    border:1px solid #ccc;
+    color:#fff;
+}
+
+/*时间轴个人博客历程*/
+#nav-star .active a{
+    background-color: #fff;
+    color:#f00;
+    font-weight:800;
+}
+#tab-cont{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top:0;
+}
+#tab-cont>div{
+    position: absolute;
+    color:#9acfea;
+    font-weight:bolder;
+    font-family: "Microsoft Yahei";
+    font-size:16px;
+    width: 222px;
+    padding-bottom:5px;
+    border-bottom:1px dashed #e0e0e0;
+}
+
+
+@media screen and (min-width: 1000px){
+    #tab-cont>div:nth-of-type(1){
+        left: -146px;
+        top: 22%;
+    }
+    #tab-cont>div:nth-of-type(2){
+        left: 240px;
+        top: 37%;
+    }
+    #tab-cont>div:nth-of-type(3){
+        left: -146px;
+        top: 59%;
+    }
+    #tab-cont>div:nth-of-type(4){
+        left: 240px;
+        top: 70%;
+    }
+}
+@media screen and (min-width: 1220px){
+    #tab-cont>div:nth-of-type(1){
+        left: -121px;
+        top: 22%;
+    }
+    #tab-cont>div:nth-of-type(2){
+        left: 284px;
+        top: 36%;
+    }
+    #tab-cont>div:nth-of-type(3){
+        left: -121px;
+        top: 57%;
+    }
+    #tab-cont>div:nth-of-type(4){
+        left: 284px;
+        top: 70%;
+    }
+}
+
+#nav-star{
+    position:relative;
+    z-index:999999;
+}
+
+/*底部区域*/
+#footer{
+    height: 40px;
+    width: 100%;
+    background-color: #fff;
+    line-height:40px;
+}

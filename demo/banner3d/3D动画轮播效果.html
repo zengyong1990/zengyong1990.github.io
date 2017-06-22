@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <style id="style">
+        *{
+            margin:0;
+            padding:0;
+        }
+        .wrap{
+
+            width:1050px;
+            height: 300px;
+            perspective: 1000px;
+            -webkit-perspective: 1000px;
+            margin:50px auto 0px;
+            position:relative;
+        }
+        .contain{
+            width:100%;
+            height: 100%;
+        }
+        ul{
+            backface-visibility: hidden;
+            width:30px;
+            height: 300px;
+            position:relative;
+            float:left;
+            list-style:none;
+            transform-style:preserve-3d;
+            -webkit-transform-origin:center center -150px;
+            -moz-transform-origin:center center -150px;
+            -ms-transform-origin:center center -150px;
+            -o-transform-origin:center center -150px;
+            transform-origin:center center -150px;
+            /*transform:rotateX(90deg) rotateY(0deg);*/
+        }
+        li{
+            width:100%;
+            height: 100%;
+            position:absolute;
+            font-size:40px;
+            display:block;
+        }
+        ul li:nth-of-type(1){
+            /*background-color: #666;*/
+            background-image:url('image/1.jpg');
+            z-index:4;
+            left:0;
+            top:0;
+        }
+        ul li:nth-of-type(2){
+            /*z-index:3;*/
+            background-image:url('image/2.jpg');
+            top:-100%;
+            left:0;
+            -webkit-transform-origin:bottom;
+            -moz-transform-origin:bottom;
+            -ms-transform-origin:bottom;
+            -o-transform-origin:bottom;
+            transform-origin:bottom;
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            -ms-transform: rotateX(90deg);
+            -o-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+        }
+        ul li:nth-of-type(3){
+            /*z-index:2;*/
+            /*background-color: #0f0;*/
+            left:0;
+            top:0;
+            background-image:url('image/3.jpg');
+            -webkit-transform: translateZ(-300px) rotateX(180deg);
+            -moz-transform: translateZ(-300px) rotateX(180deg);
+            -ms-transform: translateZ(-300px) rotateX(180deg);
+            -o-transform: translateZ(-300px) rotateX(180deg);
+            transform: translateZ(-300px) rotateX(180deg);
+        }
+        ul li:nth-of-type(4){
+            /*z-index:华达驾校;*/
+            /*background-color: #00f;*/
+            background-image:url('image/4.jpg');
+            bottom:-100%;
+            left:0;
+            -webkit-transform-origin:top;
+            -moz-transform-origin:top;
+            -ms-transform-origin:top;
+            -o-transform-origin:top;
+            transform-origin:top;
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            -ms-transform: rotateX(-90deg);
+            -o-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+        }
+       
+        div.nav{
+            height:20px;
+            width:100%;
+            position:absolute;
+            left:0;
+            bottom:10px;
+            text-align:center;
+            z-index:100;
+        }
+        span{
+            display:inline-block;
+            line-height:20px;
+            width:20px;
+            border-radius:50%;
+            background-color:#666;
+            margin-right:10px;
+            color:white;
+            font-size:12px;
+            cursor:pointer;
+        }
+        span.active{
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="contain" id="contain">
+        </div>
+        <div class="nav" id="nav">
+            <span class="active">1</span><span>2</span><span>3</span><span>4</span>
+    </div>
+    </div>
+    <script src="js/banner.js"></script>
+</body>
+</html>

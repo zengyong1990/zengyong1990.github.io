@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<meta name="author" content="Zengyong" />
+<meta name="keywords" content="zengyong,曾勇,html5,html,css3动画,js进阶,javascript教程,node.js,前端学习,studyhtml,曾勇的博客" />
+
+
+<meta name="description" content="Wow配合Animate已能完成日常开发中大部分的动画特效，但是Wow有一个弊端，它实现的动画只能做一次，如果需求变更为只要滚动到某一位置时就需要实现动画，那么我们就得使用到scrollReveal这套框架。">
+<meta name="keywords" content="动画,scrollReveal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="框架之scrollReveal">
+<meta property="og:url" content="http://www.studyhtml5.com/2017/02/07/框架合集-scrollReveal/index.html">
+<meta property="og:site_name" content="我会变得更好|因为我从未止步">
+<meta property="og:description" content="Wow配合Animate已能完成日常开发中大部分的动画特效，但是Wow有一个弊端，它实现的动画只能做一次，如果需求变更为只要滚动到某一位置时就需要实现动画，那么我们就得使用到scrollReveal这套框架。">
+<meta property="og:image" content="http://ofn33tdsr.bkt.clouddn.com/scrollReveal/1.gif">
+<meta property="og:updated_time" content="2017-02-25T01:02:59.377Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="框架之scrollReveal">
+<meta name="twitter:description" content="Wow配合Animate已能完成日常开发中大部分的动画特效，但是Wow有一个弊端，它实现的动画只能做一次，如果需求变更为只要滚动到某一位置时就需要实现动画，那么我们就得使用到scrollReveal这套框架。">
+<meta name="twitter:image" content="http://ofn33tdsr.bkt.clouddn.com/scrollReveal/1.gif">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="我会变得更好|因为我从未止步" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>框架之scrollReveal | 我会变得更好|因为我从未止步</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: null,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/author.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Zengyong</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">梦里能到达的地方 脚步也能到达</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">浏览文章</a></li>
+                        
+                            <li><a href="/archives/">文章分类</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="http://index.studyhtml5.com">站点概念页</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:545698514@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/zengyong" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zengyong1990" title="GitHub"></a>
+                            
+                                <a class="fa 豆瓣" href="https://www.douban.com/" title="豆瓣"></a>
+                            
+                                <a class="fa bilibili" href="http://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa AcFun" href="http://www.acfun.cn/" title="AcFun"></a>
+                            
+                                <a class="fa QQ" href="tencent://message/?uin=545698514&amp;Site=&amp;Menu=yes" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="http://weixin.qq.com/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animate/">Animate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wow/">Wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html语义化/">html语义化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画框架/">动画框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/求职/">求职</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浮动/">浮动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运动/">运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.runoob.com/html/html-quicklist.html">前端速查</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.iconfont.cn/plus/collections/index?type=2">阿里巴巴矢量图</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://regexper.com/">正则表达式分析工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://segmentfault.com/">segmentfault</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://portal.qiniu.com/signin">七牛云</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.jq22.com/daima">jQuery插件</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://xiuxiu.web.meitu.com/plugin/batch/taobao.html?channel=resize">美图在线处理工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.jianshu.com/p/e37410395956">好书推荐</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.markdown.cn/">markdown语法</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://javascript.ruanyifeng.com/">JavaScript标准参考教程</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://f2er.club/">醉牛前端</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.runoob.com/try/bootstrap/layoutit/">bootstrap可视化编辑器</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://blog.koalite.com/bbg/">bootstrap按钮定制</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io/zh-cn/docs/setup.html">hexo建站</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Zengyong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/author.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Zengyong</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">梦里能到达的地方 脚步也能到达</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">浏览文章</a></li>
+                
+                    <li><a href="/archives/">文章分类</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="http://index.studyhtml5.com">站点概念页</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:545698514@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/zengyong" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zengyong1990" title="GitHub"></a>
+                            
+                                <a class="fa 豆瓣" target="_blank" href="https://www.douban.com/" title="豆瓣"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="http://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa AcFun" target="_blank" href="http://www.acfun.cn/" title="AcFun"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="tencent://message/?uin=545698514&amp;Site=&amp;Menu=yes" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="http://weixin.qq.com/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-框架合集-scrollReveal" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/07/框架合集-scrollReveal/" class="article-date">
+      <time datetime="2017-02-07T13:48:18.000Z" itemprop="datePublished">2017-02-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      框架之scrollReveal
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/框架/">框架</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Wow配合Animate已能完成日常开发中大部分的动画特效，但是Wow有一个弊端，它实现的动画<code>只能做一次</code>，如果需求变更为只要滚动到某一位置时就需要实现动画，那么我们就得使用到scrollReveal这套框架。<br><a id="more"></a></p>
+<h2 id="scrollReveal作用"><a href="#scrollReveal作用" class="headerlink" title="scrollReveal作用"></a>scrollReveal作用</h2><p>scrollReveal的出现，解决了Wow配合Animate实现动画效果时只能实现一次的的弊端，作为当滚动条到达偏移值时实现多次动画的框架，也是必须掌握的。</p>
+<h2 id="scrollReveal下载"><a href="#scrollReveal下载" class="headerlink" title="scrollReveal下载"></a>scrollReveal下载</h2><p>可以前往<a href="https://scrollrevealjs.org/" title="scrollReveal官网" target="_blank" rel="external">https://scrollrevealjs.org/</a>下载并预览该框架实现的特效。</p>
+<h2 id="scrollReveal优势"><a href="#scrollReveal优势" class="headerlink" title="scrollReveal优势"></a>scrollReveal优势</h2><ul>
+<li>既不依赖jQuery，也不依赖Animate</li>
+<li>私人定制动画属性，方便快捷</li>
+<li>动画效果可以一次或者无限次实现</li>
+</ul>
+<h2 id="scrollReveal兼容"><a href="#scrollReveal兼容" class="headerlink" title="scrollReveal兼容"></a>scrollReveal兼容</h2><p>scrollReveal的动画效果底层也是css3实现的，所以其需要支持css3的浏览器— IE10+、Firefox、Chrome、Opera、Safari。</p>
+<h2 id="scrollReveal用法"><a href="#scrollReveal用法" class="headerlink" title="scrollReveal用法"></a>scrollReveal用法</h2><ol>
+<li>引入scrollreveal.js</li>
+<li><p>在js中对需要做动画的元素进行初始化</p>
+<blockquote>
+<p> window.sr = ScrollReveal();<br><br>  sr.reveal(对应元素的类名,需要加.)</p>
+</blockquote>
+</li>
+<li><p>如果需要对动画进行自定义，scrollReveal提供了丰富的初始化参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">              <span class="attr">reset</span>: <span class="literal">false</span>,   <span class="comment">// 滚动鼠标时，动画开关</span></div><div class="line">              origin: <span class="string">'bottom'</span>, <span class="comment">// 动画开始的方向</span></div><div class="line">              duration: <span class="number">500</span>,   <span class="comment">// 动画持续时间</span></div><div class="line">              delay: <span class="number">0</span>, <span class="comment">// 延迟</span></div><div class="line">              rotate: &#123;<span class="attr">x</span>:<span class="number">0</span>, <span class="attr">y</span>:<span class="number">0</span>, <span class="attr">z</span>:<span class="number">0</span>&#125;,  <span class="comment">// 过度到0的初始角度</span></div><div class="line">              opacity: <span class="number">0</span>, <span class="comment">// 初始透明度</span></div><div class="line">              scale: <span class="number">0.9</span>, <span class="comment">//缩放</span></div><div class="line">              easing: <span class="string">'cubic-bezier(0.6, 0.2, 0.2, 1)'</span>, <span class="comment">// 缓动'ease', 'ease-in-out'，'linear'...</span></div><div class="line">              <span class="comment">// 回调函数</span></div><div class="line">              beforeReveal: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">              <span class="attr">beforeReset</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">              <span class="attr">afterReveal</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">              <span class="attr">afterReset</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.sr = ScrollReveal();</div><div class="line">sr.reveal(<span class="string">'对应元素的类名,需要加.'</span>, config);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过一个实例来演示<br></p>
+<blockquote>
+<p>demo1</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        *&#123;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">list-style</span>:none;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-tag">ul</span>&#123;</div><div class="line">            <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">300px</span> auto;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-tag">li</span>&#123;</div><div class="line">            <span class="attribute">width</span>: <span class="number">40%</span>;</div><div class="line">            <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">            <span class="attribute">background-color</span>: red;</div><div class="line">            <span class="attribute">float</span>:left;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span>&#123;</div><div class="line">            <span class="attribute">float</span>:right;</div><div class="line">            <span class="attribute">background-color</span>: blue;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"height:2000px"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"sr1"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"sr2"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/scrollreveal.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> config1 = &#123;</div><div class="line">            <span class="attr">reset</span>: <span class="literal">true</span>,   <span class="comment">// 滚动鼠标时，动画开关</span></div><div class="line">            origin: <span class="string">'bottom'</span>, <span class="comment">// 动画开始的方向</span></div><div class="line">            duration: <span class="number">500</span>,   <span class="comment">// 动画持续时间</span></div><div class="line">            delay: <span class="number">500</span>, <span class="comment">// 延迟</span></div><div class="line">            rotate: &#123;<span class="attr">x</span>:<span class="number">0</span>, <span class="attr">y</span>:<span class="number">0</span>, <span class="attr">z</span>:<span class="number">0</span>&#125;,  <span class="comment">// 过度到0的初始角度</span></div><div class="line">            opacity: <span class="number">0</span>, <span class="comment">// 初始透明度</span></div><div class="line">            scale: <span class="number">0.9</span>, <span class="comment">//缩放</span></div><div class="line">            easing: <span class="string">'cubic-bezier(0.6, 0.2, 0.2, 1)'</span>, <span class="comment">// 缓动'ease', 'ease-in-out'，'linear'...</span></div><div class="line">            <span class="comment">// 回调函数</span></div><div class="line">            beforeReveal: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">            <span class="attr">beforeReset</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">            <span class="attr">afterReveal</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">            <span class="attr">afterReset</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">var</span> config2 = &#123;</div><div class="line">            <span class="attr">reset</span>: <span class="literal">false</span>,   <span class="comment">// 滚动鼠标时，动画开关</span></div><div class="line">            origin: <span class="string">'bottom'</span>, <span class="comment">// 动画开始的方向</span></div><div class="line">            duration: <span class="number">500</span>,   <span class="comment">// 动画持续时间</span></div><div class="line">            delay: <span class="number">0</span>, <span class="comment">// 延迟</span></div><div class="line">            rotate: &#123;<span class="attr">x</span>:<span class="number">100</span>, <span class="attr">y</span>:<span class="number">80</span>, <span class="attr">z</span>:<span class="number">0</span>&#125;,  <span class="comment">// 过度到0的初始角度</span></div><div class="line">            opacity: <span class="number">0.7</span>, <span class="comment">// 初始透明度</span></div><div class="line">            scale: <span class="number">1.1</span>, <span class="comment">//缩放</span></div><div class="line">            easing: <span class="string">'linear'</span>, <span class="comment">// 缓动'ease', 'ease-in-out'，'linear'...</span></div><div class="line">            <span class="comment">// 回调函数</span></div><div class="line">            beforeReveal: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">            <span class="attr">beforeReset</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">            <span class="attr">afterReveal</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;,</div><div class="line">            <span class="attr">afterReset</span>: <span class="function"><span class="keyword">function</span>(<span class="params">domEl</span>)</span>&#123;&#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">window</span>.sr = ScrollReveal();</div><div class="line">        sr.reveal(<span class="string">'.sr1'</span>,config1);</div><div class="line">        sr.reveal(<span class="string">'.sr2'</span>,config2);</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/scrollReveal/1.gif" alt="scrollReveal"></p>
+<blockquote>
+<p>通过该案例不难看出，红色盒子可以一直做动画，而蓝色盒子只做了一次动画，后续不论滚动条如何滚动蓝色盒子都不再有动画效果，因此可以说明scrollReveal中的动画效果可以通过传入的参数进行配置。比如项目需要滚动时动画只会播放一次，则可以设置reset:false，否则为true，其他参数大家可以自己进行测试。</p>
+</blockquote>
+<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>scrollReveal最突出的特点就是解决了Wow滚动时动画只能做一次这个局限，在实际工作中，我们还是要根据项目需求选择对应的框架。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/07/框架合集-scrollReveal/">框架之scrollReveal</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Zengyong</a></p>
+        <p><span>发布时间:</span>2017-02-07, 21:48:18</p>
+        <p><span>最后更新:</span>2017-02-25, 09:02:59</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/07/框架合集-scrollReveal/" title="框架之scrollReveal">http://www.studyhtml5.com/2017/02/07/框架合集-scrollReveal/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.studyhtml5.com/2017/02/07/框架合集-scrollReveal/　　作者: Zengyong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/02/08/框架合集-animate/">
+                    CSS3动画框架之Animate
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/06/框架合集-Wow/">
+                    框架之Wow
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#scrollReveal作用"><span class="toc-number">1.</span> <span class="toc-text">scrollReveal作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scrollReveal下载"><span class="toc-number">2.</span> <span class="toc-text">scrollReveal下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scrollReveal优势"><span class="toc-number">3.</span> <span class="toc-text">scrollReveal优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scrollReveal兼容"><span class="toc-number">4.</span> <span class="toc-text">scrollReveal兼容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scrollReveal用法"><span class="toc-number">5.</span> <span class="toc-text">scrollReveal用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综述"><span class="toc-number">6.</span> <span class="toc-text">综述</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"框架之scrollReveal　| 我会变得更好|因为我从未止步　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/07/框架合集-scrollReveal/" data-title="框架之scrollReveal" data-url="http://www.studyhtml5.com/2017/02/07/框架合集-scrollReveal/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"zengyong"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.studyhtml5.com/js/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=zengyong&threads=2017/02/07/框架合集-scrollReveal/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/02/08/框架合集-animate/" title="上一篇: CSS3动画框架之Animate">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/06/框架合集-Wow/" title="下一篇: 框架之Wow">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/面试那点事/">面试那点事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/javascript回弹运动/">js运动之回弹运动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/12/字体图标的那些事/">字体图标的那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/11/git-node-Hexo搭建静态博客/">git+node.js+Hexo搭建静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/框架合集-animate/">CSS3动画框架之Animate</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/07/框架合集-scrollReveal/">框架之scrollReveal</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/框架合集-Wow/">框架之Wow</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/27/html语义化/">浅析html语义化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/22/css定位与浮动浅析/">css定位与浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/05/javascript闭包/">js闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/01/为什么开git博客/">为什么要开Blog</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 Zengyong
+            </div>
+            <div class="footer-right">
+                拼搏 &nbsp;求知&nbsp; 进取&nbsp; 明智
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "进取 |" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "执着 |" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

@@ -4,234 +4,487 @@
   
     
     <entry>
-      <title><![CDATA[面试那点事]]></title>
-      <url>http://www.gohtml.online/2017/03/04/%E9%9D%A2%E8%AF%95%E9%82%A3%E7%82%B9%E4%BA%8B/</url>
-      <content type="html"><![CDATA[<p>整理几个招聘网站以及面试过程中可能遇到的问题，希望对大家有所帮助<br><a id="more"></a></p>
-<h2 id="网站整理"><a href="#网站整理" class="headerlink" title="网站整理"></a>网站整理</h2><ol>
-<li><p>拉勾<code>较为推荐</code> <a href="https://www.lagou.com/" target="_blank" rel="external">https://www.lagou.com/</a></p>
-<ul>
-<li>优势：互联网企业居多，对于前端的同学来说值得选择</li>
-<li>劣势：工作较少，入驻的面试者较多，竞争压力大</li>
-</ul>
-</li>
-<li><p>智联招聘<code>较为推荐</code> <a href="http://www.zhaopin.com/" target="_blank" rel="external">http://www.zhaopin.com/</a></p>
-<ul>
-<li>优势：入驻企业非常多，虚假广告较少</li>
-<li>劣势：求职者也众多，造成了就业竞争压力非常大，以前端为例，随便一个公司发布的岗位的竞争人数都是999+。</li>
-</ul>
-</li>
-<li><p>大街 <a href="https://www.dajie.com" target="_blank" rel="external">https://www.dajie.com</a></p>
-<ul>
-<li>优势：能与HR交谈。</li>
-<li>劣势：职位少</li>
-</ul>
-</li>
-<li><p>内推网：北京地区较为靠谱 <a href="http://www.neitui.me/" target="_blank" rel="external">http://www.neitui.me/</a></p>
-<ul>
-<li>优势：内推模式比较新颖</li>
-<li>劣势：职位太少</li>
-</ul>
-</li>
-<li><p>Boss直聘 <a href="http://www.zhipin.com/?sid=sem_pz_bdpc_index" title="Boss直聘" target="_blank" rel="external">http://www.zhipin.com/?sid=sem_pz_bdpc_index</a></p>
-</li>
-<li><p>前程无忧 51job<code>较为推荐</code> <a href="http://www.51job.com/?from=baidupz" target="_blank" rel="external">http://www.51job.com/?from=baidupz</a></p>
-<ul>
-<li>优势：老牌招聘网站</li>
-<li>劣势：同智联</li>
-</ul>
-</li>
-<li><p>中华英才<code>被58收购，另类的58</code> <a href="www.chinahr.com">www.chinahr.com</a></p>
-<ul>
-<li>优势：老牌的招聘网站</li>
-<li>劣势：58一个神奇的网站，但是筛选制度不够完善，所以虚假消息非常多。这几天看了下中华英才，感觉还不错。</li>
-</ul>
-</li>
-<li><p>纳人 —暂时忽略，太不稳定</p>
-</li>
-<li><p>猎聘<code>较为推荐</code> <a href="https://www.liepin.com" target="_blank" rel="external">https://www.liepin.com</a></p>
-<ul>
-<li>优势：高端大欺上档次，低调奢华有内涵</li>
-<li>劣势：职位都比较上档次，但是要求较高，无工作经验的人基本没什么机会。</li>
-</ul>
-</li>
-<li><p>自由职客 <a href="http://www.freekeer.com/" target="_blank" rel="external">http://www.freekeer.com/</a></p>
-</li>
-<li><p>中国人才热线 <a href="http://www.cjol.com/" target="_blank" rel="external">http://www.cjol.com/</a></p>
-<ul>
-<li>优势：面试几率高</li>
-<li>劣势：主要以南方企业为主，但入驻的HR太少,有时都会让求职者认为它已经倒闭</li>
-</ul>
-</li>
-<li><p>好工作 <a href="http://www.93hgz.com/" target="_blank" rel="external">http://www.93hgz.com/</a></p>
-</li>
-<li><p>博客园/csdn招聘</p>
-</li>
-</ol>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>最近几天咨询了不少搞IT的同学和朋友，据此总结一下面试的相关问题(<code>只做参考</code>)。</p>
-</blockquote>
-<h3 id="面试邀请"><a href="#面试邀请" class="headerlink" title="面试邀请"></a>面试邀请</h3><p>考虑当前前端人数众多，一跃已经成为当前竞争压力最大的岗位之一。保守估计10-20份投递将会有一个面试邀请，所以说每一个面试机会是非常珍贵的。大家如果在同一时间得到多个面试邀请并且面试时间都为具体某个时间段，除非不得已，万不可推掉，建议大家可以告知对方延后面试时间，一般hr都会同意。</p>
-<h3 id="面试环节"><a href="#面试环节" class="headerlink" title="面试环节"></a>面试环节</h3><p>不考虑外企，一般来说除去bat一线企业，面试分为1面2面3面，天数正常为1天。</p>
-<ul>
-<li>一般1面属于小型或者创业公司，这类公司一般来说技术要求比较高，直接是技术人员或者boss级别人员进行面试，当然不乏不懂技术的<code>菜鸟</code>面试你，该类公司体制不够成熟，福利也不够多，但也不乏财大气粗的boss，能进则进，进不了也无妨。</li>
-<li>2面：搜房网，明源为例—人事面到技术面，技术面一般为2-4人。</li>
-<li>3面：以携程为例  技术小弟—-项目经理（部门主管）—人事,以国家政务研究中心为例：人事-技术小弟–项目经理（部门主管）</li>
-</ul>
-<p>一般来说技术小弟面试完，并且初面感觉还不错就轮到项目经理或主管级别的出手了，而且如果对方对面试者比较有意向，都不会问太偏的问题（除非你的简历把自己写的过于bug，所以对于每一位求职者来说写简历也算是一门必修课—&gt;<a href="http://get.ftqq.com/744.get" title="如何写好技术简历" target="_blank" rel="external">如何写好技术简历</a>）。整个面试结束之后，一般都会让面试者回家等候消息，一般一周内会有答复，不过超过2天其实就不要太报希望。当然个人见过接近20天才通知上班的，纯属特例。</p>
-<h3 id="常见问题整理"><a href="#常见问题整理" class="headerlink" title="常见问题整理"></a>常见问题整理</h3><p>本节抛开前端面试题，主要整理一些面试官常提的问题（生活化），该类问题主要是考验应聘者的应变和谈吐能力，检验其能否在公司团队中与其他同事和谐共处。</p>
-<ol>
-<li>请用几分钟介绍一下你自己？</li>
-<li>在大学期间所学的主要课程有哪些？</li>
-<li>鉴于你的专业是XXX，基本是与IT无关的专业，为什么要转行前端呢？</li>
-<li>谈谈你在大学期间（上家公司）最大的收获是什么？</li>
-<li>方便聊聊你的家人吗？</li>
-<li>从上一家公司离职的原因是如何的？</li>
-<li>你理想中的公司是怎样的？</li>
-<li>我们的问题问完了，请问你还有什么需要问的？</li>
-</ol>
+      <title><![CDATA[webstorm浏览器预览时提示localhost连接失败]]></title>
+      <url>http://www.gohtml.online/2017/06/22/webstorm%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A2%84%E8%A7%88%E6%97%B6%E6%8F%90%E7%A4%BAlocalhost%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/</url>
+      <content type="html"><![CDATA[<p>webstorm浏览器预览时提示localhost连接失败，以下为解决方案<br><a id="more"></a></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>最近几天用webstorm做项目，可是突然使用webstorm用浏览器调试时，提示localhost:63342连接不上，让我检查代理服务和网络。如果出现这样的问题，可以使用如下方法解决：</p>
+<p>打开webstorm的安装目录，找到/bin/WebStorm.exe.vmoptions文件，在其中添加以下两行代码：</p>
+<pre><code>-Drpc.port=53342
+-Drpc.onlyAnyHost=true
+</code></pre><p>保存后然后重启webstorm，完美解决。</p>
+<p>如果觉得webstorm自带的服务器端口号太丑陋，我们也可以进行修改，下图为调整方式<br><img src="http://ol5ro64tz.bkt.clouddn.com/%E6%9B%B4%E6%8D%A2%E7%AB%AF%E5%8F%A3%E5%8F%B7.png" alt="ws端口更换"></p>
 ]]></content>
       
         <categories>
             
-            <category> 面试 </category>
+            <category> webstorm </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> 求职 </tag>
+            <tag> webstorm </tag>
+            
+            <tag> 小技巧 </tag>
             
         </tags>
         
     </entry>
     
     <entry>
-      <title><![CDATA[js运动之回弹运动]]></title>
-      <url>http://www.gohtml.online/2017/02/17/javascript%E5%9B%9E%E5%BC%B9%E8%BF%90%E5%8A%A8/</url>
-      <content type="html"><![CDATA[<p>谈起js运动,不少人或多或少都知道一些关于匀速运动和缓冲运动的知识,但如果说起回弹运动,可能知之者甚少.js回弹运动的形式为物体基于某一固定位置作来回运动,因为运动的路径犹如一个球体来回弹,所以称为回弹运动.<br><a id="more"></a></p>
-<h2 id="什么是回弹运动"><a href="#什么是回弹运动" class="headerlink" title="什么是回弹运动"></a>什么是回弹运动</h2><p>回弹运动就是物体基于某一固定位置作来回运动,字面意思很好理解，但是如何用程序化的语言去描述该运动呢?在回答该问题之前,我们先聊一下加速和减速运动，为了方便理解，本文所有物体的运动均为直线运动，同时每个运动都将以代码的形式展现.</p>
-<h3 id="加速运动"><a href="#加速运动" class="headerlink" title="加速运动"></a>加速运动</h3><p>该运动的特点为：速度不断增加。</p>
-<blockquote>
-<p>demo1</p>
-</blockquote>
+      <title><![CDATA[angular杂项]]></title>
+      <url>http://www.gohtml.online/2017/06/20/angular%E6%9D%82%E9%A1%B9/</url>
+      <content type="html"><![CDATA[<p> angular技术点非常之多，这里简单整理一些比较常用的技术点。<br><a id="more"></a></p>
+<h2 id="angular-ui-router路由"><a href="#angular-ui-router路由" class="headerlink" title="angular-ui-router路由"></a>angular-ui-router路由</h2><p>这里我并没有使用angular自带的路由，而是使用了一款第三方ui-router这个框架，以下为该框架的路由传参方式。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">ui-sref</span>=<span class="string">"manage.adduser(&#123;id:1,name:'zs'&#125;)"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"iconfont icon-jia"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line">app.config(["$stateProvider","$urlRouterProvider",function ($stateProvider,$urlRouterProvider) &#123;</div><div class="line">    $urlRouterProvider.when("","/login"); //默认跳转</div><div class="line">    $stateProvider.state("manage.adduser",&#123; // 增加用户</div><div class="line">			        url:"/user/adduser?&#123;id,name&#125;", //?id=1&amp;name=zhangsan </div><div class="line"> 					//若 url:"/user/adduser/:id/:name"，那么地址栏显示manage/user/adduser/1/zhangsan</div><div class="line">			        templateUrl:"./views/manage/user/adduser.html",</div><div class="line">			        controller:"addUserCtrl"</div><div class="line">	&#125;)</div><div class="line">])</div></pre></td></tr></table></figure>
+<p>另外如果index页面里有路由a并且有ui-view，a里面嵌套路由b，但是路由b希望自己展示在index的ui-view里面，可以通过state(“a”,{}).state(“b”，{})这样写，不要state(“a”,{}).state(“a.b”,{}),否则b就会跳转到a里面的ui-view中了;</p>
+<p>接收参数,在控制器里面注入$stateParams服务</p>
+<h2 id="checkbox相关"><a href="#checkbox相关" class="headerlink" title="checkbox相关"></a>checkbox相关</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"checkbox-inline"</span> <span class="attr">ng-repeat</span>=<span class="string">"(index,item) in userManage.isPower"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"power"</span>  <span class="attr">ng-model</span>=<span class="string">"item.checked"</span>  <span class="attr">ng-checked</span>=<span class="string">"item.checked"</span> <span class="attr">ng-click</span>=<span class="string">"userManage.addPower(item.checked,index+1)"</span> &gt;</span>&#123;&#123;item.roleName&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在checkbox里面ng-model 绑定的是true或者false，选中为true，不选为false</p>
+<h2 id="select相关"><a href="#select相关" class="headerlink" title="select相关"></a>select相关</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">ng-model</span>=<span class="string">"addUser.departmentId"</span> <span class="attr">ng-options</span>=<span class="string">"x.departmentId as x.depName for x in addUserConfig.dep"</span> &gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>--请选择--<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>我们也可以通过<code>&lt;!--&lt;option value=&quot;&quot; ng-repeat=&quot;(index,item) in addUserConfig.dep&quot; ng-bind=&quot;item&quot;&gt;&lt;/option&gt;--&gt;</code>进行option</p>
+<h2 id="jqLite选择符的问题"><a href="#jqLite选择符的问题" class="headerlink" title="jqLite选择符的问题"></a>jqLite选择符的问题</h2><p>jqLite是不支持选择符。我们可以通过 angular.element传入一个DOM对象来使用jqLite提供的api。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> tpl = <span class="built_in">document</span>.querySelector(<span class="string">'#clock'</span>);</div><div class="line">angular.element(tpl).text(...);</div><div class="line">angular.element(<span class="built_in">document</span>).ready($scope.query);</div></pre></td></tr></table></figure>
+<h2 id="jqLite扩展的方法"><a href="#jqLite扩展的方法" class="headerlink" title="jqLite扩展的方法"></a>jqLite扩展的方法</h2><p>jqLite包括一些额外的方法以适应AngularJS框架：</p>
 <ul>
-<li>公用css</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50px</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><p>公用html</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">onclick</span>=<span class="string">"move()"</span>&gt;</span>move<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<li>controller(name) - 获得元素对应的控制器对象</li>
+<li>injector() - 获得元素对应的注入器对象</li>
+<li>scope() - 获得元素对应的作用域对象</li>
+<li>isolateScope() - 获得元素对应的隔离作用域对象，如果有的话。</li>
+<li><p>inheritedData() - 和data()一样，但如果当前元素没有指定的数据，会向上级 节点继续找。</p>
 </li>
-<li><p>加速运动js代码</p>
-<pre><code>function move(){
-    var btn = document.getElementById(&apos;btn&apos;);
-    var box = document.getElementById(&apos;box&apos;);
-    var speed = 0; //初始速度
-    setInterval(function(){
-        console.log(speed);
-        speed++; //速度自增
-        box.style.left = box.offsetLeft+speed+&apos;px&apos;;
-    },50)
-}
-</code></pre></li>
-</ul>
-<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/1.gif" alt="加速运动"></p>
-<ul>
-<li>我们发现加速运动的物体会一直沿着它的初始路线作运动，且方向不会改变。</li>
-</ul>
-<h3 id="减速运动"><a href="#减速运动" class="headerlink" title="减速运动"></a>减速运动</h3><p>该运动的特点为：速度不断减少。</p>
-<blockquote>
-<p>demo2</p>
-</blockquote>
-<ul>
-<li>减速运动js代码</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</div><div class="line">    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">    <span class="keyword">var</span> speed = <span class="number">40</span>; <span class="comment">//初始速度</span></div><div class="line">    setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(speed);</div><div class="line">        speed--;	 <span class="comment">//速度自减</span></div><div class="line">        box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">    &#125;,<span class="number">50</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/2.gif" alt="减速运动"></p>
-<ul>
-<li>我们发现减速运动的物体，当<code>速度减少为负值</code>时，该物体将做反方向的直线运动，且<code>方向只改变一次</code>。</li>
-</ul>
-<h2 id="回弹运动"><a href="#回弹运动" class="headerlink" title="回弹运动"></a>回弹运动</h2><p> 刚才我们说到，回弹运动的物体是以某一个位置为基准作往复运动，运动方向的变化与减速运动类似，但是又有着明显差别,因为回弹运动的方向将一直发生变化。因此我们可以合并加速和减速运动，当运动物体的位置小于基准位置时，让该物体做加速运动，当大于基准位置时，让其做减速运动，这样就可以实现回弹运动了。</p>
-<blockquote>
-<p>demo3</p>
-</blockquote>
-<ul>
-<li>回弹运动js代码    </li>
-</ul>
-<pre><code>  &lt;script&gt;  
-        function move(target){
-            var btn = document.getElementById(&apos;btn&apos;);
-            var box = document.getElementById(&apos;box&apos;);
-            var speed = 0;
-            setInterval(function(){
-                console.log(speed);
-                if(box.offsetLeft &lt;= 400){
-                    speed++;
-                }else{
-                    speed--;
-                }
-                box.style.left = box.offsetLeft+speed+&apos;px&apos;;
-            },50)
-        }
-&lt;/script&gt; 
-</code></pre><p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/3.gif" alt="回弹运动"></p>
-<ul>
-<li>回弹运动的运动轨迹就是基于某一位置做往复运动，但是这样的运动形式在我们实际开发中运用的并不多，所以我们需要进行一定的优化。</li>
-</ul>
-<h2 id="优化回弹运动"><a href="#优化回弹运动" class="headerlink" title="优化回弹运动"></a>优化回弹运动</h2><ol>
-<li>速度优化<ul>
-<li>实际开发中回弹运动中的加速和减速不可能为每次自增或者自减1个像素，我们可以用一个公式代替速度的变化：当前速度 += （运动基准位置 - 运动物体的当前位置）*系数。</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>demo4</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> &lt;script&gt;</div><div class="line">       <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">       <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">           <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">           setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">               <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">               <span class="keyword">if</span>(box.offsetLeft&lt;<span class="number">400</span>)&#123;</div><div class="line">                   speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">               &#125;<span class="keyword">else</span>&#123;</div><div class="line">                   speed -= (box.offsetLeft<span class="number">-400</span>)*<span class="number">0.2</span>;</div><div class="line">               &#125;</div><div class="line"></div><div class="line">               box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">           &#125;,<span class="number">50</span>)</div><div class="line">       &#125; </div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/4.gif" alt="速度优化1"></p>
-<p>   但是还是没有出现我们想要的效果，这里有个小技巧，我们可以将最终的速度值再乘上一个系数</p>
-<blockquote>
-<p>demo5<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">      <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">          setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">              <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">              <span class="keyword">if</span>(box.offsetLeft&lt;<span class="number">400</span>)&#123;</div><div class="line">                  speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">              &#125;<span class="keyword">else</span>&#123;</div><div class="line">                  speed -= (box.offsetLeft<span class="number">-400</span>)*<span class="number">0.2</span>;</div><div class="line">              &#125;</div><div class="line">              speed *= <span class="number">0.9</span>; <span class="comment">//乘以一个系数</span></div><div class="line">              box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">          &#125;,<span class="number">50</span>)</div><div class="line">      &#125;</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/5.gif" alt="速度优化2"></p>
-<ul>
-<li>效果出来了有没有！但是我们还有几个问题亟需解决：<ol>
-<li>速度的两次取值公式重复度非常高，是否可以优化？</li>
-<li>在日志打印处处，offsetLeft一直在400处来回变化，如何解决？</li>
-<li>另外我们不希望物体回弹这么多次，只要一次回弹效果即可，怎么实现？</li>
-<li>定时器未清除；</li>
-</ol>
+<li><p>angular.forEach 遍历</p>
 </li>
 </ul>
+<pre><code class="javascript">
+<span class="keyword">var</span> objs =[{<span class="attr">a</span>:<span class="number">1</span>},{<span class="attr">a</span>:<span class="number">2</span>}];
+angular.forEach(objs, <span class="function"><span class="keyword">function</span>(<span class="params">data,index,array</span>)</span>{
+    <span class="comment">//data等价于array[index]</span>
+    <span class="built_in">console</span>.log(data.a+<span class="string">'='</span>+array[index].a);
+});
+</code></pre>
 <ul>
-<li>解决方案<ol>
-<li>我们将speed += (400-box.offsetLeft)x0.2与speed -= (box.offsetLeft-400)x0.2展开发现两个公式均为speed = speed+ 400x0.2 - box.offsetLeftx0.2，所以两者可以用其中任意一个公式代替；</li>
-<li>因为offsetLeft为整数取值，而speed的取值是通过一个系数相乘得到的结果，必然会产生小数，因此其中存在了一定的误差—–我们可以用一个变量存储当前的位置，最后再赋值给运动物体；</li>
-<li>刚才speed的系数为0.9,我们可以改变该系数，这样就可以调整回弹次数，如果希望回弹次数较少，则可以将系数值设置低一些。</li>
-<li>当速度足够小，并且物体的当前位置与目标位置的距离足够近的时候，清除定时器</li>
-</ol>
-</li>
+<li>angular.fromJson(json) 把字符串转化为对象 </li>
 </ul>
-<blockquote>
-<p>demo6<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">      <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">      <span class="keyword">var</span> dis = <span class="number">0</span>;</div><div class="line">      <span class="keyword">var</span> timer = <span class="literal">null</span>;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          clearInterval(timer);</div><div class="line">          <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">          timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">              speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">              speed *= <span class="number">0.6</span>; <span class="comment">//乘以一个系数</span></div><div class="line">              dis += speed;</div><div class="line">              <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(speed)&lt;<span class="number">1</span> &amp;&amp; <span class="built_in">Math</span>.abs(<span class="number">400</span>-box.offsetLeft)&lt;<span class="number">1</span>)&#123;</div><div class="line">                  clearInterval(timer);</div><div class="line">                  box.style.left = <span class="number">400</span> +<span class="string">'px'</span>;</div><div class="line">              &#125;<span class="keyword">else</span>&#123;</div><div class="line">                  box.style.left = dis+<span class="string">'px'</span>;</div><div class="line">              &#125;</div><div class="line">              <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">          &#125;,<span class="number">50</span>)</div><div class="line">      &#125;</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/6.gif" alt="回弹运动优化版"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>回弹运动其实就是之前的加减速运动融合而成的升级版本，本身实现并不复杂，有些东西需要我们自己去钻研去发掘，举一反三触类旁通，这也是学习之法。</p>
+<ul>
+<li>angular.toJson 把对象转为Json字符串</li>
+</ul>
+<h2 id="angular中使用jQuery"><a href="#angular中使用jQuery" class="headerlink" title="angular中使用jQuery"></a>angular中使用jQuery</h2><p>如果不愿意使用jqLite，希望直接使用选择器获取dom元素，也可以在AngularJS之前引入jQuery库。 AngularJS自动地将jqLite升级成jQuery，angular.element等同于 $ 。</p>
 ]]></content>
       
         <categories>
             
-            <category> javascript </category>
+            <category> angular </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> javascript </tag>
+            <tag> angular </tag>
             
-            <tag> 运动 </tag>
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[angular控制器]]></title>
+      <url>http://www.gohtml.online/2017/06/15/angular%E6%8E%A7%E5%88%B6%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p> 探究angular控制器，本文主要说明控制器间如何进行数据通信。<br><a id="more"></a></p>
+<blockquote>
+<p>首先说明————-以下观点纯属个人看法，说错了别打我</p>
+</blockquote>
+<h2 id="为什么要使用控制器"><a href="#为什么要使用控制器" class="headerlink" title="为什么要使用控制器"></a>为什么要使用控制器</h2><ul>
+<li>angular真的很奇怪，它不能直接与js进行交互，为了让js与angular能够实现交互，这时控制器诞生了。比如如下的demo1，直接在ng-click中写alert是无效的，因此我们需要改版为demo2。</li>
+</ul>
+<h3 id="demo1"><a href="#demo1" class="headerlink" title="demo1"></a>demo1</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点我弹窗"</span> <span class="attr">ng-click</span>=<span class="string">"alert(1)"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="demo2"><a href="#demo2" class="headerlink" title="demo2"></a>demo2</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点我弹窗"</span> <span class="attr">ng-click</span>=<span class="string">"showModel()"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>,[]);</div><div class="line">  app.controller(<span class="string">'zyCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">      $scope.showModel = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          alert(<span class="number">1</span>);</div><div class="line">      &#125;</div><div class="line">  &#125;])</div></pre></td></tr></table></figure>
+<ul>
+<li>观察上述代码：我们通过app.controller(‘zyCtrl’,[‘$scope’,function ($scope) {}])定义了一个控制器，这个控制器名字是zyCtrl，但是后面的数组是什么？官方学名叫<code>依赖注入</code>，我理解的是控制器需要什么，就注入什么服务。当然依赖注入还有另外一种写法—–<code>推断式注入</code>：app.controller(‘zyCtrl’,function($scope){}),但是不推荐使用，因为上线时我们的代码需要丑化，所以这个过程只适用于未经过压缩和混淆的代码。关于注入方式可以参考这篇文章&gt;&gt;<a href="http://blog.csdn.net/luo_xinran/article/details/52153830" title="依赖注入的方式" target="_blank" rel="external">依赖注入的方式</a></li>
+</ul>
+<h2 id="控制器间的数据通信"><a href="#控制器间的数据通信" class="headerlink" title="控制器间的数据通信"></a>控制器间的数据通信</h2><p>控制器作为view与model交互的纽带，当项目达到一定的程度，自然而然的牵涉到控制器间的数据通信。这里总结了几种控制器间的数据通信方法</p>
+<ul>
+<li>创建一个服务factory作为媒介进行传递</li>
+<li>通过$scope作用域继承关系</li>
+<li>基于事件$on,$emit,$boardcast</li>
+</ul>
+<h3 id="创建一个服务factory作为媒介进行通信"><a href="#创建一个服务factory作为媒介进行通信" class="headerlink" title="创建一个服务factory作为媒介进行通信"></a>创建一个服务factory作为媒介进行通信</h3><p>这里主要利用了angular的服务是一个单例，我们只需要将创建的服务注入到相应的控制器中，就可以利用这个单例进行数据的传递。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn2"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.factory(<span class="string">"myService"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">btn</span>:<span class="string">'我是服务，一个单例哟'</span></div><div class="line">    &#125;;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope,myService</span>) </span>&#123;</div><div class="line">    $scope.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        myService.btn = $scope.btn1;</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope,myService</span>) </span>&#123;</div><div class="line">    $scope.btn2 = myService.btn;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn2 = myService.btn;</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h3 id="通过-scope作用域继承关系通信"><a href="#通过-scope作用域继承关系通信" class="headerlink" title="通过$scope作用域继承关系通信"></a>通过$scope作用域继承关系通信</h3><p>这种其实不必多说，就是利用了作用域，向上查找。有两种情况：</p>
+<ul>
+<li>传递的值为值类型 修改父的子会改，修改子的父不变 <code>解决方法：</code>子控制器使用$scope.$parent</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn1 = <span class="string">"我被老爸点了"</span>；</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn1 = <span class="string">"我被孩子点了"</span>； <span class="comment">//解决方案 $scope.$parent.btn1 = "我被孩子点了"；</span></div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<ul>
+<li>传递的值为引用类型 双向绑定</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"ctrlConfig.btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"ctrlConfig.btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.ctrlConfig = &#123;&#125;;</div><div class="line">    $scope.ctrlConfig.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.ctrlConfig.btn1 = <span class="string">"我被爹点了"</span></div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.ctrlConfig.btn1 = <span class="string">"我被儿子点了"</span></div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<p>我们可以利用引用类型的特性，再顶层创建一个总控制器，定义一个配置属性，该属性为引用类型{}，然后其他的子类就可以在他的基础上添加属性和方法，其他的控制器可以直接使用该属性上的属性何方法了，也就实现了控制器间的数据传递。</p>
+<h3 id="基于事件-on-emit-boardcast通信"><a href="#基于事件-on-emit-boardcast通信" class="headerlink" title="基于事件$on,$emit,$boardcast通信"></a>基于事件$on,$emit,$boardcast通信</h3><p>向上广播$emit  向下广播$boardcast  接收广播$on 如果是兄弟关系（a,b）的控制器数据交互，那么我们可以通过a向父$emit，父接收到，然后向b发送$boardcast</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"name"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"son2Name"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">'allCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.$on(<span class="string">"fatherOn"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e,newV</span>) </span>&#123;</div><div class="line">        $scope.$broadcast(<span class="string">"sonOn"</span>,newV);</div><div class="line">    &#125;)</div><div class="line">&#125;])</div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.name = <span class="string">'我是第一个孩子'</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.$emit(<span class="string">"fatherOn"</span>,$scope.name);</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2Name = <span class="string">'我是第二个孩子'</span>;</div><div class="line">    $scope.$on(<span class="string">"sonOn"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e,newV</span>)</span>&#123;</div><div class="line">        $scope.son2Name = newV;</div><div class="line">    &#125;)</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>控制器这块的数据通信非常重要，刚开始学的时候遇到了不少坑，但是都一一解决了，如果后期遇到其他关于控制器方面的问题，会及时在这里进行补充。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> angular </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> angular </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[angular1.6知识点总结]]></title>
+      <url>http://www.gohtml.online/2017/06/13/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>angular1.6学习笔记，主要对知识点进行总结，以后会对某些模块或某些技术点进行深挖，具体挖多深就得靠毅力了–！。<br><a id="more"></a></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>Angular是Google开发的前端技术框架。AngularJS是Google开源的一款JavaScript MVC框架,弥补了HTML在构建应用方面的不足,其通过使用指令(directives)结构来扩展HTML标签，另外angular还实现了数据双向绑定等技术，使开发者从频繁的操作dom中解放出来。</p>
+</blockquote>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>数据双向绑定 ng-model</li>
+<li>控制器 controller</li>
+<li>指令 directive</li>
+<li>路由 学习的是ui-router</li>
+<li>服务 学习的是factory</li>
+<li>过滤器 filter</li>
+<li>表单验证</li>
+</ul>
+<h2 id="数据双向绑定"><a href="#数据双向绑定" class="headerlink" title="数据双向绑定"></a>数据双向绑定</h2><ul>
+<li>angular需借助表单实现数据的双向绑定（ng-model）</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ng-model</span>=<span class="string">"user"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-bind</span>=<span class="string">"user"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><ul>
+<li>控制器 控制 AngularJS 应用程序的数据</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>,[]);</div><div class="line">    app.controller(<span class="string">'myCtrl'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">	</div><div class="line">    &#125;)</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li><span style="color:red">*&nbsp;还有许多知识点需要进一步探究</span>angular最强大的地方，扩展了html标签，同时也可以实现表单验证。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'app'</span>,[]).directive(<span class="string">'home'</span>, 	<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	    <span class="keyword">return</span> &#123;</div><div class="line">	        <span class="attr">restrict</span>: <span class="string">'EA'</span>,</div><div class="line">	        <span class="attr">templateUrl</span>: <span class="string">'./public/common/directive/home.html'</span>,</div><div class="line">	        <span class="attr">replace</span>: <span class="literal">true</span>,</div><div class="line">	        <span class="attr">scope</span>: &#123;</div><div class="line">	            <span class="attr">list</span>: <span class="string">'=list'</span> <span class="comment">//数据双向绑定，另外还有&amp;(方法)和@(字符串)</span></div><div class="line">	        &#125;,</div><div class="line">	        <span class="attr">link</span>: <span class="function"><span class="keyword">function</span> (<span class="params">scope, ele, attr</span>) </span>&#123;</div><div class="line">	            scope.change2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	                scope.list = <span class="string">'home'</span>;</div><div class="line">	            &#125;</div><div class="line">	        &#125;</div><div class="line">	    &#125;</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><ul>
+<li>主要学的是ui-router，因为广州的项目使用的是ui-router。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>, [<span class="string">'ui.router'</span>]);</div><div class="line">	app.config([<span class="string">"$stateProvider"</span>,<span class="string">"$urlRouterProvider"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$stateProvider,$urlRouterProvider</span>) </span>&#123;</div><div class="line">	    $urlRouterProvider.when(<span class="string">''</span>,<span class="string">'/home'</span>);</div><div class="line">	    $stateProvider.state(<span class="string">'home'</span>,&#123;</div><div class="line">	        <span class="attr">url</span>:<span class="string">'/home'</span>,</div><div class="line">	        <span class="attr">templateUrl</span>:<span class="string">'./views/list/list.html'</span>,</div><div class="line">	        <span class="attr">controller</span>:<span class="string">'listCtrl'</span></div><div class="line">	    &#125;)</div><div class="line">	&#125;])</div></pre></td></tr></table></figure>
+<h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><ul>
+<li>angular实现服务的方式有三种，factory/service/value，其中factory就是返回一个对象，service里面可以使用this，value就是定义常量，可以理解为ES6的const.考虑北京广州两地只使用factory，这里例子只说明factory</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  app = angular.module(<span class="string">'app'</span>,[]);</div><div class="line">app.factory(<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">    obj.isOk = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'i am ok!'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;);</div><div class="line">		</div><div class="line">app.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope,myService</span>) </span>&#123; <span class="comment">//自定义的服务需要注入到控制器中</span></div><div class="line">    $scope.confirm = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        myService.isOk();</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><ul>
+<li>angular自带的过滤器 <ul>
+<li>currency (货币处理)</li>
+<li>date (日期格式化)</li>
+<li>filter(匹配子串)</li>
+<li>json(格式化json对象)</li>
+<li>limitTo(限制数组长度或字符串长度)</li>
+<li>lowercase(小写)</li>
+<li>uppercase(大写)</li>
+<li>number(格式化数字)</li>
+<li>orderBy(排序)</li>
+</ul>
+</li>
+<li>自定义过滤器 filter</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> app =angular.module(<span class="string">"app"</span>,[]);	</div><div class="line">app.filter(<span class="string">'toUpper'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">input,value</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> input.toUpperCase()+value;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>使用<a href="http://www.tuicool.com/articles/ueUZBv" title="说明" target="_blank" rel="external">使用说明</a></p>
+<ul>
+<li>直接在html中</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ng-model</span>=<span class="string">"userName"</span>&gt;</span></div><div class="line">&#123;&#123;userName | uppercase&#125;&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>在控制器中注入，注入的时候为过滤器名+Filter</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> app =angular.module(<span class="string">"app"</span>,[]);	</div><div class="line">	app.controller(<span class="string">"myCtrl"</span>,[<span class="string">"$scope"</span>,<span class="string">"toUpperFilter"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope,toUpperFilter</span>) </span>&#123;</div><div class="line">      $scope.$watch(<span class="string">'userName'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">newV,oldV</span>) </span>&#123;</div><div class="line">          $scope.userName = toUpperFilter(newV,<span class="string">"---"</span>);</div><div class="line">          <span class="built_in">console</span>.log(newV, oldV);</div><div class="line">      &#125;)</div><div class="line">  &#125;])</div></pre></td></tr></table></figure>
+<h2 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h2><ul>
+<li><p>angular表单验证非常强大，实现起来非常方便，只需要把相应的验证规则写入制定表单即可。<a href="http://www.cnblogs.com/rohelm/p/4033513.html" title="ng表单验证" target="_blank" rel="external">ng表单验证</a></p>
+<ul>
+<li>ng-maxlength 最大长度</li>
+<li>ng-minlength 最小长度</li>
+<li>ng-pattern   正则验证</li>
+<li>type=”email” 邮箱验证</li>
+<li>type=”number” 数字验证</li>
+<li>type=”url” 地址验证</li>
+<li>$dirty        表单有填写记录</li>
+<li>$valid        字段内容合法的</li>
+<li>$invalid    字段内容是非法的</li>
+<li>$pristine    表单没有填写记录                    </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">"formTable"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"phone"</span>  <span class="attr">ng-model</span>=<span class="string">"user.phone"</span> <span class="attr">ng-pattern</span>=<span class="string">"/^[1]\d&#123;10&#125;$/"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"submit"</span> <span class="attr">ng-disabled</span>=<span class="string">"!formTable.phone.$valid"</span>&gt;</span></div><div class="line">    &#123;&#123;user.phone&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>之前没怎么接触angular，初期学习明显感受到自身angular经验不足带来的陡峭学习曲线，该框架对新人确实不太友好，总结为四个字：坑比较多。。。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> angular </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> angular </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[webstorm配置git]]></title>
+      <url>http://www.gohtml.online/2017/05/06/webstorm%E9%85%8D%E7%BD%AEgit/</url>
+      <content type="html"><![CDATA[<p>一直在用webstorm，这里简单整理下webstorm配置git的步骤<br><a id="more"></a></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>前提：已安装git和webstrom，由于个人使用webstorm2017.1版本，所以以下截图以该版本进行说明，其他版本若有出入，请自行谷歌。</p>
+<ol>
+<li>通过file-Settings进入设置页面（ws中默认快捷键为ctrl+alt+s）;</li>
+<li><p>搜索git，在Path to Git exectable处选择git执行路径.（做好之后点击test，如果配置成功系统会给以相应提示，错误就会提示找不到文件）</p>
+<p> <img src="http://ol5ro64tz.bkt.clouddn.com/gitgit1.png?imageslim" alt="git配置"></p>
+</li>
+<li><p>配置好git后我们需要在本机生成公钥私钥（ssh-keygen），然后在github上进行配置ssh。</p>
+</li>
+<li><p>在webstorm中配置创建的项目（具体远程仓库地址，本地仓库以及项目名自行配置），至此，我们以成功在webstrom中配置了git<br><img src="http://ol5ro64tz.bkt.clouddn.com/gitgit2.png" alt="项目配置git"></p>
+<p> <img src="http://ol5ro64tz.bkt.clouddn.com/gitgit3.png" alt="项目配置git2"></p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> git </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> git配置 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[闲聊canvas画布宽高设置]]></title>
+      <url>http://www.gohtml.online/2017/03/10/%E9%97%B2%E8%81%8Acanvas%E7%94%BB%E5%B8%83%E5%AE%BD%E9%AB%98%E8%AE%BE%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<p>canvas真是让人又爱又恨的Html标签，爱的是开发者可以把整个屏幕当作一个画布使用，在这张画布上我们能够发挥自己的想象力进行绘图，恨的是虽然canvas提供的api并不多，给人造成一种极容易上手的假象，其实如果没有扎实的js功底、想通过canvas绘制一副自己满意的作品着实有些难度。今天这里我们要探讨的并不是通过canvas如何作图，而是聊一聊canvas宽高的设置。</p>
+<a id="more"></a>
+<h2 id="canvas宽高问题"><a href="#canvas宽高问题" class="headerlink" title="canvas宽高问题"></a>canvas宽高问题</h2><p>如果提到canvas如何设置宽高，大家肯定会异口同声的说‘通过标签属性width和height设置即可’，但是大家是否有思考过:<code>为什么canvas的宽高不能通过style进行设置呢？</code>，我们举一个例子来说明：</p>
+<h3 id="demo1"><a href="#demo1" class="headerlink" title="demo1"></a>demo1</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">canvas</span> &#123;</div><div class="line">            <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#333</span>;</div><div class="line">            <span class="attribute">display</span>: block;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">50px</span> auto;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"can"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(<span class="string">'can'</span>);</div><div class="line">    <span class="keyword">var</span> ctx = can.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="comment">//绘制一个矩形</span></div><div class="line">    ctx.fillStyle = <span class="string">'rosybrown'</span>;</div><div class="line">    ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">70</span>, <span class="number">70</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/canvas/demo1.jpg?imageslim" alt="demo1"></p>
+<ul>
+<li>通过这个案例我们可以很清楚的观察到<code>当不对canvas画布作任何宽高处理时，系统默认的宽为300，高为150</code>，在其中绘制的矩形宽高显示正常，均为70。俗话说，没有对比就没有伤害，接着我们通过另一个案例修改style属性中的width和height来观察矩形显示的宽高是否发生变化。</li>
+</ul>
+<h3 id="demo2"><a href="#demo2" class="headerlink" title="demo2"></a>demo2</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">canvas</span> &#123;</div><div class="line">            <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#333</span>;</div><div class="line">            <span class="attribute">display</span>: block;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">50px</span> auto;</div><div class="line">            <span class="attribute">width</span>: <span class="number">450px</span>;</div><div class="line">            <span class="attribute">height</span>:<span class="number">300px</span>;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"can"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(<span class="string">'can'</span>);</div><div class="line">    <span class="keyword">var</span> ctx = can.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="comment">//绘制一个矩形</span></div><div class="line">    ctx.fillStyle = <span class="string">'rosybrown'</span>;</div><div class="line">    ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">70</span>, <span class="number">70</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/canvas/demo2.jpg" alt="demo2"></p>
+<ul>
+<li>通过demo1和demo2两张图片的对比，我们可以发现demo2中的图像被拉伸了，经过观察我们可以初步得出拉伸的规律为<code>修改后的width/画布原始宽度 = 绘制图片实际宽度/图像绘制时设置的宽度</code>,高度改变规律与宽度改变规律相同。接着我们再来看看同时修改canvas标签中的width、height以及style中的width、height时，绘制出来的图像变化情况是否也遵循刚才我们得出的规律。</li>
+</ul>
+<h3 id="demo3"><a href="#demo3" class="headerlink" title="demo3"></a>demo3</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">canvas</span> &#123;</div><div class="line">            <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#333</span>;</div><div class="line">            <span class="attribute">display</span>: block;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">50px</span> auto;</div><div class="line">            <span class="attribute">width</span>: <span class="number">800px</span>;</div><div class="line">            <span class="attribute">height</span>:<span class="number">300px</span>;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"can"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"200"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(<span class="string">'can'</span>);</div><div class="line">    <span class="keyword">var</span> ctx = can.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="comment">//绘制一个矩形</span></div><div class="line">    ctx.fillStyle = <span class="string">'rosybrown'</span>;</div><div class="line">    ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">70</span>, <span class="number">70</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/demo3.jpg" alt="demo3"></p>
+<ul>
+<li>我们发现，通过demo2得出的规律在demo3这里并不适用，但是通过观察demo1、demo2和demo3的html结构以及页面展示实际效果，我们可以对demo2中的规律进行扩展，<code>通过style修改后的width/canvas标签设置的width（如没有设置，则为canvas原始宽度） = 绘制图片实际宽度/图像绘制时设置的宽度</code>，高度变化规律也相同。</li>
+</ul>
+<blockquote>
+<p>看完了以上三个案例，可能不禁有人会问，为什么会产生这样的结果呢？</p>
+</blockquote>
+<p>其实对于canvas来说，它分为画板和画布，我们通过直接修改canvas标签中的width和height能够将画板和画布都进行修改；但是通过style修改的width和height只是修改了画板的宽高，画布并没有作任何的修改。本身一家兄弟，画布看到画板修改了宽高，哪有不嫉妒之理，所以自行的拉伸了自己的宽高使之与画板相同，就造成了我们demo2和demo3中出现的矩形拉伸现象。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>当然，canvas中还有很多其他的<code>奇葩</code>现象，只要我们逐步分析深入，大胆求证，一定会得出解决之道。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> canvas </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> html </tag>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[git+node.js+Hexo搭建静态博客]]></title>
+      <url>http://www.gohtml.online/2017/02/11/git-node-Hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<p>早前用git+node.js+hexo搭建了一个静态博客，总之兜兜转转一大圈，因为无人一起讨论，所以也走了不少弯路，俗话说的好：<code>在技术的世界里如果没经历过绝望，就说明你折腾的还不够</code>。言归正传，前人栽树后人乘凉，今天在这里简单的讲解下博客搭建过程以及搭建过程中可能会遇到的问题。个人能力有限，本文不会就底层进行深入剖析。</p>
+<a id="more"></a>
+<h2 id="git部分"><a href="#git部分" class="headerlink" title="git部分"></a>git部分</h2><ul>
+<li>在github官网<a href="https://github.com/" title="github" target="_blank" rel="external">https://github.com/</a>进行注册，并新建一个远程仓库,仓库名设置为{username}.github.io</li>
+<li>git下载：<a href="https://git-for-windows.github.io/" title="git下载" target="_blank" rel="external">https://git-for-windows.github.io/</a>，一直点击下一步安装即可。</li>
+<li>简单指令了解，稍后将会用到：<ul>
+<li>git init 初始化本地仓库</li>
+<li>git add . 将暂存区文件进行监听</li>
+<li>git status 查看文件状态</li>
+<li>git config user.name  ‘你的名字，英文表示’  本地配置用户名</li>
+<li>git config user.email ‘你的邮箱地址’  本地配置用户邮箱</li>
+<li>git remote add origin ‘git地址’ 本地与远程仓库关联</li>
+<li>git config <span>-</span><span>-</span>list 查看配置（包括本地配置local，全局配置global和系统配置system），检查用户名、邮箱和远程仓库关联是否成功。</li>
+<li>git push origin master 提交到远程仓库</li>
+<li>ssh-keygen 生成公钥私钥，可以在用户家目录<code>C:\Users\Administrator\.ssh</code>(Administrator更改为个人电脑登录名)中找到id_rsa.pub文件，用记事本打开id_rsa.pub，然后将id_rsa.pub的内容关联到github，下面的gif图片展示公钥添加方法：<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/ssh.gif" alt="ssh"><br><img src="http://ol5ro64tz.bkt.clouddn.com/git/%E5%85%AC%E9%92%A5.gif" alt="公钥"></li>
+</ul>
+</li>
+</ul>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/git/1.gif" alt="添加公钥方法"></p>
+<h2 id="node部分"><a href="#node部分" class="headerlink" title="node部分"></a>node部分</h2><ul>
+<li>node下载：<a href="http://nodejs.cn/download/" title="node下载" target="_blank" rel="external">http://nodejs.cn/download/</a>，一直点击下一步安装即可</li>
+</ul>
+<h2 id="hexo部分"><a href="#hexo部分" class="headerlink" title="hexo部分"></a>hexo部分</h2><ul>
+<li>当git和node都安装好之后，我们这时就可以安装hexo了，打开node.js命名行，输入<code>npm install -g hexo-cli</code>进行安装。（node.js命令行如下图所示）</li>
+</ul>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/nodejs.jpg" alt="nodejs命令行"><br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/nodejs2.jpg" alt="node.js"></p>
+<ul>
+<li><p>安装好后，我们在指定的博客目录使用git bash对其进行初始化<code>hexo init</code>，初始化完成后，我们可以看到如下结构的文件。如果期间出现报错，请在命令行输入<code>npm install hexo --save</code><br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/hexoInit.gif" alt="hexo init"></p>
+<pre><code>├── _config.yml
+├── package.json
+├── scaffolds
+── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre></li>
+<li><p>其中_config.yml是我们的本地配置文件，source为资源文件，themes为主题文件合集，我们可以根据需要在网上下载中意的主题<a href="https://hexo.io/themes/" title="hexo主题" target="_blank" rel="external">https://hexo.io/themes/</a>进行配置。</p>
+</li>
+<li><p><code>hexo init</code>初始化结束后，我们可以通过<code>hexo g</code>在本地生成静态页面，然后再调用<code>hexo s --debug</code>运行400服务器查看博客效果（具体操作如下图）。<br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo.gif" alt="hexo本地预览"></p>
+</li>
+<li><p>本地运行无误后，我们在本地配置文件_config.yml处修改配置信息，在配置文件中找到url和deploy，将对应的值修改如下形式：</p>
+<pre><code>url：个人github page地址
+deploy: 
+    type: git
+    repository: 
+          github: git@github.com:{你的仓库名}/{你的仓库名}.github.io.git,master        
+</code></pre></li>
+<li><p>接着我们可以利用第一部分学到的git命令行与远程仓库相关联</p>
+<ol>
+<li>git init  初始化</li>
+<li>git remote add origin ‘git地址’   本地仓库与远程仓库相关联</li>
+<li>git config user.name  ‘你的名字，英文表示’  本地配置用户名</li>
+<li>git config user.email ‘你的邮箱地址’  本地配置用户邮箱</li>
+<li>git config <span>-</span><span>-</span>list 查看是否关联成功，当出现如下图所示的信息后，表示配置成功<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/gitStyle.jpg" alt="git配置"></li>
+</ol>
+</li>
+<li><p>以上所有的步骤都做好之后，这时我们就可以通过’hexo g -d’将本地的静态页面提交到git上面了，等待几分钟后，就可以通过对应的gitpage进行访问了。例如我们的git仓库名是zengyong1990.github.io那么我们的博客url地址就是<code>https://zengyong1990.github.io</code></p>
+</li>
+</ul>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/hexo1.gif" alt="http://ol5ro64tz.bkt.clouddn.com/hexo1.gif" title="将博客部署到github"></p>
+<h2 id="配置自定义域名"><a href="#配置自定义域名" class="headerlink" title="配置自定义域名"></a>配置自定义域名</h2><ul>
+<li><p>静态页面搭建成功了，但是觉得github提供的二级域名太别扭怎么办?我们可以通过域名映射来解决，首先我们需要注册一个域名，由于我的域名是通过<code>阿里云</code>注册的，本章节均已阿里云进行展开说明。域名注册后，我们点击阿里云后台进行域名解析，这里推荐使用<code>新手引导设置</code>，如图所示。<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/2.gif" alt="域名解析"></p>
+</li>
+<li><p>接着我们到github页面设置远程仓库属性，如下图<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/3.gif" alt="github域名配置"></p>
+</li>
+</ul>
+<h2 id="碰到的问题与解决方法"><a href="#碰到的问题与解决方法" class="headerlink" title="碰到的问题与解决方法"></a>碰到的问题与解决方法</h2><h3 id="通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案"><a href="#通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案" class="headerlink" title="通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案"></a>通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案</h3><blockquote>
+<p> hexo d的时候提示ERROR Deployer not found: Git </p>
+</blockquote>
+<ul>
+<li>解决方案： <code>npm install hexo-deployer-git --save</code></li>
+</ul>
+<blockquote>
+<p>git的时候提示modified: xxx(modified content, untracked content)</p>
+</blockquote>
+<ul>
+<li>解决方案：表示文件没被跟踪，我们可以找到对应文件目录，在其子目录中删除其中的.git文件夹。</li>
+</ul>
+<blockquote>
+<p>$ npm install hexo-cli -g报npm WARN optional dep failed, continuing fsevents</p>
+</blockquote>
+<ul>
+<li>解决方案：<code>npm cache clean</code></li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
+<li>个人能力有限，语言组织也为自身短板所在，在讲解个人博客搭建过程中难免会出现纰漏，还请谅解。</li>
+<li>通过搭建github pages托管的静态博客还是有些复杂的，因为有一定的技术门槛，所以真正想尝试的人不多。我建议的是大家应该有理性的思考，不要被他人的看法所左右，对自己发展有利的东西，只要能合理的分配个人时间，都是可以去尝试的。</li>
+<li>该静态博客的主要优点就是能让我们方便的进行博文编写，因为数据都在本地，所以我们可以选择适合自己的编辑软件去编写博文，而网络上的其他博客却做不到；另外网络博客麻烦之处在于各种关键字的屏蔽和大量广告的滋生，对于大部分人来说，是极其不原因看到这种情况的发生的，但是却又无可奈何，毕竟是暂住在别人家，而这里这种现象基本是不存在的，因为我们就是博客的主人。</li>
+</ul>
+<blockquote>
+<p>总而言之，感兴趣的朋友都可以根据该文的步骤走一遍，在搭建博客的过程中遇到任何问题，都欢迎拍砖讨论</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 博客搭建 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 见解 </tag>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> git </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[浅析html语义化]]></title>
+      <url>http://www.gohtml.online/2017/01/27/html%E8%AF%AD%E4%B9%89%E5%8C%96/</url>
+      <content type="html"><![CDATA[<p>提一个问题:什么是html语义化?相信有不少在前端摸爬滚打的同学都被问到过.今天大年三十,外面鞭炮轰轰,就借着着鞭炮声,来聊一聊html语义化.</p>
+<a id="more"></a>
+<h2 id="什么是html语义化"><a href="#什么是html语义化" class="headerlink" title="什么是html语义化"></a>什么是html语义化</h2><ul>
+<li>百度解释:首先是关于<code>语义(Semantics)</code>和<code>默认样式</code>的区别，默认样式是浏览器设定的一些常用tag的表现形式，语义化的主要目的就是让大家直观的认识标签(markup)和属性(attribute)的用途和作用，很明显H系列看起来很像标题，因为拥有粗体和较大的字号,但是要记住它们并不是给文本添加样式的。&lt;strong&gt;,&lt;em&gt;用来区别于其他文字，起到了强调的作用.</li>
+<li>直白来说:html语义化就是告诉浏览器每个标签的作用,让其做更好的渲染,同时也提高了用户的体验.</li>
+</ul>
+<h2 id="html语义化的好处"><a href="#html语义化的好处" class="headerlink" title="html语义化的好处"></a>html语义化的好处</h2><ul>
+<li>对<code>搜索引擎</code>友好:良好的结构和语义化使你的网站更容易被搜索引擎抓取.</li>
+<li><code>用户体验</code>直线上升,比如我们悬浮一张图片上时会出现某些提示信息.</li>
+<li>裸奔好看,当页面<code>无css</code>的时候,html显示的结构不至于太奇葩.</li>
+<li>更加贯彻了W3C中的<code>结构样式表现</code>相分离的准则.</li>
+<li><code>方便其他设备的解析</code>,比如盲人阅读器等</li>
+<li><code>便于开发和维护</code>,语义化的html更加容易阅读和理解,每个项目中的协作组都应该自觉遵循这个标准</li>
+</ul>
+<h2 id="html编写时的注意点"><a href="#html编写时的注意点" class="headerlink" title="html编写时的注意点"></a>html编写时的注意点</h2><ul>
+<li>尽量少用无语义的标签,虽说现在是div+css布局,但是div和span能少用则少用</li>
+<li>尽量不要使用w3c已经废弃但仍然有效的标签,比如s标签等</li>
+<li>同一个页面最多只允许用一次h1标签</li>
+<li>当语义不清时,有多个标签进行选择,比如div和p,优先选择p标签</li>
+<li>时在做导航优先考虑列表标签，尽量少用和不用p标签，虽然p+span标签有时在做导航时非常简便，但是p标签的语义是段落，然而导航是段落吗？</li>
+<li>始终记住:html中的标签是给文本添加语义的,并不是改变了文本的样式</li>
+<li>其他以后想到再补充</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> html </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> html </tag>
+            
+            <tag> 见解 </tag>
+            
+            <tag> html语义化 </tag>
             
         </tags>
         
@@ -239,7 +492,7 @@
     
     <entry>
       <title><![CDATA[字体图标的那些事]]></title>
-      <url>http://www.gohtml.online/2017/02/12/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
+      <url>http://www.gohtml.online/2016/11/12/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
       <content type="html"><![CDATA[<p>字体图标从本质来说就是一类特殊字体，它给人的直观感受就是图标，但是它可以像文字一样修改样式，同时不会像图片一样造成失真和多次请求等问题，所以习惯性我们将它称为字体图标。<br><a id="more"></a></p>
 <blockquote>
 <p>本文所有案例基于<a href="http://www.iconfont.cn/plus/collections/index?type=2" title="阿里巴巴矢量图" target="_blank" rel="external">阿里巴巴矢量图</a>进行说明</p>
@@ -347,168 +600,224 @@
     </entry>
     
     <entry>
-      <title><![CDATA[git+node.js+Hexo搭建静态博客]]></title>
-      <url>http://www.gohtml.online/2017/02/11/git-node-Hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</url>
-      <content type="html"><![CDATA[<p>最近用git+node.js+hexo搭建了一个静态博客，总之兜兜转转一大圈，因为无人一起讨论，所以也走了不少弯路，俗话说的好：<code>在技术的世界里如果没经历过绝望，就说明你折腾的还不够</code>。言归正传，前人栽树后人乘凉，今天在这里简单的讲解下我的博客搭建过程以及搭建过程中可能会遇到的问题。个人能力有限，本文不会就底层进行深入剖析。</p>
-<a id="more"></a>
-<h2 id="git部分"><a href="#git部分" class="headerlink" title="git部分"></a>git部分</h2><ul>
-<li>在github官网<a href="https://github.com/" title="github" target="_blank" rel="external">https://github.com/</a>进行注册，并新建一个远程仓库,仓库名设置为{username}.github.io</li>
-<li>git下载：<a href="https://git-for-windows.github.io/" title="git下载" target="_blank" rel="external">https://git-for-windows.github.io/</a>，一直点击下一步安装即可。</li>
-<li>简单指令了解，稍后将会用到：<ul>
-<li>git init 初始化本地仓库</li>
-<li>git add . 将暂存区文件进行监听</li>
-<li>git status 查看文件状态</li>
-<li>git config user.name  ‘你的名字，英文表示’  本地配置用户名</li>
-<li>git config user.email ‘你的邮箱地址’  本地配置用户邮箱</li>
-<li>git add remote origin ‘git地址’ 本地与远程仓库关联</li>
-<li>git config –list 查看配置（包括本地配置local，全局配置global和系统配置system），检查用户名、邮箱和远程仓库关联是否成功。</li>
-<li>git push origin master 提交到远程仓库</li>
-<li>ssh-keygen 生成公钥私钥，可以在用户家目录<code>C:\Users\Administrator\.ssh</code>(Administrator更改为个人电脑登录名)中找到id_rsa.pub文件，用记事本打开id_rsa.pub，然后将id_rsa.pub的内容关联到github，下面的gif图片展示公钥添加方法：<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/ssh.gif" alt="ssh"><br><img src="http://ol5ro64tz.bkt.clouddn.com/git/%E5%85%AC%E9%92%A5.gif" alt="公钥"></li>
-</ul>
-</li>
-</ul>
-<p><img src="http://ol5ro64tz.bkt.clouddn.com/git/1.gif" alt="添加公钥方法"></p>
-<h2 id="node部分"><a href="#node部分" class="headerlink" title="node部分"></a>node部分</h2><ul>
-<li>node下载：<a href="http://nodejs.cn/download/" title="node下载" target="_blank" rel="external">http://nodejs.cn/download/</a>，一直点击下一步安装即可</li>
-</ul>
-<h2 id="hexo部分"><a href="#hexo部分" class="headerlink" title="hexo部分"></a>hexo部分</h2><ul>
-<li>当git和node都安装好之后，我们这时就可以安装hexo了，打开node.js命名行，输入<code>npm install -g hexo-cli</code>进行安装。（node.js命令行如下图所示）</li>
-</ul>
-<p><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/nodejs.jpg" alt="nodejs命令行"><br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/nodejs2.jpg" alt="node.js"></p>
+      <title><![CDATA[js运动之回弹运动]]></title>
+      <url>http://www.gohtml.online/2016/09/17/javascript%E5%9B%9E%E5%BC%B9%E8%BF%90%E5%8A%A8/</url>
+      <content type="html"><![CDATA[<p>谈起js运动,不少人或多或少都知道一些关于匀速运动和缓冲运动的知识,但如果说起回弹运动,可能知之者甚少.js回弹运动的形式为物体基于某一固定位置作来回运动,因为运动的路径犹如一个球体来回弹,所以称为回弹运动.<br><a id="more"></a></p>
+<h2 id="什么是回弹运动"><a href="#什么是回弹运动" class="headerlink" title="什么是回弹运动"></a>什么是回弹运动</h2><p>回弹运动就是物体基于某一固定位置作来回运动,字面意思很好理解，但是如何用程序化的语言去描述该运动呢?在回答该问题之前,我们先聊一下加速和减速运动，为了方便理解，本文所有物体的运动均为直线运动，同时每个运动都将以代码的形式展现.</p>
+<h3 id="加速运动"><a href="#加速运动" class="headerlink" title="加速运动"></a>加速运动</h3><p>该运动的特点为：速度不断增加。</p>
+<blockquote>
+<p>demo1</p>
+</blockquote>
 <ul>
-<li><p>安装好后，我们在指定的博客目录使用git bash对其进行初始化<code>hexo init</code>，初始化完成后，我们可以看到如下结构的文件。如果期间出现报错，请在命令行输入<code>npm install hexo --save</code><br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/hexoInit.gif" alt="hexo init"></p>
-<pre><code>├── _config.yml
-├── package.json
-├── scaffolds
-── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-</code></pre></li>
-<li><p>其中_config.yml是我们的本地配置文件，source为资源文件，themes为主题文件合集，我们可以根据需要在网上下载中意的主题<a href="https://hexo.io/themes/" title="hexo主题" target="_blank" rel="external">https://hexo.io/themes/</a>进行配置。</p>
+<li>公用css</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50px</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>公用html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">onclick</span>=<span class="string">"move()"</span>&gt;</span>move<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p><code>hexo init</code>初始化结束后，我们可以通过<code>hexo g</code>在本地生成静态页面，然后再调用<code>hexo s --debug</code>运行400服务器查看博客效果（具体操作如下图）。<br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo.gif" alt="hexo本地预览"></p>
-</li>
-<li><p>本地运行无误后，我们在本地配置文件_config.yml处修改配置信息，在配置文件中找到url和deploy，将对应的值修改如下形式：</p>
-<pre><code>url：个人github page地址
-deploy: 
-    type: git
-    repository: 
-          github: git@github.com:{你的仓库名}/{你的仓库名}.github.io.git,master        
+<li><p>加速运动js代码</p>
+<pre><code>&lt;script&gt;            
+    function move(){
+        var btn = document.getElementById(&apos;btn&apos;);
+        var box = document.getElementById(&apos;box&apos;);
+        var speed = 0; //初始速度
+        setInterval(function(){
+            console.log(speed);
+            speed++; //速度自增
+            box.style.left = box.offsetLeft+speed+&apos;px&apos;;
+        },50)
+    }
+&lt;/script&gt;
 </code></pre></li>
-<li><p>接着我们可以利用第一部分学到的git命令行与远程仓库相关联</p>
-<ol>
-<li>git init  初始化</li>
-<li>git add remote origin ‘git地址’   本地仓库与远程仓库相关联</li>
-<li>git config user.name  ‘你的名字，英文表示’  本地配置用户名</li>
-<li>git config user.email ‘你的邮箱地址’  本地配置用户邮箱</li>
-<li>git config –list 查看是否关联成功，当出现如下图所示的信息后，表示配置成功<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/gitStyle.jpg" alt="git配置"></li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/1.gif" alt="加速运动"></p>
+<ul>
+<li>我们发现加速运动的物体会一直沿着它的初始路线作运动，且方向不会改变。</li>
+</ul>
+<h3 id="减速运动"><a href="#减速运动" class="headerlink" title="减速运动"></a>减速运动</h3><p>该运动的特点为：速度不断减少。</p>
+<blockquote>
+<p>demo2</p>
+</blockquote>
+<ul>
+<li>减速运动js代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	    <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</div><div class="line">	    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">	    <span class="keyword">var</span> speed = <span class="number">40</span>; <span class="comment">//初始速度</span></div><div class="line">	    setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	        <span class="built_in">console</span>.log(speed);</div><div class="line">	        speed--;	 <span class="comment">//速度自减</span></div><div class="line">	        box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">	    &#125;,<span class="number">50</span>)</div><div class="line">	&#125;    </div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/2.gif" alt="减速运动"></p>
+<ul>
+<li>我们发现减速运动的物体，当<code>速度减少为负值</code>时，该物体将做反方向的直线运动，且<code>方向只改变一次</code>。</li>
+</ul>
+<h2 id="回弹运动"><a href="#回弹运动" class="headerlink" title="回弹运动"></a>回弹运动</h2><p> 刚才我们说到，回弹运动的物体是以某一个位置为基准作往复运动，运动方向的变化与减速运动类似，但是又有着明显差别,因为回弹运动的方向将一直发生变化。因此我们可以合并加速和减速运动，当运动物体的位置小于基准位置时，让该物体做加速运动，当大于基准位置时，让其做减速运动，这样就可以实现回弹运动了。</p>
+<blockquote>
+<p>demo3</p>
+</blockquote>
+<ul>
+<li>回弹运动js代码</li>
+</ul>
+<pre><code>&lt;script&gt;  
+      function move(target){
+          var btn = document.getElementById(&apos;btn&apos;);
+          var box = document.getElementById(&apos;box&apos;);
+          var speed = 0;
+          setInterval(function(){
+              console.log(speed);
+              if(box.offsetLeft &lt;= 400){
+                  speed++;
+              }else{
+                  speed--;
+              }
+              box.style.left = box.offsetLeft+speed+&apos;px&apos;;
+          },50)
+      }
+</code></pre><p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/3.gif" alt="回弹运动"></p>
+<ul>
+<li>回弹运动的运动轨迹就是基于某一位置做往复运动，但是这样的运动形式在我们实际开发中运用的并不多，所以我们需要进行一定的优化。</li>
+</ul>
+<h2 id="优化回弹运动"><a href="#优化回弹运动" class="headerlink" title="优化回弹运动"></a>优化回弹运动</h2><ol>
+<li>速度优化<ul>
+<li>实际开发中回弹运动中的加速和减速不可能为每次自增或者自减1个像素，我们可以用一个公式代替速度的变化：当前速度 += （运动基准位置 - 运动物体的当前位置）*系数。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>demo4</p>
+</blockquote>
+<ul>
+<li>回弹运动js代码优化版1<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> &lt;script&gt;</div><div class="line">       <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">       <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">           <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">           setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">               <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">               <span class="keyword">if</span>(box.offsetLeft&lt;<span class="number">400</span>)&#123;</div><div class="line">                   speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">               &#125;<span class="keyword">else</span>&#123;</div><div class="line">                   speed -= (box.offsetLeft<span class="number">-400</span>)*<span class="number">0.2</span>;</div><div class="line">               &#125;</div><div class="line"></div><div class="line">               box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">           &#125;,<span class="number">50</span>)</div><div class="line">       &#125; </div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/4.gif" alt="速度优化1"></p>
+<p>   但是还是没有出现我们想要的效果，这里有个小技巧，我们可以将最终的速度值再乘上一个系数</p>
+<blockquote>
+<p>demo5</p>
+</blockquote>
+<ul>
+<li>回弹运动js代码优化版2<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">      <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">          setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">              <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">              <span class="keyword">if</span>(box.offsetLeft&lt;<span class="number">400</span>)&#123;</div><div class="line">                  speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">              &#125;<span class="keyword">else</span>&#123;</div><div class="line">                  speed -= (box.offsetLeft<span class="number">-400</span>)*<span class="number">0.2</span>;</div><div class="line">              &#125;</div><div class="line">              speed *= <span class="number">0.9</span>; <span class="comment">//乘以一个系数</span></div><div class="line">              box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">          &#125;,<span class="number">50</span>)</div><div class="line">      &#125;</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/5.gif" alt="速度优化2"></p>
+<ul>
+<li>效果出来了有没有！但是我们还有几个问题亟需解决：<ol>
+<li>速度的两次取值公式重复度非常高，是否可以优化？</li>
+<li>在日志打印处处，offsetLeft一直在400处来回变化，如何解决？</li>
+<li>另外我们不希望物体回弹这么多次，只要一次回弹效果即可，怎么实现？</li>
+<li>定时器未清除；</li>
 </ol>
 </li>
-<li><p>以上所有的步骤都做好之后，这时我们就可以通过’hexo g -d’将本地的静态页面提交到git上面了，等待几分钟后，就可以通过对应的gitpage进行访问了。例如我们的git仓库名是zengyong1990.github.io那么我们的博客url地址就是<code>https://zengyong1990.github.io</code></p>
+</ul>
+<ul>
+<li>解决方案<ol>
+<li>我们将speed += (400-box.offsetLeft)x0.2与speed -= (box.offsetLeft-400)x0.2展开发现两个公式均为speed = speed+ 400x0.2 - box.offsetLeftx0.2，所以两者可以用其中任意一个公式代替；</li>
+<li>因为offsetLeft为整数取值，而speed的取值是通过一个系数相乘得到的结果，必然会产生小数，因此其中存在了一定的误差—–我们可以用一个变量存储当前的位置，最后再赋值给运动物体；</li>
+<li>刚才speed的系数为0.9,我们可以改变该系数，这样就可以调整回弹次数，如果希望回弹次数较少，则可以将系数值设置低一些。</li>
+<li>当速度足够小，并且物体的当前位置与目标位置的距离足够近的时候，清除定时器</li>
+</ol>
 </li>
 </ul>
-<p><img src="http://ol5ro64tz.bkt.clouddn.com/hexo1.gif" alt="http://ol5ro64tz.bkt.clouddn.com/hexo1.gif" title="将博客部署到github"></p>
-<h2 id="配置自定义域名"><a href="#配置自定义域名" class="headerlink" title="配置自定义域名"></a>配置自定义域名</h2><ul>
-<li><p>静态页面搭建成功了，但是觉得github提供的二级域名太别扭怎么办?我们可以通过域名映射来解决，首先我们需要注册一个域名，由于我的域名是通过<code>阿里云</code>注册的，本章节均已阿里云进行展开说明。域名注册后，我们点击阿里云后台进行域名解析，这里推荐使用<code>新手引导设置</code>，如图所示。<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/2.gif" alt="域名解析"></p>
+<blockquote>
+<p>demo6</p>
+</blockquote>
+<ul>
+<li>回弹运动js代码优化版3<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">      <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">      <span class="keyword">var</span> dis = <span class="number">0</span>;</div><div class="line">      <span class="keyword">var</span> timer = <span class="literal">null</span>;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          clearInterval(timer);</div><div class="line">          <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">          timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">              speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">              speed *= <span class="number">0.6</span>; <span class="comment">//乘以一个系数</span></div><div class="line">              dis += speed;</div><div class="line">              <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(speed)&lt;<span class="number">1</span> &amp;&amp; <span class="built_in">Math</span>.abs(<span class="number">400</span>-box.offsetLeft)&lt;<span class="number">1</span>)&#123;</div><div class="line">                  clearInterval(timer);</div><div class="line">                  box.style.left = <span class="number">400</span> +<span class="string">'px'</span>;</div><div class="line">              &#125;<span class="keyword">else</span>&#123;</div><div class="line">                  box.style.left = dis+<span class="string">'px'</span>;</div><div class="line">              &#125;</div><div class="line">              <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">          &#125;,<span class="number">50</span>)</div><div class="line">      &#125;</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p>接着我们到github页面设置远程仓库属性，如下图<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/3.gif" alt="github域名配置"></p>
-</li>
 </ul>
-<h2 id="碰到的问题与解决方法"><a href="#碰到的问题与解决方法" class="headerlink" title="碰到的问题与解决方法"></a>碰到的问题与解决方法</h2><h3 id="通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案"><a href="#通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案" class="headerlink" title="通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案"></a>通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案</h3><blockquote>
-<p> hexo d的时候提示ERROR Deployer not found: Git </p>
-</blockquote>
-<ul>
-<li>解决方案： <code>npm install hexo-deployer-git --save</code></li>
-</ul>
-<blockquote>
-<p>git的时候提示modified: xxx(modified content, untracked content)</p>
-</blockquote>
-<ul>
-<li>解决方案：表示文件没被跟踪，我们可以找到对应文件目录，在其子目录中删除其中的.git文件夹。</li>
-</ul>
-<blockquote>
-<p>$ npm install hexo-cli -g报npm WARN optional dep failed, continuing fsevents</p>
-</blockquote>
-<ul>
-<li>解决方案：<code>npm cache clean</code></li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
-<li>个人能力有限，语言组织也为自身短板所在，在讲解个人博客搭建过程中难免会出现纰漏，还请谅解。</li>
-<li>通过搭建github pages托管的静态博客还是有些复杂的，因为有一定的技术门槛，所以真正想尝试的人不多。我建议的是大家应该有理性的思考，不要被他人的看法所左右，对自己发展有利的东西，只要能合理的分配个人时间，都是可以去尝试的。</li>
-<li>该静态博客的主要优点就是能让我们方便的进行博文编写，因为数据都在本地，所以我们可以选择适合自己的编辑软件去编写博文，而网络上的其他博客却做不到；另外网络博客麻烦之处在于各种关键字的屏蔽和大量广告的滋生，对于大部分人来说，是极其不原因看到这种情况的发生的，但是却又无可奈何，毕竟是暂住在别人家，而这里这种现象基本是不存在的，因为我们就是博客的主人。</li>
-</ul>
-<blockquote>
-<p>总而言之，感兴趣的朋友都可以根据该文的步骤走一遍，在搭建博客的过程中遇到任何问题，都欢迎拍砖讨论</p>
-</blockquote>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/6.gif" alt="回弹运动优化版"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>回弹运动其实就是之前的加减速运动融合而成的升级版本，本身实现并不复杂，有些东西需要我们自己去钻研去发掘，举一反三触类旁通，这也是学习之法。</p>
 ]]></content>
       
         <categories>
             
-            <category> 博客搭建 </category>
+            <category> javascript </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> 见解 </tag>
+            <tag> javascript </tag>
             
-            <tag> 博客搭建 </tag>
-            
-            <tag> git </tag>
-            
-            <tag> hexo </tag>
+            <tag> 运动 </tag>
             
         </tags>
         
     </entry>
     
     <entry>
-      <title><![CDATA[CSS3动画框架之Animate]]></title>
-      <url>http://www.gohtml.online/2017/02/08/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-animate/</url>
-      <content type="html"><![CDATA[<p>前端框架一般分为三种：1.ui类；2.js类；3动画字体图标类，本节主要是对css动画类的框架-Animate的说明，该框架内容浅显，开发者只需会使用即可。<br><a id="more"></a></p>
-<h2 id="animate框架目标"><a href="#animate框架目标" class="headerlink" title="animate框架目标"></a>animate框架目标</h2><p>使开发者在做css动画时犹如喝水一样简单（Just-add-water CSS animations）</p>
-<h2 id="animate框架作用"><a href="#animate框架作用" class="headerlink" title="animate框架作用"></a>animate框架作用</h2><p>animate框架主要将css中的各类动画效果进行集成。众所周知，css中动画是由animation产生的，所以该框架也是基于animation动画属性形成的产物。</p>
-<h2 id="animate框架下载"><a href="#animate框架下载" class="headerlink" title="animate框架下载"></a>animate框架下载</h2><p>我们可以登录<a href="https://daneden.github.io/animate.css/" title="animate官网" target="_blank" rel="external">animate官网</a>进行下载，同时也可以在首页预览各类动画样式。</p>
-<h2 id="animate框架使用"><a href="#animate框架使用" class="headerlink" title="animate框架使用"></a>animate框架使用</h2><p>该框架已经于github托管，因此可以通过README.md文件查阅其使用方法，这里简单说明一下使用步骤：</p>
+      <title><![CDATA[js闭包]]></title>
+      <url>http://www.gohtml.online/2016/06/05/javascript%E9%97%AD%E5%8C%85/</url>
+      <content type="html"><![CDATA[<p>闭包作为js中的重点也是难点,困扰了不少人,前人栽树后人乘凉,这些天拜读了多位大神级人物关于闭包的解析,故此站在其他巨人的肩膀上我在这里做一次基础性的总结</p>
+<a id="more"></a>
+<h2 id="百度解释"><a href="#百度解释" class="headerlink" title="百度解释"></a>百度解释</h2><blockquote>
+<p>闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。“闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）</p>
+</blockquote>
 <ul>
-<li>在对应的项目中引入animate.css文件；</li>
-<li>在需要做动画的元素上添加类名：animated、infinite和对应的动画样式；<ul>
-<li>其中animated是指动画的时长，animate.css默认动画时长为1s，我们通过在自定义样式中更改动画时长；</li>
-<li>infinite指动画将无限进行播放，该类名作为可选项进行添加；</li>
-<li>animate.css提供的动画应该非常之多，我们可以在其中选取需要的样式，比如抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）。</li>
-<li>兼容性：由于animate是基于css3的，所以要求能兼容css3的浏览器—IE10+、Firefox、Chrome、Opera、Safari。<h2 id="animate框架简单实例"><a href="#animate框架简单实例" class="headerlink" title="animate框架简单实例"></a>animate框架简单实例</h2><blockquote>
+<li>百度的解释比较官方,个人觉得算是比较好懂,当然是相对于有基础的friends而言,我相信很多人看了这解释也是云里雾里,话不多说我们来剖析下到底什么是闭包.</li>
+</ul>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><h3 id="变量作用域-1"><a href="#变量作用域-1" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>在说闭包之前,我们先说一个概念—变量的作用域,直白点来说变量作用域就是指变量的作用范围,在js中变量的作用域无非以下两种:</p>
+<ul>
+<li>全局变量<blockquote>
 <p>demo1</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/animate.min.css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        *&#123;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">border</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">list-style</span>:none;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-class">.box</span>&#123;</div><div class="line">            <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">margin</span>:<span class="number">200px</span> auto;</div><div class="line">            <span class="attribute">background-color</span>: <span class="number">#f00</span>;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box animated infinite bounce"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	alert(a); </div><div class="line">&#125;</div><div class="line">getNum();<span class="comment">//1000</span></div></pre></td></tr></table></figure>
+<ul>
+<li>局部变量<blockquote>
+<p>demo2</p>
+</blockquote>
 </li>
 </ul>
-<p><img src="http://ofn33tdsr.bkt.clouddn.com/animate/1.gif" alt="animate简单实例"></p>
-<h2 id="结合js"><a href="#结合js" class="headerlink" title="结合js"></a>结合js</h2><p>demo1是当页面打开时产生的动画，如果我们希望通过用户的操作产生某个动画，那么该如何操作呢？—通过与js结合使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    alert(a);</div><div class="line">&#125;</div><div class="line">getNum();<span class="comment">//1000;</span></div><div class="line">alert(a); <span class="comment">// a is not defined</span></div></pre></td></tr></table></figure>
+<p>通过以上的例子说明了至少两个问题:</p>
+<ol>
+<li>全局变量可以在函数内部进行访问</li>
+<li><p>局部变量是在函数内部定义的,并且在函数外部无法直接访问</p>
+<ul>
+<li>由此引出了我们需要解决的问题,我们想在<code>函数外部</code>获取到函数内部的变量如何去做?<br>在解决这个问题之前,我们先来解决另外一个问题,如何获取函数内部的变量–&gt;我们可以通过在函数内部再定义一个函数来解决.</li>
+</ul>
+</li>
+</ol>
 <blockquote>
-<p>demo2<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/animate.min.css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">div</span>&#123;</div><div class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">margin</span>:<span class="number">100px</span> auto;</div><div class="line">            <span class="attribute">background-color</span>: red;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</div><div class="line">		<span class="comment">//当鼠标移入时添加动画</span></div><div class="line">        div.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            div.setAttribute(<span class="string">'class'</span>,<span class="string">'animated bounce'</span>);</div><div class="line">            setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="built_in">window</span>.location.reload();</div><div class="line">            &#125;,<span class="number">1000</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>demo3<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(a); <span class="comment">//1000    </span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p><img src="http://ofn33tdsr.bkt.clouddn.com/animate/2.gif" alt="结合js"></p>
-<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>各类框架的出现，目的是让开发者快速高效的进行开发，但是不论什么框架，最底层的还是最基础的内容，我们学习的时候要明白不论框架如何变化，实现的效果多么酷炫，都是万变不离其宗。</p>
+<p>既然我们能够通过定义子函数来获取函数内部的变量,那么只需要借助于return返回值,将该函数返回出去,我们就不就可以在函数外部获取到函数内部的变量的了吗?废话不多说,直接试一试.</p>
+<blockquote>
+<p>demo4<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(a);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> getA;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> temp = getNum();</div><div class="line">temp(); <span class="comment">//1000;</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>果然我们在函数外部通过return获取到了函数内部的变量.</p>
+<h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><h3 id="刚才演示的demo4就是闭包"><a href="#刚才演示的demo4就是闭包" class="headerlink" title="刚才演示的demo4就是闭包"></a>刚才演示的<strong>demo4</strong>就是闭包</h3><ol>
+<li>我们通过观察demo4可以发现,闭包其实就是一个函数,是一个什么函数呢?一个<code>有权限访问其他函数作用域中变量的函数</code>.</li>
+<li>js中闭包这个函数比较特殊,因为刚才我们说到了js中正常的情况下在函数外部是无法访问函数内部的变量.要想访问,我们必须使用函数套函数的方式进行实现,所以说闭包给人的直观感觉就是<code>定义在一个函数内部的函数</code>.</li>
+</ol>
+<h2 id="那么闭包有什么作用呢"><a href="#那么闭包有什么作用呢" class="headerlink" title="那么闭包有什么作用呢?"></a>那么闭包有什么作用呢?</h2><ol>
+<li>通过闭包我们可以获取到函数内部的变量</li>
+<li>使变量在内存中一直存在,就是延长局部变量的生命周期,这又牵扯到一个问题:js垃圾回收机制.简单来说,局部变量在函数调用后就会被销毁.要想再函数调用后不被销毁,那么我们就可以使用闭包,这点既可以说是闭包的优点也算它的缺点.我们可以通过以下代码来说明这个问题:<blockquote>
+<p>demo5</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">    nAdd=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;n+=<span class="number">1</span>&#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(n);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> result=f1();</div><div class="line">result(); <span class="comment">// 999</span></div><div class="line">nAdd();</div><div class="line">result(); <span class="comment">// 1000</span></div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<p>通过该例可以看出在函数调用后,变量n并没有被销毁,而是仍然存在于内存中,result调用了两次,实质上result就是f2的闭包函数.<br><b style="color:skyblue">可能有人会有疑问:为什么变量n没有被销毁呢?</b></p>
+<ul>
+<li>因为f2被赋予result,而result是全局函数,只要window不关闭,那么他就不会消失,所以导致了f2一直存在在内存中,而f2是在f1中定义的,就是说f2是依赖f1生活,所以f2不死,f1也不会消亡,所以其内部变量n也会一直存在.</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于闭包,个人理解的也不够深刻,只能根据他人的解释然后进行浅显的解读,以后会继续进行补充,此文纯属抛砖引入.</p>
 ]]></content>
       
         <categories>
             
-            <category> 动画框架 </category>
+            <category> javascript </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> Animate </tag>
+            <tag> javascript </tag>
             
-            <tag> 动画框架 </tag>
+            <tag> 闭包 </tag>
             
-            <tag> css3 </tag>
+            <tag> js </tag>
             
         </tags>
         
@@ -516,7 +825,7 @@ deploy:
     
     <entry>
       <title><![CDATA[框架之scrollReveal]]></title>
-      <url>http://www.gohtml.online/2017/02/07/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-scrollReveal/</url>
+      <url>http://www.gohtml.online/2016/04/16/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-scrollReveal/</url>
       <content type="html"><![CDATA[<p>Wow配合Animate已能完成日常开发中大部分的动画特效，但是Wow有一个弊端，它实现的动画<code>只能做一次</code>，如果需求变更为只要滚动到某一位置时就需要实现动画，那么我们就得使用到scrollReveal这套框架。<br><a id="more"></a></p>
 <h2 id="scrollReveal作用"><a href="#scrollReveal作用" class="headerlink" title="scrollReveal作用"></a>scrollReveal作用</h2><p>scrollReveal的出现，解决了Wow配合Animate实现动画效果时只能实现一次的的弊端，作为当滚动条到达偏移值时实现多次动画的框架，也是必须掌握的。</p>
 <h2 id="scrollReveal下载"><a href="#scrollReveal下载" class="headerlink" title="scrollReveal下载"></a>scrollReveal下载</h2><p>可以前往<a href="https://scrollrevealjs.org/" title="scrollReveal官网" target="_blank" rel="external">https://scrollrevealjs.org/</a>下载并预览该框架实现的特效。</p>
@@ -568,7 +877,7 @@ deploy:
     
     <entry>
       <title><![CDATA[框架之Wow]]></title>
-      <url>http://www.gohtml.online/2017/02/06/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-Wow/</url>
+      <url>http://www.gohtml.online/2016/03/16/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-Wow/</url>
       <content type="html"><![CDATA[<p>我们已经了解了动画字体类框架Animate，但是Animate结合js或者jQuery使用还是太复杂，如何可以使开发者的工作更加高效呢？这时我们可以使用动画字体类的另外一个框架—Wow，该框架的名字对于我个人来说是十分亲切的—wower！<br><a id="more"></a></p>
 <h2 id="Wow框架的作用"><a href="#Wow框架的作用" class="headerlink" title="Wow框架的作用"></a>Wow框架的作用</h2><p>Wow框架是配套于Animate框架使用的，因为省去了大量的判断以及添加了丰富的<code>自定义属性</code>，所以通过Wow，我们可以更高效的开发出<code>滚动时</code>产生的特效：(Reveal Animations When You Scroll. Very Animate.css Friend Easily customize animation settings: style, delay, length, offset, iterations…)</p>
 <h2 id="Wow优点"><a href="#Wow优点" class="headerlink" title="Wow优点"></a>Wow优点</h2><p>轻量级、自定义效果方便快捷</p>
@@ -629,47 +938,50 @@ deploy:
     </entry>
     
     <entry>
-      <title><![CDATA[浅析html语义化]]></title>
-      <url>http://www.gohtml.online/2017/01/27/html%E8%AF%AD%E4%B9%89%E5%8C%96/</url>
-      <content type="html"><![CDATA[<p>提一个问题:什么是html语义化?相信有不少在前端摸爬滚打的同学都被问到过.今天大年三十,外面鞭炮轰轰,就借着着鞭炮声,来聊一聊html语义化.</p>
-<a id="more"></a>
-<h2 id="什么是html语义化"><a href="#什么是html语义化" class="headerlink" title="什么是html语义化"></a>什么是html语义化</h2><ul>
-<li>百度解释:首先是关于<code>语义(Semantics)</code>和<code>默认样式</code>的区别，默认样式是浏览器设定的一些常用tag的表现形式，语义化的主要目的就是让大家直观的认识标签(markup)和属性(attribute)的用途和作用，很明显H系列看起来很像标题，因为拥有粗体和较大的字号,但是要记住它们并不是给文本添加样式的。&lt;strong&gt;,&lt;em&gt;用来区别于其他文字，起到了强调的作用.</li>
-<li>直白来说:html语义化就是告诉浏览器每个标签的作用,让其做更好的渲染,同时也提高了用户的体验.</li>
+      <title><![CDATA[CSS3动画框架之Animate]]></title>
+      <url>http://www.gohtml.online/2016/03/08/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-animate/</url>
+      <content type="html"><![CDATA[<p>前端框架一般分为三种：1.ui类；2.js类；3动画字体图标类，本节主要是对css动画类的框架-Animate的说明，该框架内容浅显，开发者只需会使用即可。<br><a id="more"></a></p>
+<h2 id="animate框架目标"><a href="#animate框架目标" class="headerlink" title="animate框架目标"></a>animate框架目标</h2><p>使开发者在做css动画时犹如喝水一样简单（Just-add-water CSS animations）</p>
+<h2 id="animate框架作用"><a href="#animate框架作用" class="headerlink" title="animate框架作用"></a>animate框架作用</h2><p>animate框架主要将css中的各类动画效果进行集成。众所周知，css中动画是由animation产生的，所以该框架也是基于animation动画属性形成的产物。</p>
+<h2 id="animate框架下载"><a href="#animate框架下载" class="headerlink" title="animate框架下载"></a>animate框架下载</h2><p>我们可以登录<a href="https://daneden.github.io/animate.css/" title="animate官网" target="_blank" rel="external">animate官网</a>进行下载，同时也可以在首页预览各类动画样式。</p>
+<h2 id="animate框架使用"><a href="#animate框架使用" class="headerlink" title="animate框架使用"></a>animate框架使用</h2><p>该框架已经于github托管，因此可以通过README.md文件查阅其使用方法，这里简单说明一下使用步骤：</p>
+<ul>
+<li>在对应的项目中引入animate.css文件；</li>
+<li>在需要做动画的元素上添加类名：animated、infinite和对应的动画样式；<ul>
+<li>其中animated是指动画的时长，animate.css默认动画时长为1s，我们通过在自定义样式中更改动画时长；</li>
+<li>infinite指动画将无限进行播放，该类名作为可选项进行添加；</li>
+<li>animate.css提供的动画应该非常之多，我们可以在其中选取需要的样式，比如抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）。</li>
+<li>兼容性：由于animate是基于css3的，所以要求能兼容css3的浏览器—IE10+、Firefox、Chrome、Opera、Safari。<h2 id="animate框架简单实例"><a href="#animate框架简单实例" class="headerlink" title="animate框架简单实例"></a>animate框架简单实例</h2><blockquote>
+<p>demo1</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/animate.min.css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        *&#123;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">border</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">list-style</span>:none;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-class">.box</span>&#123;</div><div class="line">            <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">margin</span>:<span class="number">200px</span> auto;</div><div class="line">            <span class="attribute">background-color</span>: <span class="number">#f00</span>;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box animated infinite bounce"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+</blockquote>
+</li>
 </ul>
-<h2 id="html语义化的好处"><a href="#html语义化的好处" class="headerlink" title="html语义化的好处"></a>html语义化的好处</h2><ul>
-<li>对<code>搜索引擎</code>友好:良好的结构和语义化使你的网站更容易被搜索引擎抓取.</li>
-<li><code>用户体验</code>直线上升,比如我们悬浮一张图片上时会出现某些提示信息.</li>
-<li>裸奔好看,当页面<code>无css</code>的时候,html显示的结构不至于太奇葩.</li>
-<li>更加贯彻了W3C中的<code>结构样式表现</code>相分离的准则.</li>
-<li><code>方便其他设备的解析</code>,比如盲人阅读器等</li>
-<li><code>便于开发和维护</code>,语义化的html更加容易阅读和理解,每个项目中的协作组都应该自觉遵循这个标准</li>
+</li>
 </ul>
-<h2 id="html编写时的注意点"><a href="#html编写时的注意点" class="headerlink" title="html编写时的注意点"></a>html编写时的注意点</h2><ul>
-<li>尽量少用无语义的标签,虽说现在是div+css布局,但是div和span能少用则少用</li>
-<li>尽量不要使用w3c已经废弃但仍然有效的标签,比如s标签等</li>
-<li>同一个页面最多只允许用一次h1标签</li>
-<li>当语义不清时,有多个标签进行选择,比如div和p,优先选择p标签</li>
-<li>时在做导航优先考虑列表标签，尽量少用和不用p标签，虽然p+span标签有时在做导航时非常简便，但是p标签的语义是段落，然而导航是段落吗？</li>
-<li>始终记住:html中的标签是给文本添加语义的,并不是改变了文本的样式</li>
-<li>其他以后想到再补充</li>
-</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/animate/1.gif" alt="animate简单实例"></p>
+<h2 id="结合js"><a href="#结合js" class="headerlink" title="结合js"></a>结合js</h2><p>demo1是当页面打开时产生的动画，如果我们希望通过用户的操作产生某个动画，那么该如何操作呢？—通过与js结合使用</p>
+<blockquote>
+<p>demo2<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/animate.min.css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">div</span>&#123;</div><div class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">margin</span>:<span class="number">100px</span> auto;</div><div class="line">            <span class="attribute">background-color</span>: red;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</div><div class="line">		<span class="comment">//当鼠标移入时添加动画</span></div><div class="line">        div.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            div.setAttribute(<span class="string">'class'</span>,<span class="string">'animated bounce'</span>);</div><div class="line">            setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="built_in">window</span>.location.reload();</div><div class="line">            &#125;,<span class="number">1000</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/animate/2.gif" alt="结合js"></p>
+<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>各类框架的出现，目的是让开发者快速高效的进行开发，但是不论什么框架，最底层的还是最基础的内容，我们学习的时候要明白不论框架如何变化，实现的效果多么酷炫，都是万变不离其宗。</p>
 ]]></content>
       
         <categories>
             
-            <category> html </category>
+            <category> 动画框架 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> html </tag>
+            <tag> Animate </tag>
             
-            <tag> 见解 </tag>
+            <tag> 动画框架 </tag>
             
-            <tag> html语义化 </tag>
+            <tag> css3 </tag>
             
         </tags>
         
@@ -677,7 +989,7 @@ deploy:
     
     <entry>
       <title><![CDATA[css定位与浮动]]></title>
-      <url>http://www.gohtml.online/2016/12/22/css%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%B5%AE%E5%8A%A8%E6%B5%85%E6%9E%90/</url>
+      <url>http://www.gohtml.online/2016/02/22/css%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%B5%AE%E5%8A%A8%E6%B5%85%E6%9E%90/</url>
       <content type="html"><![CDATA[<p><code>定位(position)</code>和<code>浮动(float)</code>怕是css基础中最难掌握的两个点了,很多人都分不清什么时候该用定位,什么时候应该用浮动.而当两者在父子容器中使用时,更是一头雾水.</p>
 <a id="more"></a>
 <h2 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h2><blockquote>
@@ -761,90 +1073,9 @@ deploy:
     </entry>
     
     <entry>
-      <title><![CDATA[js闭包]]></title>
-      <url>http://www.gohtml.online/2016/12/05/javascript%E9%97%AD%E5%8C%85/</url>
-      <content type="html"><![CDATA[<p>闭包作为js中的重点也是难点,困扰了不少人,前人栽树后人乘凉,这些天拜读了多位大神级人物关于闭包的解析,故此站在其他巨人的肩膀上我在这里做一次基础性的总结</p>
-<a id="more"></a>
-<h2 id="百度解释"><a href="#百度解释" class="headerlink" title="百度解释"></a>百度解释</h2><blockquote>
-<p>闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。“闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）</p>
-</blockquote>
-<ul>
-<li>百度的解释比较官方,个人觉得算是比较好懂,当然是相对于有基础的friends而言,我相信很多人看了这解释也是云里雾里,话不多说我们来剖析下到底什么是闭包.</li>
-</ul>
-<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><h3 id="变量作用域-1"><a href="#变量作用域-1" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>在说闭包之前,我们先说一个概念—变量的作用域,直白点来说变量作用域就是指变量的作用范围,在js中变量的作用域无非以下两种:</p>
-<ul>
-<li>全局变量<blockquote>
-<p>demo1</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	alert(a); </div><div class="line">&#125;</div><div class="line">getNum();<span class="comment">//1000</span></div></pre></td></tr></table></figure>
-<ul>
-<li>局部变量<blockquote>
-<p>demo2</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    alert(a);</div><div class="line">&#125;</div><div class="line">getNum();<span class="comment">//1000;</span></div><div class="line">alert(a); <span class="comment">// a is not defined</span></div></pre></td></tr></table></figure>
-<p>通过以上的例子说明了至少两个问题:</p>
-<ol>
-<li>全局变量可以在函数内部进行访问</li>
-<li><p>局部变量是在函数内部定义的,并且在函数外部无法直接访问</p>
-<ul>
-<li>由此引出了我们需要解决的问题,我们想在<code>函数外部</code>获取到函数内部的变量如何去做?<br>在解决这个问题之前,我们先来解决另外一个问题,如何获取函数内部的变量–&gt;我们可以通过在函数内部再定义一个函数来解决.</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>demo3<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(a); <span class="comment">//1000    </span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>既然我们能够通过定义子函数来获取函数内部的变量,那么只需要借助于return返回值,将该函数返回出去,我们就不就可以在函数外部获取到函数内部的变量的了吗?废话不多说,直接试一试.</p>
-<blockquote>
-<p>demo4<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(a);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> getA;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> temp = getNum();</div><div class="line">temp(); <span class="comment">//1000;</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>果然我们在函数外部通过return获取到了函数内部的变量.</p>
-<h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><h3 id="刚才演示的demo4就是闭包"><a href="#刚才演示的demo4就是闭包" class="headerlink" title="刚才演示的demo4就是闭包"></a>刚才演示的<strong>demo4</strong>就是闭包</h3><ol>
-<li>我们通过观察demo4可以发现,闭包其实就是一个函数,是一个什么函数呢?一个<code>有权限访问其他函数作用域中变量的函数</code>.</li>
-<li>js中闭包这个函数比较特殊,因为刚才我们说到了js中正常的情况下在函数外部是无法访问函数内部的变量.要想访问,我们必须使用函数套函数的方式进行实现,所以说闭包给人的直观感觉就是<code>定义在一个函数内部的函数</code>.</li>
-</ol>
-<h2 id="那么闭包有什么作用呢"><a href="#那么闭包有什么作用呢" class="headerlink" title="那么闭包有什么作用呢?"></a>那么闭包有什么作用呢?</h2><ol>
-<li>通过闭包我们可以获取到函数内部的变量</li>
-<li>使变量在内存中一直存在,就是延长局部变量的生命周期,这又牵扯到一个问题:js垃圾回收机制.简单来说,局部变量在函数调用后就会被销毁.要想再函数调用后不被销毁,那么我们就可以使用闭包,这点既可以说是闭包的优点也算它的缺点.我们可以通过以下代码来说明这个问题:<blockquote>
-<p>demo5</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">    nAdd=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;n+=<span class="number">1</span>&#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(n);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> result=f1();</div><div class="line">result(); <span class="comment">// 999</span></div><div class="line">nAdd();</div><div class="line">result(); <span class="comment">// 1000</span></div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<p>通过该例可以看出在函数调用后,变量n并没有被销毁,而是仍然存在于内存中,result调用了两次,实质上result就是f2的闭包函数.<br><b style="color:skyblue">可能有人会有疑问:为什么变量n没有被销毁呢?</b></p>
-<ul>
-<li>因为f2被赋予result,而result是全局函数,只要window不关闭,那么他就不会消失,所以导致了f2一直存在在内存中,而f2是在f1中定义的,就是说f2是依赖f1生活,所以f2不死,f1也不会消亡,所以其内部变量n也会一直存在.</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于闭包,个人理解的也不够深刻,只能根据他人的解释然后进行浅显的解读,以后会继续进行补充,此文纯属抛砖引入.</p>
-]]></content>
-      
-        <categories>
-            
-            <category> javascript </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> javascript </tag>
-            
-            <tag> 闭包 </tag>
-            
-            <tag> js </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[为什么要开Blog]]></title>
-      <url>http://www.gohtml.online/2016/10/01/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80git%E5%8D%9A%E5%AE%A2/</url>
-      <content type="html"><![CDATA[<p>之前在<code>CSDN</code>,<code>新浪</code>也写过一段时间博客,但管理太过于混乱,经常提交失败.另外就是言论自由这个东西,算了,别扯远,反正考虑了许久,终归是放弃了CSDN这些blog.老早就听说git page还不错,于是便过来凑个热闹.</p>
+      <url>http://www.gohtml.online/2015/12/01/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80git%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<p>之前在<code>CSDN</code>,<code>新浪</code>也写过一段时间博客,但管理太过于混乱,经常提交失败.另外就是言论自由这个东西,算了,别扯远,反正考虑了许久,终归是放弃了CSDN这些blog.老早就听说可以通过github托管博客,但一直没有具体了解，近来无事，便过来凑个热闹.</p>
 <a id="more"></a>
 <h2 id="为什么要写博客"><a href="#为什么要写博客" class="headerlink" title="为什么要写博客"></a>为什么要写博客</h2><ul>
 <li>前段时间写博客的时候有人笑道别人都不写博客了,你怎么还在写?当时我并没有反驳什么,其实如果某人的学生时代结束了,就不能读书了吗?答案当然是否定的.阅读使人明事理晓得失,而博客就是一个让人通过记录不断成长、通过交流不断进步的地方,博客不会因为博客时代的结束而没有去记录的价值,只要是觉得正确的东西我们都可以去做,是与非那是别人的事.</li>
@@ -858,8 +1089,8 @@ deploy:
 <li><p><strong>如何做到高质量</strong><br><br>有些人当场就懵了,怎么写高质量的博文?</p>
 <ul>
 <li><code>首先是根据自身实际出发</code>,我们不要根据别人的喜好来写博文,这样一味的迎合别人从长远来看,对自身的发展是百害而无一利。建议大家根据自身实际出发,把你曾经碰到的坎写出来,不要觉得某样东西现在看来很小白很幼稚而不去写,请不要怀疑曾经碰到的小白问题,还有更小白的人卡在那里而无法动弹. </li>
-<li><code>其次要有所想，学会表达</code>,把你觉得重要的有价值的东西、想要分享的东西写出来,这需要一个过程。有些人会想十种方法解决一个问题,但是让他说出个所以然,他就无从下手了。既要会做也要会说,这是能力的体现,有句话说的好:<strong>如果你不能向一个六岁的孩子解释清楚一个问题，那么其实你自己根本就没弄懂</strong>.</li>
-<li><code>最后是要坚持</code>,很多人每周抽一天跑5公里,可能坚持不了多久,但是让他每周写一篇一千字以上的博客,这个坚持下来真的没多难，相信很多刚入博客的朋友可能会担忧,前几周我可以写几篇,因为自己还有点干货储备,可是下周呢?这时你就惶恐了。所以说我们需要不断学习、不断去发掘新的知识，不断扩充自己的知识储备。<br>我们需要的是恒心与毅力，不要怀疑自己做不了，一个人如果连尝试的勇气都没有何谈成功呢？<br>##写博客的好处</li>
+<li><code>其次要有所想，学会表达</code>,把你觉得重要的有价值的东西、想要分享的东西写出来,这需要一个过程。有些人会想十种方法解决一个问题,但是让他说出个所以然,他就无从下手了。既要会做也要会说,这是能力的体现,有句话说的好:<strong>如果你不能向一个六岁的孩子解释清楚一个问题，那么其实你自己根本就没弄懂</strong>.博客,这个坚持下来真的没多难，相信很多刚入博客的朋友可能会担忧,前几周我可以写几篇,因为自己还</li>
+<li><code>最后是要坚持</code>,很多人每周抽一天跑5公里,可能坚持不了多久,但是让他每周写一篇一千字以上的有点干货储备,可是下周呢?这时你就惶恐了。所以说我们需要不断学习、不断去发掘新的知识，不断扩充自己的知识储备。<br>我们需要的是恒心与毅力，不要怀疑自己做不了，一个人如果连尝试的勇气都没有何谈成功呢？<br>##写博客的好处</li>
 </ul>
 </li>
 <li><p><strong>提高自己的表达能力</strong></p>
@@ -885,7 +1116,7 @@ deploy:
 </ul>
 </li>
 </ul>
-<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>作为一个前端人，我们一直在给别人<code>建房子</code>，但是很少有人拥有<code>自己的房子</code>，所以赶快动手给自己也建一所房子吧，茅屋虽小，但也能容身.文笔粗糙,还忘手下留情！<a href="http://www.studyhtml5.com" title="我的博客">我是zengyong，我为自己代言</a></p>
+<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>作为一个前端人，我们一直在给别人<code>建房子</code>，但是很少有人拥有<code>自己的房子</code>，所以赶快动手给自己也建一所房子吧，茅屋虽小，但也能容身.文笔粗糙,还忘手下留情！<a href="http://www.studyhtml5.com" title="我的博客" target="_blank" rel="external">我是zengyong，我为自己代言</a></p>
 ]]></content>
       
         <categories>

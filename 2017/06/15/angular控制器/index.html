@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<meta name="author" content="Zengyong" />
+<meta name="keywords" content="zengyong,曾勇,html5,html,css3动画,js进阶,javascript教程,node.js,前端学习,studyhtml,曾勇的博客" />
+
+
+<meta name="description" content="探究angular控制器，本文主要说明控制器间如何进行数据通信。">
+<meta name="keywords" content="angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular控制器">
+<meta property="og:url" content="http://www.gohtml.online/2017/06/15/angular控制器/index.html">
+<meta property="og:site_name" content="我会变得更好|因为我从未止步">
+<meta property="og:description" content="探究angular控制器，本文主要说明控制器间如何进行数据通信。">
+<meta property="og:updated_time" content="2017-06-22T02:56:43.740Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular控制器">
+<meta name="twitter:description" content="探究angular控制器，本文主要说明控制器间如何进行数据通信。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="我会变得更好|因为我从未止步" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>angular控制器 | 我会变得更好|因为我从未止步</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: null,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/author.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Zengyong</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">梦里能到达的地方 脚步也能到达</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">首页</a></li>
+                        
+                            <li><a href="/archives/">文章分类</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:545698514@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/zengyong" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zengyong1990" title="GitHub"></a>
+                            
+                                <a class="fa 豆瓣" href="https://www.douban.com/" title="豆瓣"></a>
+                            
+                                <a class="fa bilibili" href="http://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa AcFun" href="http://www.acfun.cn/" title="AcFun"></a>
+                            
+                                <a class="fa QQ" href="tencent://message/?uin=545698514&amp;Site=&amp;Menu=yes" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="http://weixin.qq.com/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animate/">Animate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wow/">Wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git配置/">git配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html语义化/">html语义化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画框架/">动画框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小技巧/">小技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浮动/">浮动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运动/">运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.runoob.com/html/html-quicklist.html">前端速查</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.iconfont.cn/plus/collections/index?type=2">阿里巴巴矢量图</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://regexper.com/">正则表达式分析工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://segmentfault.com/">segmentfault</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://portal.qiniu.com/signin">七牛云</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.jq22.com/daima">jQuery插件</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://xiuxiu.web.meitu.com/plugin/batch/taobao.html?channel=resize">美图在线处理工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.jianshu.com/p/e37410395956">好书推荐</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.markdown.cn/">markdown语法</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://javascript.ruanyifeng.com/">JavaScript标准参考教程</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://f2er.club/">醉牛前端</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.runoob.com/try/bootstrap/layoutit/">bootstrap可视化编辑器</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://blog.koalite.com/bbg/">bootstrap按钮定制</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io/zh-cn/docs/setup.html">hexo建站</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Zengyong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/author.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Zengyong</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">梦里能到达的地方 脚步也能到达</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">文章分类</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:545698514@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/zengyong" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zengyong1990" title="GitHub"></a>
+                            
+                                <a class="fa 豆瓣" target="_blank" href="https://www.douban.com/" title="豆瓣"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="http://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa AcFun" target="_blank" href="http://www.acfun.cn/" title="AcFun"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="tencent://message/?uin=545698514&amp;Site=&amp;Menu=yes" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="http://weixin.qq.com/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-angular控制器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/15/angular控制器/" class="article-date">
+      <time datetime="2017-06-15T07:02:18.000Z" itemprop="datePublished">2017-06-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angular控制器
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/angular/">angular</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p> 探究angular控制器，本文主要说明控制器间如何进行数据通信。<br><a id="more"></a></p>
+<blockquote>
+<p>首先说明————-以下观点纯属个人看法，说错了别打我</p>
+</blockquote>
+<h2 id="为什么要使用控制器"><a href="#为什么要使用控制器" class="headerlink" title="为什么要使用控制器"></a>为什么要使用控制器</h2><ul>
+<li>angular真的很奇怪，它不能直接与js进行交互，为了让js与angular能够实现交互，这时控制器诞生了。比如如下的demo1，直接在ng-click中写alert是无效的，因此我们需要改版为demo2。</li>
+</ul>
+<h3 id="demo1"><a href="#demo1" class="headerlink" title="demo1"></a>demo1</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点我弹窗"</span> <span class="attr">ng-click</span>=<span class="string">"alert(1)"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="demo2"><a href="#demo2" class="headerlink" title="demo2"></a>demo2</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点我弹窗"</span> <span class="attr">ng-click</span>=<span class="string">"showModel()"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>,[]);</div><div class="line">  app.controller(<span class="string">'zyCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">      $scope.showModel = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          alert(<span class="number">1</span>);</div><div class="line">      &#125;</div><div class="line">  &#125;])</div></pre></td></tr></table></figure>
+<ul>
+<li>观察上述代码：我们通过app.controller(‘zyCtrl’,[‘$scope’,function ($scope) {}])定义了一个控制器，这个控制器名字是zyCtrl，但是后面的数组是什么？官方学名叫<code>依赖注入</code>，我理解的是控制器需要什么，就注入什么服务。当然依赖注入还有另外一种写法—–<code>推断式注入</code>：app.controller(‘zyCtrl’,function($scope){}),但是不推荐使用，因为上线时我们的代码需要丑化，所以这个过程只适用于未经过压缩和混淆的代码。关于注入方式可以参考这篇文章&gt;&gt;<a href="http://blog.csdn.net/luo_xinran/article/details/52153830" title="依赖注入的方式" target="_blank" rel="external">依赖注入的方式</a></li>
+</ul>
+<h2 id="控制器间的数据通信"><a href="#控制器间的数据通信" class="headerlink" title="控制器间的数据通信"></a>控制器间的数据通信</h2><p>控制器作为view与model交互的纽带，当项目达到一定的程度，自然而然的牵涉到控制器间的数据通信。这里总结了几种控制器间的数据通信方法</p>
+<ul>
+<li>创建一个服务factory作为媒介进行传递</li>
+<li>通过$scope作用域继承关系</li>
+<li>基于事件$on,$emit,$boardcast</li>
+</ul>
+<h3 id="创建一个服务factory作为媒介进行通信"><a href="#创建一个服务factory作为媒介进行通信" class="headerlink" title="创建一个服务factory作为媒介进行通信"></a>创建一个服务factory作为媒介进行通信</h3><p>这里主要利用了angular的服务是一个单例，我们只需要将创建的服务注入到相应的控制器中，就可以利用这个单例进行数据的传递。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn2"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.factory(<span class="string">"myService"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">btn</span>:<span class="string">'我是服务，一个单例哟'</span></div><div class="line">    &#125;;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope,myService</span>) </span>&#123;</div><div class="line">    $scope.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        myService.btn = $scope.btn1;</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope,myService</span>) </span>&#123;</div><div class="line">    $scope.btn2 = myService.btn;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn2 = myService.btn;</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h3 id="通过-scope作用域继承关系通信"><a href="#通过-scope作用域继承关系通信" class="headerlink" title="通过$scope作用域继承关系通信"></a>通过$scope作用域继承关系通信</h3><p>这种其实不必多说，就是利用了作用域，向上查找。有两种情况：</p>
+<ul>
+<li>传递的值为值类型 修改父的子会改，修改子的父不变 <code>解决方法：</code>子控制器使用$scope.$parent</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn1 = <span class="string">"我被老爸点了"</span>；</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn1 = <span class="string">"我被孩子点了"</span>； <span class="comment">//解决方案 $scope.$parent.btn1 = "我被孩子点了"；</span></div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<ul>
+<li>传递的值为引用类型 双向绑定</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"ctrlConfig.btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"ctrlConfig.btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.ctrlConfig = &#123;&#125;;</div><div class="line">    $scope.ctrlConfig.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.ctrlConfig.btn1 = <span class="string">"我被爹点了"</span></div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.ctrlConfig.btn1 = <span class="string">"我被儿子点了"</span></div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<p>我们可以利用引用类型的特性，再顶层创建一个总控制器，定义一个配置属性，该属性为引用类型{}，然后其他的子类就可以在他的基础上添加属性和方法，其他的控制器可以直接使用该属性上的属性何方法了，也就实现了控制器间的数据传递。</p>
+<h3 id="基于事件-on-emit-boardcast通信"><a href="#基于事件-on-emit-boardcast通信" class="headerlink" title="基于事件$on,$emit,$boardcast通信"></a>基于事件$on,$emit,$boardcast通信</h3><p>向上广播$emit  向下广播$boardcast  接收广播$on 如果是兄弟关系（a,b）的控制器数据交互，那么我们可以通过a向父$emit，父接收到，然后向b发送$boardcast</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"name"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"son2Name"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">'allCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.$on(<span class="string">"fatherOn"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e,newV</span>) </span>&#123;</div><div class="line">        $scope.$broadcast(<span class="string">"sonOn"</span>,newV);</div><div class="line">    &#125;)</div><div class="line">&#125;])</div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.name = <span class="string">'我是第一个孩子'</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.$emit(<span class="string">"fatherOn"</span>,$scope.name);</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2Name = <span class="string">'我是第二个孩子'</span>;</div><div class="line">    $scope.$on(<span class="string">"sonOn"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e,newV</span>)</span>&#123;</div><div class="line">        $scope.son2Name = newV;</div><div class="line">    &#125;)</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>控制器这块的数据通信非常重要，刚开始学的时候遇到了不少坑，但是都一一解决了，如果后期遇到其他关于控制器方面的问题，会及时在这里进行补充。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/06/15/angular控制器/">angular控制器</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Zengyong</a></p>
+        <p><span>发布时间:</span>2017-06-15, 15:02:18</p>
+        <p><span>最后更新:</span>2017-06-22, 10:56:43</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/15/angular控制器/" title="angular控制器">http://www.gohtml.online/2017/06/15/angular控制器/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.gohtml.online/2017/06/15/angular控制器/　　作者: Zengyong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/06/20/angular杂项/">
+                    angular杂项
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/06/13/angular学习笔记/">
+                    angular1.6知识点总结
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要使用控制器"><span class="toc-number">1.</span> <span class="toc-text">为什么要使用控制器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#demo1"><span class="toc-number">1.1.</span> <span class="toc-text">demo1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#demo2"><span class="toc-number">1.2.</span> <span class="toc-text">demo2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制器间的数据通信"><span class="toc-number">2.</span> <span class="toc-text">控制器间的数据通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个服务factory作为媒介进行通信"><span class="toc-number">2.1.</span> <span class="toc-text">创建一个服务factory作为媒介进行通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过-scope作用域继承关系通信"><span class="toc-number">2.2.</span> <span class="toc-text">通过$scope作用域继承关系通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于事件-on-emit-boardcast通信"><span class="toc-number">2.3.</span> <span class="toc-text">基于事件$on,$emit,$boardcast通信</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"angular控制器　| 我会变得更好|因为我从未止步　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/06/20/angular杂项/" title="上一篇: angular杂项">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/06/13/angular学习笔记/" title="下一篇: angular1.6知识点总结">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/webstorm浏览器预览时提示localhost连接失败/">webstorm浏览器预览时提示localhost连接失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/angular杂项/">angular杂项</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/15/angular控制器/">angular控制器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/13/angular学习笔记/">angular1.6知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/06/webstorm配置git/">webstorm配置git</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/闲聊canvas画布宽高设置/">闲聊canvas画布宽高设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/11/git-node-Hexo搭建静态博客/">git+node.js+Hexo搭建静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/27/html语义化/">浅析html语义化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/字体图标的那些事/">字体图标的那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/17/javascript回弹运动/">js运动之回弹运动</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/05/javascript闭包/">js闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/框架合集-scrollReveal/">框架之scrollReveal</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/框架合集-Wow/">框架之Wow</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/框架合集-animate/">CSS3动画框架之Animate</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/css定位与浮动浅析/">css定位与浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/01/为什么开git博客/">为什么要开Blog</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 Zengyong
+            </div>
+            <div class="footer-right">
+                拼搏 &nbsp;求知&nbsp; 进取&nbsp; 明智
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "进取 |" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "执着 |" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

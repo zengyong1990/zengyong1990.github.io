@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<meta name="author" content="Zengyong" />
+<meta name="keywords" content="zengyong,曾勇,html5,html,css3动画,js进阶,javascript教程,node.js,前端学习,studyhtml,曾勇的博客" />
+
+
+<meta name="description" content="谈起js运动,不少人或多或少都知道一些关于匀速运动和缓冲运动的知识,但如果说起回弹运动,可能知之者甚少.js回弹运动的形式为物体基于某一固定位置作来回运动,因为运动的路径犹如一个球体来回弹,所以称为回弹运动.">
+<meta name="keywords" content="javascript,运动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js运动之回弹运动">
+<meta property="og:url" content="http://www.gohtml.online/2016/09/17/javascript回弹运动/index.html">
+<meta property="og:site_name" content="我会变得更好|因为我从未止步">
+<meta property="og:description" content="谈起js运动,不少人或多或少都知道一些关于匀速运动和缓冲运动的知识,但如果说起回弹运动,可能知之者甚少.js回弹运动的形式为物体基于某一固定位置作来回运动,因为运动的路径犹如一个球体来回弹,所以称为回弹运动.">
+<meta property="og:image" content="http://ofn33tdsr.bkt.clouddn.com/blog/move/1.gif">
+<meta property="og:image" content="http://ofn33tdsr.bkt.clouddn.com/blog/move/2.gif">
+<meta property="og:image" content="http://ofn33tdsr.bkt.clouddn.com/blog/move/3.gif">
+<meta property="og:image" content="http://ofn33tdsr.bkt.clouddn.com/blog/move/4.gif">
+<meta property="og:image" content="http://ofn33tdsr.bkt.clouddn.com/blog/move/5.gif">
+<meta property="og:image" content="http://ofn33tdsr.bkt.clouddn.com/blog/move/6.gif">
+<meta property="og:updated_time" content="2017-06-15T06:22:07.606Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js运动之回弹运动">
+<meta name="twitter:description" content="谈起js运动,不少人或多或少都知道一些关于匀速运动和缓冲运动的知识,但如果说起回弹运动,可能知之者甚少.js回弹运动的形式为物体基于某一固定位置作来回运动,因为运动的路径犹如一个球体来回弹,所以称为回弹运动.">
+<meta name="twitter:image" content="http://ofn33tdsr.bkt.clouddn.com/blog/move/1.gif">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="我会变得更好|因为我从未止步" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>js运动之回弹运动 | 我会变得更好|因为我从未止步</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: null,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/author.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Zengyong</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">梦里能到达的地方 脚步也能到达</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">首页</a></li>
+                        
+                            <li><a href="/archives/">文章分类</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:545698514@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/zengyong" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zengyong1990" title="GitHub"></a>
+                            
+                                <a class="fa 豆瓣" href="https://www.douban.com/" title="豆瓣"></a>
+                            
+                                <a class="fa bilibili" href="http://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa AcFun" href="http://www.acfun.cn/" title="AcFun"></a>
+                            
+                                <a class="fa QQ" href="tencent://message/?uin=545698514&amp;Site=&amp;Menu=yes" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="http://weixin.qq.com/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animate/">Animate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wow/">Wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git配置/">git配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html语义化/">html语义化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画框架/">动画框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小技巧/">小技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浮动/">浮动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运动/">运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.runoob.com/html/html-quicklist.html">前端速查</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.iconfont.cn/plus/collections/index?type=2">阿里巴巴矢量图</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://regexper.com/">正则表达式分析工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://segmentfault.com/">segmentfault</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://portal.qiniu.com/signin">七牛云</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.jq22.com/daima">jQuery插件</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://xiuxiu.web.meitu.com/plugin/batch/taobao.html?channel=resize">美图在线处理工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.jianshu.com/p/e37410395956">好书推荐</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.markdown.cn/">markdown语法</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://javascript.ruanyifeng.com/">JavaScript标准参考教程</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://f2er.club/">醉牛前端</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.runoob.com/try/bootstrap/layoutit/">bootstrap可视化编辑器</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://blog.koalite.com/bbg/">bootstrap按钮定制</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io/zh-cn/docs/setup.html">hexo建站</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Zengyong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/author.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Zengyong</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">梦里能到达的地方 脚步也能到达</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">文章分类</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:545698514@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/zengyong" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zengyong1990" title="GitHub"></a>
+                            
+                                <a class="fa 豆瓣" target="_blank" href="https://www.douban.com/" title="豆瓣"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="http://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa AcFun" target="_blank" href="http://www.acfun.cn/" title="AcFun"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="tencent://message/?uin=545698514&amp;Site=&amp;Menu=yes" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="http://weixin.qq.com/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-javascript回弹运动" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/17/javascript回弹运动/" class="article-date">
+      <time datetime="2016-09-17T13:48:18.000Z" itemprop="datePublished">2016-09-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js运动之回弹运动
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/运动/">运动</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>谈起js运动,不少人或多或少都知道一些关于匀速运动和缓冲运动的知识,但如果说起回弹运动,可能知之者甚少.js回弹运动的形式为物体基于某一固定位置作来回运动,因为运动的路径犹如一个球体来回弹,所以称为回弹运动.<br><a id="more"></a></p>
+<h2 id="什么是回弹运动"><a href="#什么是回弹运动" class="headerlink" title="什么是回弹运动"></a>什么是回弹运动</h2><p>回弹运动就是物体基于某一固定位置作来回运动,字面意思很好理解，但是如何用程序化的语言去描述该运动呢?在回答该问题之前,我们先聊一下加速和减速运动，为了方便理解，本文所有物体的运动均为直线运动，同时每个运动都将以代码的形式展现.</p>
+<h3 id="加速运动"><a href="#加速运动" class="headerlink" title="加速运动"></a>加速运动</h3><p>该运动的特点为：速度不断增加。</p>
+<blockquote>
+<p>demo1</p>
+</blockquote>
+<ul>
+<li>公用css</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50px</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>公用html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">onclick</span>=<span class="string">"move()"</span>&gt;</span>move<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>加速运动js代码</p>
+<pre><code>&lt;script&gt;            
+    function move(){
+        var btn = document.getElementById(&apos;btn&apos;);
+        var box = document.getElementById(&apos;box&apos;);
+        var speed = 0; //初始速度
+        setInterval(function(){
+            console.log(speed);
+            speed++; //速度自增
+            box.style.left = box.offsetLeft+speed+&apos;px&apos;;
+        },50)
+    }
+&lt;/script&gt;
+</code></pre></li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/1.gif" alt="加速运动"></p>
+<ul>
+<li>我们发现加速运动的物体会一直沿着它的初始路线作运动，且方向不会改变。</li>
+</ul>
+<h3 id="减速运动"><a href="#减速运动" class="headerlink" title="减速运动"></a>减速运动</h3><p>该运动的特点为：速度不断减少。</p>
+<blockquote>
+<p>demo2</p>
+</blockquote>
+<ul>
+<li>减速运动js代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	    <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</div><div class="line">	    <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">	    <span class="keyword">var</span> speed = <span class="number">40</span>; <span class="comment">//初始速度</span></div><div class="line">	    setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	        <span class="built_in">console</span>.log(speed);</div><div class="line">	        speed--;	 <span class="comment">//速度自减</span></div><div class="line">	        box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">	    &#125;,<span class="number">50</span>)</div><div class="line">	&#125;    </div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/2.gif" alt="减速运动"></p>
+<ul>
+<li>我们发现减速运动的物体，当<code>速度减少为负值</code>时，该物体将做反方向的直线运动，且<code>方向只改变一次</code>。</li>
+</ul>
+<h2 id="回弹运动"><a href="#回弹运动" class="headerlink" title="回弹运动"></a>回弹运动</h2><p> 刚才我们说到，回弹运动的物体是以某一个位置为基准作往复运动，运动方向的变化与减速运动类似，但是又有着明显差别,因为回弹运动的方向将一直发生变化。因此我们可以合并加速和减速运动，当运动物体的位置小于基准位置时，让该物体做加速运动，当大于基准位置时，让其做减速运动，这样就可以实现回弹运动了。</p>
+<blockquote>
+<p>demo3</p>
+</blockquote>
+<ul>
+<li>回弹运动js代码</li>
+</ul>
+<pre><code>&lt;script&gt;  
+      function move(target){
+          var btn = document.getElementById(&apos;btn&apos;);
+          var box = document.getElementById(&apos;box&apos;);
+          var speed = 0;
+          setInterval(function(){
+              console.log(speed);
+              if(box.offsetLeft &lt;= 400){
+                  speed++;
+              }else{
+                  speed--;
+              }
+              box.style.left = box.offsetLeft+speed+&apos;px&apos;;
+          },50)
+      }
+</code></pre><p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/3.gif" alt="回弹运动"></p>
+<ul>
+<li>回弹运动的运动轨迹就是基于某一位置做往复运动，但是这样的运动形式在我们实际开发中运用的并不多，所以我们需要进行一定的优化。</li>
+</ul>
+<h2 id="优化回弹运动"><a href="#优化回弹运动" class="headerlink" title="优化回弹运动"></a>优化回弹运动</h2><ol>
+<li>速度优化<ul>
+<li>实际开发中回弹运动中的加速和减速不可能为每次自增或者自减1个像素，我们可以用一个公式代替速度的变化：当前速度 += （运动基准位置 - 运动物体的当前位置）*系数。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>demo4</p>
+</blockquote>
+<ul>
+<li>回弹运动js代码优化版1<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> &lt;script&gt;</div><div class="line">       <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">       <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">           <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">           setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">               <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">               <span class="keyword">if</span>(box.offsetLeft&lt;<span class="number">400</span>)&#123;</div><div class="line">                   speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">               &#125;<span class="keyword">else</span>&#123;</div><div class="line">                   speed -= (box.offsetLeft<span class="number">-400</span>)*<span class="number">0.2</span>;</div><div class="line">               &#125;</div><div class="line"></div><div class="line">               box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">           &#125;,<span class="number">50</span>)</div><div class="line">       &#125; </div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/4.gif" alt="速度优化1"></p>
+<p>   但是还是没有出现我们想要的效果，这里有个小技巧，我们可以将最终的速度值再乘上一个系数</p>
+<blockquote>
+<p>demo5</p>
+</blockquote>
+<ul>
+<li>回弹运动js代码优化版2<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">      <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">          setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">              <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">              <span class="keyword">if</span>(box.offsetLeft&lt;<span class="number">400</span>)&#123;</div><div class="line">                  speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">              &#125;<span class="keyword">else</span>&#123;</div><div class="line">                  speed -= (box.offsetLeft<span class="number">-400</span>)*<span class="number">0.2</span>;</div><div class="line">              &#125;</div><div class="line">              speed *= <span class="number">0.9</span>; <span class="comment">//乘以一个系数</span></div><div class="line">              box.style.left = box.offsetLeft+speed+<span class="string">'px'</span>;</div><div class="line">          &#125;,<span class="number">50</span>)</div><div class="line">      &#125;</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/5.gif" alt="速度优化2"></p>
+<ul>
+<li>效果出来了有没有！但是我们还有几个问题亟需解决：<ol>
+<li>速度的两次取值公式重复度非常高，是否可以优化？</li>
+<li>在日志打印处处，offsetLeft一直在400处来回变化，如何解决？</li>
+<li>另外我们不希望物体回弹这么多次，只要一次回弹效果即可，怎么实现？</li>
+<li>定时器未清除；</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>解决方案<ol>
+<li>我们将speed += (400-box.offsetLeft)x0.2与speed -= (box.offsetLeft-400)x0.2展开发现两个公式均为speed = speed+ 400x0.2 - box.offsetLeftx0.2，所以两者可以用其中任意一个公式代替；</li>
+<li>因为offsetLeft为整数取值，而speed的取值是通过一个系数相乘得到的结果，必然会产生小数，因此其中存在了一定的误差—–我们可以用一个变量存储当前的位置，最后再赋值给运动物体；</li>
+<li>刚才speed的系数为0.9,我们可以改变该系数，这样就可以调整回弹次数，如果希望回弹次数较少，则可以将系数值设置低一些。</li>
+<li>当速度足够小，并且物体的当前位置与目标位置的距离足够近的时候，清除定时器</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>demo6</p>
+</blockquote>
+<ul>
+<li>回弹运动js代码优化版3<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">      <span class="keyword">var</span> speed = <span class="number">0</span>;</div><div class="line">      <span class="keyword">var</span> dis = <span class="number">0</span>;</div><div class="line">      <span class="keyword">var</span> timer = <span class="literal">null</span>;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          clearInterval(timer);</div><div class="line">          <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</div><div class="line">          timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">              speed += (<span class="number">400</span>-box.offsetLeft)*<span class="number">0.2</span>;</div><div class="line">              speed *= <span class="number">0.6</span>; <span class="comment">//乘以一个系数</span></div><div class="line">              dis += speed;</div><div class="line">              <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(speed)&lt;<span class="number">1</span> &amp;&amp; <span class="built_in">Math</span>.abs(<span class="number">400</span>-box.offsetLeft)&lt;<span class="number">1</span>)&#123;</div><div class="line">                  clearInterval(timer);</div><div class="line">                  box.style.left = <span class="number">400</span> +<span class="string">'px'</span>;</div><div class="line">              &#125;<span class="keyword">else</span>&#123;</div><div class="line">                  box.style.left = dis+<span class="string">'px'</span>;</div><div class="line">              &#125;</div><div class="line">              <span class="built_in">console</span>.log(box.offsetLeft);</div><div class="line">          &#125;,<span class="number">50</span>)</div><div class="line">      &#125;</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://ofn33tdsr.bkt.clouddn.com/blog/move/6.gif" alt="回弹运动优化版"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>回弹运动其实就是之前的加减速运动融合而成的升级版本，本身实现并不复杂，有些东西需要我们自己去钻研去发掘，举一反三触类旁通，这也是学习之法。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/09/17/javascript回弹运动/">js运动之回弹运动</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Zengyong</a></p>
+        <p><span>发布时间:</span>2016-09-17, 21:48:18</p>
+        <p><span>最后更新:</span>2017-06-15, 14:22:07</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/17/javascript回弹运动/" title="js运动之回弹运动">http://www.gohtml.online/2016/09/17/javascript回弹运动/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.gohtml.online/2016/09/17/javascript回弹运动/　　作者: Zengyong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/11/12/字体图标的那些事/">
+                    字体图标的那些事
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/06/05/javascript闭包/">
+                    js闭包
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是回弹运动"><span class="toc-number">1.</span> <span class="toc-text">什么是回弹运动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加速运动"><span class="toc-number">1.1.</span> <span class="toc-text">加速运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减速运动"><span class="toc-number">1.2.</span> <span class="toc-text">减速运动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回弹运动"><span class="toc-number">2.</span> <span class="toc-text">回弹运动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化回弹运动"><span class="toc-number">3.</span> <span class="toc-text">优化回弹运动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"js运动之回弹运动　| 我会变得更好|因为我从未止步　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/11/12/字体图标的那些事/" title="上一篇: 字体图标的那些事">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/06/05/javascript闭包/" title="下一篇: js闭包">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/webstorm浏览器预览时提示localhost连接失败/">webstorm浏览器预览时提示localhost连接失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/angular杂项/">angular杂项</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/15/angular控制器/">angular控制器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/13/angular学习笔记/">angular1.6知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/06/webstorm配置git/">webstorm配置git</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/闲聊canvas画布宽高设置/">闲聊canvas画布宽高设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/11/git-node-Hexo搭建静态博客/">git+node.js+Hexo搭建静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/27/html语义化/">浅析html语义化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/字体图标的那些事/">字体图标的那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/17/javascript回弹运动/">js运动之回弹运动</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/05/javascript闭包/">js闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/框架合集-scrollReveal/">框架之scrollReveal</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/框架合集-Wow/">框架之Wow</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/框架合集-animate/">CSS3动画框架之Animate</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/css定位与浮动浅析/">css定位与浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/01/为什么开git博客/">为什么要开Blog</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 Zengyong
+            </div>
+            <div class="footer-right">
+                拼搏 &nbsp;求知&nbsp; 进取&nbsp; 明智
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "进取 |" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "执着 |" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

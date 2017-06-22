@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[面试那点事]]></title>
-      <url>http://www.studyhtml5.com/2017/03/04/%E9%9D%A2%E8%AF%95%E9%82%A3%E7%82%B9%E4%BA%8B/</url>
+      <url>http://www.gohtml.online/2017/03/04/%E9%9D%A2%E8%AF%95%E9%82%A3%E7%82%B9%E4%BA%8B/</url>
       <content type="html"><![CDATA[<p>整理几个招聘网站以及面试过程中可能遇到的问题，希望对大家有所帮助<br><a id="more"></a></p>
 <h2 id="网站整理"><a href="#网站整理" class="headerlink" title="网站整理"></a>网站整理</h2><ol>
 <li><p>拉勾<code>较为推荐</code> <a href="https://www.lagou.com/" target="_blank" rel="external">https://www.lagou.com/</a></p>
@@ -108,7 +108,7 @@
     
     <entry>
       <title><![CDATA[js运动之回弹运动]]></title>
-      <url>http://www.studyhtml5.com/2017/02/17/javascript%E5%9B%9E%E5%BC%B9%E8%BF%90%E5%8A%A8/</url>
+      <url>http://www.gohtml.online/2017/02/17/javascript%E5%9B%9E%E5%BC%B9%E8%BF%90%E5%8A%A8/</url>
       <content type="html"><![CDATA[<p>谈起js运动,不少人或多或少都知道一些关于匀速运动和缓冲运动的知识,但如果说起回弹运动,可能知之者甚少.js回弹运动的形式为物体基于某一固定位置作来回运动,因为运动的路径犹如一个球体来回弹,所以称为回弹运动.<br><a id="more"></a></p>
 <h2 id="什么是回弹运动"><a href="#什么是回弹运动" class="headerlink" title="什么是回弹运动"></a>什么是回弹运动</h2><p>回弹运动就是物体基于某一固定位置作来回运动,字面意思很好理解，但是如何用程序化的语言去描述该运动呢?在回答该问题之前,我们先聊一下加速和减速运动，为了方便理解，本文所有物体的运动均为直线运动，同时每个运动都将以代码的形式展现.</p>
 <h3 id="加速运动"><a href="#加速运动" class="headerlink" title="加速运动"></a>加速运动</h3><p>该运动的特点为：速度不断增加。</p>
@@ -239,7 +239,7 @@
     
     <entry>
       <title><![CDATA[字体图标的那些事]]></title>
-      <url>http://www.studyhtml5.com/2017/02/12/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
+      <url>http://www.gohtml.online/2017/02/12/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
       <content type="html"><![CDATA[<p>字体图标从本质来说就是一类特殊字体，它给人的直观感受就是图标，但是它可以像文字一样修改样式，同时不会像图片一样造成失真和多次请求等问题，所以习惯性我们将它称为字体图标。<br><a id="more"></a></p>
 <blockquote>
 <p>本文所有案例基于<a href="http://www.iconfont.cn/plus/collections/index?type=2" title="阿里巴巴矢量图" target="_blank" rel="external">阿里巴巴矢量图</a>进行说明</p>
@@ -348,7 +348,7 @@
     
     <entry>
       <title><![CDATA[git+node.js+Hexo搭建静态博客]]></title>
-      <url>http://www.studyhtml5.com/2017/02/11/git-node-Hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</url>
+      <url>http://www.gohtml.online/2017/02/11/git-node-Hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<p>最近用git+node.js+hexo搭建了一个静态博客，总之兜兜转转一大圈，因为无人一起讨论，所以也走了不少弯路，俗话说的好：<code>在技术的世界里如果没经历过绝望，就说明你折腾的还不够</code>。言归正传，前人栽树后人乘凉，今天在这里简单的讲解下我的博客搭建过程以及搭建过程中可能会遇到的问题。个人能力有限，本文不会就底层进行深入剖析。</p>
 <a id="more"></a>
 <h2 id="git部分"><a href="#git部分" class="headerlink" title="git部分"></a>git部分</h2><ul>
@@ -466,7 +466,7 @@ deploy:
     
     <entry>
       <title><![CDATA[CSS3动画框架之Animate]]></title>
-      <url>http://www.studyhtml5.com/2017/02/08/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-animate/</url>
+      <url>http://www.gohtml.online/2017/02/08/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-animate/</url>
       <content type="html"><![CDATA[<p>前端框架一般分为三种：1.ui类；2.js类；3动画字体图标类，本节主要是对css动画类的框架-Animate的说明，该框架内容浅显，开发者只需会使用即可。<br><a id="more"></a></p>
 <h2 id="animate框架目标"><a href="#animate框架目标" class="headerlink" title="animate框架目标"></a>animate框架目标</h2><p>使开发者在做css动画时犹如喝水一样简单（Just-add-water CSS animations）</p>
 <h2 id="animate框架作用"><a href="#animate框架作用" class="headerlink" title="animate框架作用"></a>animate框架作用</h2><p>animate框架主要将css中的各类动画效果进行集成。众所周知，css中动画是由animation产生的，所以该框架也是基于animation动画属性形成的产物。</p>
@@ -516,7 +516,7 @@ deploy:
     
     <entry>
       <title><![CDATA[框架之scrollReveal]]></title>
-      <url>http://www.studyhtml5.com/2017/02/07/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-scrollReveal/</url>
+      <url>http://www.gohtml.online/2017/02/07/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-scrollReveal/</url>
       <content type="html"><![CDATA[<p>Wow配合Animate已能完成日常开发中大部分的动画特效，但是Wow有一个弊端，它实现的动画<code>只能做一次</code>，如果需求变更为只要滚动到某一位置时就需要实现动画，那么我们就得使用到scrollReveal这套框架。<br><a id="more"></a></p>
 <h2 id="scrollReveal作用"><a href="#scrollReveal作用" class="headerlink" title="scrollReveal作用"></a>scrollReveal作用</h2><p>scrollReveal的出现，解决了Wow配合Animate实现动画效果时只能实现一次的的弊端，作为当滚动条到达偏移值时实现多次动画的框架，也是必须掌握的。</p>
 <h2 id="scrollReveal下载"><a href="#scrollReveal下载" class="headerlink" title="scrollReveal下载"></a>scrollReveal下载</h2><p>可以前往<a href="https://scrollrevealjs.org/" title="scrollReveal官网" target="_blank" rel="external">https://scrollrevealjs.org/</a>下载并预览该框架实现的特效。</p>
@@ -568,7 +568,7 @@ deploy:
     
     <entry>
       <title><![CDATA[框架之Wow]]></title>
-      <url>http://www.studyhtml5.com/2017/02/06/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-Wow/</url>
+      <url>http://www.gohtml.online/2017/02/06/%E6%A1%86%E6%9E%B6%E5%90%88%E9%9B%86-Wow/</url>
       <content type="html"><![CDATA[<p>我们已经了解了动画字体类框架Animate，但是Animate结合js或者jQuery使用还是太复杂，如何可以使开发者的工作更加高效呢？这时我们可以使用动画字体类的另外一个框架—Wow，该框架的名字对于我个人来说是十分亲切的—wower！<br><a id="more"></a></p>
 <h2 id="Wow框架的作用"><a href="#Wow框架的作用" class="headerlink" title="Wow框架的作用"></a>Wow框架的作用</h2><p>Wow框架是配套于Animate框架使用的，因为省去了大量的判断以及添加了丰富的<code>自定义属性</code>，所以通过Wow，我们可以更高效的开发出<code>滚动时</code>产生的特效：(Reveal Animations When You Scroll. Very Animate.css Friend Easily customize animation settings: style, delay, length, offset, iterations…)</p>
 <h2 id="Wow优点"><a href="#Wow优点" class="headerlink" title="Wow优点"></a>Wow优点</h2><p>轻量级、自定义效果方便快捷</p>
@@ -630,7 +630,7 @@ deploy:
     
     <entry>
       <title><![CDATA[浅析html语义化]]></title>
-      <url>http://www.studyhtml5.com/2017/01/27/html%E8%AF%AD%E4%B9%89%E5%8C%96/</url>
+      <url>http://www.gohtml.online/2017/01/27/html%E8%AF%AD%E4%B9%89%E5%8C%96/</url>
       <content type="html"><![CDATA[<p>提一个问题:什么是html语义化?相信有不少在前端摸爬滚打的同学都被问到过.今天大年三十,外面鞭炮轰轰,就借着着鞭炮声,来聊一聊html语义化.</p>
 <a id="more"></a>
 <h2 id="什么是html语义化"><a href="#什么是html语义化" class="headerlink" title="什么是html语义化"></a>什么是html语义化</h2><ul>
@@ -677,7 +677,7 @@ deploy:
     
     <entry>
       <title><![CDATA[css定位与浮动]]></title>
-      <url>http://www.studyhtml5.com/2016/12/22/css%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%B5%AE%E5%8A%A8%E6%B5%85%E6%9E%90/</url>
+      <url>http://www.gohtml.online/2016/12/22/css%E5%AE%9A%E4%BD%8D%E4%B8%8E%E6%B5%AE%E5%8A%A8%E6%B5%85%E6%9E%90/</url>
       <content type="html"><![CDATA[<p><code>定位(position)</code>和<code>浮动(float)</code>怕是css基础中最难掌握的两个点了,很多人都分不清什么时候该用定位,什么时候应该用浮动.而当两者在父子容器中使用时,更是一头雾水.</p>
 <a id="more"></a>
 <h2 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h2><blockquote>
@@ -762,7 +762,7 @@ deploy:
     
     <entry>
       <title><![CDATA[js闭包]]></title>
-      <url>http://www.studyhtml5.com/2016/12/05/javascript%E9%97%AD%E5%8C%85/</url>
+      <url>http://www.gohtml.online/2016/12/05/javascript%E9%97%AD%E5%8C%85/</url>
       <content type="html"><![CDATA[<p>闭包作为js中的重点也是难点,困扰了不少人,前人栽树后人乘凉,这些天拜读了多位大神级人物关于闭包的解析,故此站在其他巨人的肩膀上我在这里做一次基础性的总结</p>
 <a id="more"></a>
 <h2 id="百度解释"><a href="#百度解释" class="headerlink" title="百度解释"></a>百度解释</h2><blockquote>
@@ -843,7 +843,7 @@ deploy:
     
     <entry>
       <title><![CDATA[为什么要开Blog]]></title>
-      <url>http://www.studyhtml5.com/2016/10/01/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80git%E5%8D%9A%E5%AE%A2/</url>
+      <url>http://www.gohtml.online/2016/10/01/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80git%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<p>之前在<code>CSDN</code>,<code>新浪</code>也写过一段时间博客,但管理太过于混乱,经常提交失败.另外就是言论自由这个东西,算了,别扯远,反正考虑了许久,终归是放弃了CSDN这些blog.老早就听说git page还不错,于是便过来凑个热闹.</p>
 <a id="more"></a>
 <h2 id="为什么要写博客"><a href="#为什么要写博客" class="headerlink" title="为什么要写博客"></a>为什么要写博客</h2><ul>

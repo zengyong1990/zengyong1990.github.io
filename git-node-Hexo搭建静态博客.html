@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<meta name="author" content="Zengyong" />
+<meta name="keywords" content="zengyong,曾勇,html5,html,css3动画,js进阶,javascript教程,node.js,前端学习,studyhtml,曾勇的博客" />
+
+
+<meta name="description" content="早前用git+node.js+hexo搭建了一个静态博客，总之兜兜转转一大圈，因为无人一起讨论，所以也走了不少弯路，俗话说的好：在技术的世界里如果没经历过绝望，就说明你折腾的还不够。言归正传，前人栽树后人乘凉，今天在这里简单的讲解下博客搭建过程以及搭建过程中可能会遇到的问题。个人能力有限，本文不会就底层进行深入剖析。">
+<meta name="keywords" content="博客搭建,见解,git,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git+node.js+Hexo搭建静态博客">
+<meta property="og:url" content="http://www.zengyong.xin/git-node-Hexo搭建静态博客.html">
+<meta property="og:site_name" content="我会变得更好|因为我从未止步">
+<meta property="og:description" content="早前用git+node.js+hexo搭建了一个静态博客，总之兜兜转转一大圈，因为无人一起讨论，所以也走了不少弯路，俗话说的好：在技术的世界里如果没经历过绝望，就说明你折腾的还不够。言归正传，前人栽树后人乘凉，今天在这里简单的讲解下博客搭建过程以及搭建过程中可能会遇到的问题。个人能力有限，本文不会就底层进行深入剖析。">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/git/ssh.gif">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/git/%E5%85%AC%E9%92%A5.gif">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/git/1.gif">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/hexo/nodejs.jpg">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/hexo/nodejs2.jpg">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/hexo/hexoInit.gif">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/hexo.gif">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/git/gitStyle.jpg">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/hexo1.gif">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/git/2.gif">
+<meta property="og:image" content="http://ol5ro64tz.bkt.clouddn.com/git/3.gif">
+<meta property="og:updated_time" content="2017-06-15T06:21:54.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git+node.js+Hexo搭建静态博客">
+<meta name="twitter:description" content="早前用git+node.js+hexo搭建了一个静态博客，总之兜兜转转一大圈，因为无人一起讨论，所以也走了不少弯路，俗话说的好：在技术的世界里如果没经历过绝望，就说明你折腾的还不够。言归正传，前人栽树后人乘凉，今天在这里简单的讲解下博客搭建过程以及搭建过程中可能会遇到的问题。个人能力有限，本文不会就底层进行深入剖析。">
+<meta name="twitter:image" content="http://ol5ro64tz.bkt.clouddn.com/git/ssh.gif">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="我会变得更好|因为我从未止步" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>git+node.js+Hexo搭建静态博客 | 我会变得更好|因为我从未止步</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: null,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/author.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Zengyong</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">梦里能到达的地方 脚步也能到达</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">首页</a></li>
+                        
+                            <li><a href="/archives/">文章分类</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:545698514@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/zengyong" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zengyong1990" title="GitHub"></a>
+                            
+                                <a class="fa 豆瓣" href="https://www.douban.com/" title="豆瓣"></a>
+                            
+                                <a class="fa bilibili" href="http://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa AcFun" href="http://www.acfun.cn/" title="AcFun"></a>
+                            
+                                <a class="fa QQ" href="tencent://message/?uin=545698514&amp;Site=&amp;Menu=yes" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="http://weixin.qq.com/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animate/">Animate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wow/">Wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git配置/">git配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html语义化/">html语义化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画框架/">动画框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小技巧/">小技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浮动/">浮动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运动/">运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.runoob.com/html/html-quicklist.html">前端速查</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.iconfont.cn/plus/collections/index?type=2">阿里巴巴矢量图</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://regexper.com/">正则表达式分析工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://segmentfault.com/">segmentfault</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://portal.qiniu.com/signin">七牛云</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.jq22.com/daima">jQuery插件</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://xiuxiu.web.meitu.com/plugin/batch/taobao.html?channel=resize">美图在线处理工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.jianshu.com/p/e37410395956">好书推荐</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.markdown.cn/">markdown语法</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://javascript.ruanyifeng.com/">JavaScript标准参考教程</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://f2er.club/">醉牛前端</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.runoob.com/try/bootstrap/layoutit/">bootstrap可视化编辑器</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://blog.koalite.com/bbg/">bootstrap按钮定制</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io/zh-cn/docs/setup.html">hexo建站</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Zengyong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/author.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Zengyong</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">梦里能到达的地方 脚步也能到达</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">文章分类</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:545698514@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/zengyong" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zengyong1990" title="GitHub"></a>
+                            
+                                <a class="fa 豆瓣" target="_blank" href="https://www.douban.com/" title="豆瓣"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="http://www.bilibili.com/" title="bilibili"></a>
+                            
+                                <a class="fa AcFun" target="_blank" href="http://www.acfun.cn/" title="AcFun"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="tencent://message/?uin=545698514&amp;Site=&amp;Menu=yes" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="http://weixin.qq.com/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="[post]-git-node-Hexo搭建静态博客" class="article article-type-[post]" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/git-node-Hexo搭建静态博客.html" class="article-date">
+      <time datetime="2017-02-11T13:48:18.000Z" itemprop="datePublished">2017-02-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git+node.js+Hexo搭建静态博客
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/博客搭建/">博客搭建</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/见解/">见解</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>早前用git+node.js+hexo搭建了一个静态博客，总之兜兜转转一大圈，因为无人一起讨论，所以也走了不少弯路，俗话说的好：<code>在技术的世界里如果没经历过绝望，就说明你折腾的还不够</code>。言归正传，前人栽树后人乘凉，今天在这里简单的讲解下博客搭建过程以及搭建过程中可能会遇到的问题。个人能力有限，本文不会就底层进行深入剖析。</p>
+<a id="more"></a>
+<h2 id="git部分"><a href="#git部分" class="headerlink" title="git部分"></a>git部分</h2><ul>
+<li>在github官网<a href="https://github.com/" title="github" target="_blank" rel="external">https://github.com/</a>进行注册，并新建一个远程仓库,仓库名设置为{username}.github.io</li>
+<li>git下载：<a href="https://git-for-windows.github.io/" title="git下载" target="_blank" rel="external">https://git-for-windows.github.io/</a>，一直点击下一步安装即可。</li>
+<li>简单指令了解，稍后将会用到：<ul>
+<li>git init 初始化本地仓库</li>
+<li>git add . 将暂存区文件进行监听</li>
+<li>git status 查看文件状态</li>
+<li>git config user.name  ‘你的名字，英文表示’  本地配置用户名</li>
+<li>git config user.email ‘你的邮箱地址’  本地配置用户邮箱</li>
+<li>git remote add origin ‘git地址’ 本地与远程仓库关联</li>
+<li>git config <span>-</span><span>-</span>list 查看配置（包括本地配置local，全局配置global和系统配置system），检查用户名、邮箱和远程仓库关联是否成功。</li>
+<li>git push origin master 提交到远程仓库</li>
+<li>ssh-keygen 生成公钥私钥，可以在用户家目录<code>C:\Users\Administrator\.ssh</code>(Administrator更改为个人电脑登录名)中找到id_rsa.pub文件，用记事本打开id_rsa.pub，然后将id_rsa.pub的内容关联到github，下面的gif图片展示公钥添加方法：<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/ssh.gif" alt="ssh"><br><img src="http://ol5ro64tz.bkt.clouddn.com/git/%E5%85%AC%E9%92%A5.gif" alt="公钥"></li>
+</ul>
+</li>
+</ul>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/git/1.gif" alt="添加公钥方法"></p>
+<h2 id="node部分"><a href="#node部分" class="headerlink" title="node部分"></a>node部分</h2><ul>
+<li>node下载：<a href="http://nodejs.cn/download/" title="node下载" target="_blank" rel="external">http://nodejs.cn/download/</a>，一直点击下一步安装即可</li>
+</ul>
+<h2 id="hexo部分"><a href="#hexo部分" class="headerlink" title="hexo部分"></a>hexo部分</h2><ul>
+<li>当git和node都安装好之后，我们这时就可以安装hexo了，打开node.js命名行，输入<code>npm install -g hexo-cli</code>进行安装。（node.js命令行如下图所示）</li>
+</ul>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/nodejs.jpg" alt="nodejs命令行"><br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/nodejs2.jpg" alt="node.js"></p>
+<ul>
+<li><p>安装好后，我们在指定的博客目录使用git bash对其进行初始化<code>hexo init</code>，初始化完成后，我们可以看到如下结构的文件。如果期间出现报错，请在命令行输入<code>npm install hexo --save</code><br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo/hexoInit.gif" alt="hexo init"></p>
+<pre><code>├── _config.yml
+├── package.json
+├── scaffolds
+── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre></li>
+<li><p>其中_config.yml是我们的本地配置文件，source为资源文件，themes为主题文件合集，我们可以根据需要在网上下载中意的主题<a href="https://hexo.io/themes/" title="hexo主题" target="_blank" rel="external">https://hexo.io/themes/</a>进行配置。</p>
+</li>
+<li><p><code>hexo init</code>初始化结束后，我们可以通过<code>hexo g</code>在本地生成静态页面，然后再调用<code>hexo s --debug</code>运行400服务器查看博客效果（具体操作如下图）。<br><img src="http://ol5ro64tz.bkt.clouddn.com/hexo.gif" alt="hexo本地预览"></p>
+</li>
+<li><p>本地运行无误后，我们在本地配置文件_config.yml处修改配置信息，在配置文件中找到url和deploy，将对应的值修改如下形式：</p>
+<pre><code>url：个人github page地址
+deploy: 
+    type: git
+    repository: 
+          github: git@github.com:{你的仓库名}/{你的仓库名}.github.io.git,master        
+</code></pre></li>
+<li><p>接着我们可以利用第一部分学到的git命令行与远程仓库相关联</p>
+<ol>
+<li>git init  初始化</li>
+<li>git remote add origin ‘git地址’   本地仓库与远程仓库相关联</li>
+<li>git config user.name  ‘你的名字，英文表示’  本地配置用户名</li>
+<li>git config user.email ‘你的邮箱地址’  本地配置用户邮箱</li>
+<li>git config <span>-</span><span>-</span>list 查看是否关联成功，当出现如下图所示的信息后，表示配置成功<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/gitStyle.jpg" alt="git配置"></li>
+</ol>
+</li>
+<li><p>以上所有的步骤都做好之后，这时我们就可以通过’hexo g -d’将本地的静态页面提交到git上面了，等待几分钟后，就可以通过对应的gitpage进行访问了。例如我们的git仓库名是zengyong1990.github.io那么我们的博客url地址就是<code>https://zengyong1990.github.io</code></p>
+</li>
+</ul>
+<p><img src="http://ol5ro64tz.bkt.clouddn.com/hexo1.gif" alt="http://ol5ro64tz.bkt.clouddn.com/hexo1.gif" title="将博客部署到github"></p>
+<h2 id="配置自定义域名"><a href="#配置自定义域名" class="headerlink" title="配置自定义域名"></a>配置自定义域名</h2><ul>
+<li><p>静态页面搭建成功了，但是觉得github提供的二级域名太别扭怎么办?我们可以通过域名映射来解决，首先我们需要注册一个域名，由于我的域名是通过<code>阿里云</code>注册的，本章节均已阿里云进行展开说明。域名注册后，我们点击阿里云后台进行域名解析，这里推荐使用<code>新手引导设置</code>，如图所示。<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/2.gif" alt="域名解析"></p>
+</li>
+<li><p>接着我们到github页面设置远程仓库属性，如下图<br><img src="http://ol5ro64tz.bkt.clouddn.com/git/3.gif" alt="github域名配置"></p>
+</li>
+</ul>
+<h2 id="碰到的问题与解决方法"><a href="#碰到的问题与解决方法" class="headerlink" title="碰到的问题与解决方法"></a>碰到的问题与解决方法</h2><h3 id="通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案"><a href="#通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案" class="headerlink" title="通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案"></a>通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案</h3><blockquote>
+<p> hexo d的时候提示ERROR Deployer not found: Git </p>
+</blockquote>
+<ul>
+<li>解决方案： <code>npm install hexo-deployer-git --save</code></li>
+</ul>
+<blockquote>
+<p>git的时候提示modified: xxx(modified content, untracked content)</p>
+</blockquote>
+<ul>
+<li>解决方案：表示文件没被跟踪，我们可以找到对应文件目录，在其子目录中删除其中的.git文件夹。</li>
+</ul>
+<blockquote>
+<p>$ npm install hexo-cli -g报npm WARN optional dep failed, continuing fsevents</p>
+</blockquote>
+<ul>
+<li>解决方案：<code>npm cache clean</code></li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
+<li>个人能力有限，语言组织也为自身短板所在，在讲解个人博客搭建过程中难免会出现纰漏，还请谅解。</li>
+<li>通过搭建github pages托管的静态博客还是有些复杂的，因为有一定的技术门槛，所以真正想尝试的人不多。我建议的是大家应该有理性的思考，不要被他人的看法所左右，对自己发展有利的东西，只要能合理的分配个人时间，都是可以去尝试的。</li>
+<li>该静态博客的主要优点就是能让我们方便的进行博文编写，因为数据都在本地，所以我们可以选择适合自己的编辑软件去编写博文，而网络上的其他博客却做不到；另外网络博客麻烦之处在于各种关键字的屏蔽和大量广告的滋生，对于大部分人来说，是极其不原因看到这种情况的发生的，但是却又无可奈何，毕竟是暂住在别人家，而这里这种现象基本是不存在的，因为我们就是博客的主人。</li>
+</ul>
+<blockquote>
+<p>总而言之，感兴趣的朋友都可以根据该文的步骤走一遍，在搭建博客的过程中遇到任何问题，都欢迎拍砖讨论</p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/git-node-Hexo搭建静态博客.html">git+node.js+Hexo搭建静态博客</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Zengyong</a></p>
+        <p><span>发布时间:</span>2017-02-11, 21:48:18</p>
+        <p><span>最后更新:</span>2017-06-15, 14:21:54</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/git-node-Hexo搭建静态博客.html" title="git+node.js+Hexo搭建静态博客">http://www.zengyong.xin/git-node-Hexo搭建静态博客.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.zengyong.xin/git-node-Hexo搭建静态博客.html　　作者: Zengyong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/闲聊canvas画布宽高设置.html">
+                    闲聊canvas画布宽高设置
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/html语义化.html">
+                    浅析html语义化
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git部分"><span class="toc-number">1.</span> <span class="toc-text">git部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node部分"><span class="toc-number">2.</span> <span class="toc-text">node部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo部分"><span class="toc-number">3.</span> <span class="toc-text">hexo部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置自定义域名"><span class="toc-number">4.</span> <span class="toc-text">配置自定义域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#碰到的问题与解决方法"><span class="toc-number">5.</span> <span class="toc-text">碰到的问题与解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案"><span class="toc-number">5.1.</span> <span class="toc-text">通过git、node和hexo搭建博客时，如果按照上述步骤来做基本的问题都可以避开，但是不确保完全没有问题发生，以下为收集的几个常见问题和解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">6.</span> <span class="toc-text">后记</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"git+node.js+Hexo搭建静态博客　| 我会变得更好|因为我从未止步　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/闲聊canvas画布宽高设置.html" title="上一篇: 闲聊canvas画布宽高设置">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/html语义化.html" title="下一篇: 浅析html语义化">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/webstorm浏览器预览时提示localhost连接失败.html">webstorm浏览器预览时提示localhost连接失败</a></li><li class="post-list-item"><a class="post-list-link" href="/angular杂项.html">angular杂项</a></li><li class="post-list-item"><a class="post-list-link" href="/angular控制器.html">angular控制器</a></li><li class="post-list-item"><a class="post-list-link" href="/angular学习笔记.html">angular1.6知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/webstorm配置git.html">webstorm配置git</a></li><li class="post-list-item"><a class="post-list-link" href="/闲聊canvas画布宽高设置.html">闲聊canvas画布宽高设置</a></li><li class="post-list-item"><a class="post-list-link" href="/git-node-Hexo搭建静态博客.html">git+node.js+Hexo搭建静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/html语义化.html">浅析html语义化</a></li><li class="post-list-item"><a class="post-list-link" href="/字体图标的那些事.html">字体图标的那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/javascript回弹运动.html">js运动之回弹运动</a></li><li class="post-list-item"><a class="post-list-link" href="/javascript闭包.html">js闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-scrollReveal.html">框架之scrollReveal</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-Wow.html">框架之Wow</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-animate.html">CSS3动画框架之Animate</a></li><li class="post-list-item"><a class="post-list-link" href="/css定位与浮动浅析.html">css定位与浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/为什么开git博客.html">为什么要开Blog</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 Zengyong
+            </div>
+            <div class="footer-right">
+                拼搏 &nbsp;求知&nbsp; 进取&nbsp; 明智
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "进取 |" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "执着 |" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

@@ -4,15 +4,34 @@
   
     
     <entry>
-      <title><![CDATA[webstorm浏览器预览时提示localhost连接失败]]></title>
-      <url>http://www.zengyong.xin/webstorm%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A2%84%E8%A7%88%E6%97%B6%E6%8F%90%E7%A4%BAlocalhost%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5.html</url>
-      <content type="html"><![CDATA[<p>webstorm浏览器预览时提示localhost连接失败，以下为解决方案<br><a id="more"></a></p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>最近几天用webstorm做项目，可是突然使用webstorm用浏览器调试时，提示localhost:63342连接不上，让我检查代理服务和网络。如果出现这样的问题，可以使用如下方法解决：</p>
+      <title><![CDATA[webstorm小技巧整理]]></title>
+      <url>http://www.zengyong.xin/webstorm%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%95%B4%E7%90%86.html</url>
+      <content type="html"><![CDATA[<p>webstorm是一款非常强大的前端编辑器，内置的插件能让我们进行高效的项目开发。这里整理一下个人使用ws的一些小技巧，不定期进行更新。<br><a id="more"></a></p>
+<h2 id="webstrom内建的端口（localhost-63342）连接不上"><a href="#webstrom内建的端口（localhost-63342）连接不上" class="headerlink" title="webstrom内建的端口（localhost:63342）连接不上"></a>webstrom内建的端口（localhost:63342）连接不上</h2><p>问题描述：用ws打开浏览器，提示localhost:63342连接不上，需要检查代理服务和网络。如果出现这样的问题，可以使用如下方法解决：</p>
 <p>打开webstorm的安装目录，找到/bin/WebStorm.exe.vmoptions文件，在其中添加以下两行代码：</p>
 <pre><code>-Drpc.port=53342
 -Drpc.onlyAnyHost=true
 </code></pre><p>保存后然后重启webstorm，完美解决。</p>
 <p>如果觉得webstorm自带的服务器端口号太丑陋，我们也可以进行修改，下图为调整方式<br><img src="http://ol5ro64tz.bkt.clouddn.com/%E6%9B%B4%E6%8D%A2%E7%AB%AF%E5%8F%A3%E5%8F%B7.png" alt="ws端口更换"></p>
+<h2 id="搜索替换快捷键"><a href="#搜索替换快捷键" class="headerlink" title="搜索替换快捷键"></a>搜索替换快捷键</h2><p>ws默认快捷键如下：</p>
+<p>单个页面搜索ctrl+F，</p>
+<p>单个页面内替换 ctrl+R</p>
+<p>全局搜索ctrl+shift+F</p>
+<p>全局替换ctrl+shift+R</p>
+<p>下图以全局搜索为例（通过菜单进行操作）：<br><img src="http://ol5ro64tz.bkt.clouddn.com/webstorm/%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2.gif" alt="全局搜索"></p>
+<h2 id="同一个ws窗口打开多个项目"><a href="#同一个ws窗口打开多个项目" class="headerlink" title="同一个ws窗口打开多个项目"></a>同一个ws窗口打开多个项目</h2><p><img src="http://ol5ro64tz.bkt.clouddn.com/webstorm/%E5%90%8C%E4%B8%80%E5%B7%A5%E7%A8%8B%E6%89%93%E5%BC%80%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE.gif" alt="ws一个窗口打开多个项目"></p>
+<h2 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h2><p>前提：已安装git和webstrom，由于个人使用webstorm2017.1版本，所以以下截图以该版本进行说明，其他版本若有出入，请自行谷歌。</p>
+<ol>
+<li>通过file-Settings进入设置页面（ws中默认快捷键为ctrl+alt+s）;</li>
+<li><p>搜索git，在Path to Git exectable处选择git执行路径.（做好之后点击test，如果配置成功系统会给以相应提示，错误就会提示找不到文件）</p>
+<p> <img src="http://ol5ro64tz.bkt.clouddn.com/gitgit1.png?imageslim" alt="git配置"></p>
+</li>
+<li><p>配置好git后我们需要在本机生成公钥私钥（ssh-keygen），然后在github上进行配置ssh。</p>
+</li>
+<li><p>在webstorm中配置创建的项目（具体远程仓库地址，本地仓库以及项目名自行配置），至此，我们以成功在webstrom中配置了git<br><img src="http://ol5ro64tz.bkt.clouddn.com/gitgit2.png" alt="项目配置git"></p>
+<p> <img src="http://ol5ro64tz.bkt.clouddn.com/gitgit3.png" alt="项目配置git2"></p>
+</li>
+</ol>
 ]]></content>
       
         <categories>
@@ -89,9 +108,9 @@ angular.forEach(objs, <span class="function"><span class="keyword">function</spa
     </entry>
     
     <entry>
-      <title><![CDATA[angular控制器]]></title>
-      <url>http://www.zengyong.xin/angular%E6%8E%A7%E5%88%B6%E5%99%A8.html</url>
-      <content type="html"><![CDATA[<p> 探究angular控制器，本文主要说明控制器间如何进行数据通信。<br><a id="more"></a></p>
+      <title><![CDATA[angular控制器及数据通信]]></title>
+      <url>http://www.zengyong.xin/angular%E6%8E%A7%E5%88%B6%E5%99%A8%E5%8F%8A%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1.html</url>
+      <content type="html"><![CDATA[<p> 探究angular控制器，本文主要说明控制器及控制器之间进行数据通信。<br><a id="more"></a></p>
 <blockquote>
 <p>首先说明————-以下观点纯属个人看法，说错了别打我</p>
 </blockquote>
@@ -248,39 +267,6 @@ angular.forEach(objs, <span class="function"><span class="keyword">function</spa
     </entry>
     
     <entry>
-      <title><![CDATA[webstorm配置git]]></title>
-      <url>http://www.zengyong.xin/webstorm%E9%85%8D%E7%BD%AEgit.html</url>
-      <content type="html"><![CDATA[<p>一直在用webstorm，这里简单整理下webstorm配置git的步骤<br><a id="more"></a></p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>前提：已安装git和webstrom，由于个人使用webstorm2017.1版本，所以以下截图以该版本进行说明，其他版本若有出入，请自行谷歌。</p>
-<ol>
-<li>通过file-Settings进入设置页面（ws中默认快捷键为ctrl+alt+s）;</li>
-<li><p>搜索git，在Path to Git exectable处选择git执行路径.（做好之后点击test，如果配置成功系统会给以相应提示，错误就会提示找不到文件）</p>
-<p> <img src="http://ol5ro64tz.bkt.clouddn.com/gitgit1.png?imageslim" alt="git配置"></p>
-</li>
-<li><p>配置好git后我们需要在本机生成公钥私钥（ssh-keygen），然后在github上进行配置ssh。</p>
-</li>
-<li><p>在webstorm中配置创建的项目（具体远程仓库地址，本地仓库以及项目名自行配置），至此，我们以成功在webstrom中配置了git<br><img src="http://ol5ro64tz.bkt.clouddn.com/gitgit2.png" alt="项目配置git"></p>
-<p> <img src="http://ol5ro64tz.bkt.clouddn.com/gitgit3.png" alt="项目配置git2"></p>
-</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> git </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> git配置 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[闲聊canvas画布宽高设置]]></title>
       <url>http://www.zengyong.xin/%E9%97%B2%E8%81%8Acanvas%E7%94%BB%E5%B8%83%E5%AE%BD%E9%AB%98%E8%AE%BE%E7%BD%AE.html</url>
       <content type="html"><![CDATA[<p>canvas真是让人又爱又恨的Html标签，爱的是开发者可以把整个屏幕当作一个画布使用，在这张画布上我们能够发挥自己的想象力进行绘图，恨的是虽然canvas提供的api并不多，给人造成一种极容易上手的假象，其实如果没有扎实的js功底、想通过canvas绘制一副自己满意的作品着实有些难度。今天这里我们要探讨的并不是通过canvas如何作图，而是聊一聊canvas宽高的设置。</p>
@@ -431,9 +417,9 @@ deploy:
         
         <tags>
             
-            <tag> 博客搭建 </tag>
-            
             <tag> 见解 </tag>
+            
+            <tag> 博客搭建 </tag>
             
             <tag> git </tag>
             
@@ -480,9 +466,9 @@ deploy:
         
         <tags>
             
-            <tag> 见解 </tag>
-            
             <tag> html </tag>
+            
+            <tag> 见解 </tag>
             
             <tag> html语义化 </tag>
             
@@ -1058,8 +1044,6 @@ deploy:
         
         <tags>
             
-            <tag> 见解 </tag>
-            
             <tag> html </tag>
             
             <tag> css </tag>
@@ -1067,6 +1051,8 @@ deploy:
             <tag> 定位 </tag>
             
             <tag> 浮动 </tag>
+            
+            <tag> 见解 </tag>
             
         </tags>
         

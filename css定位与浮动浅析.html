@@ -17,7 +17,7 @@
 
 
 <meta name="description" content="定位(position)和浮动(float)怕是css基础中最难掌握的两个点了,很多人都分不清什么时候该用定位,什么时候应该用浮动.而当两者在父子容器中使用时,更是一头雾水.">
-<meta name="keywords" content="见解,html,css,定位,浮动">
+<meta name="keywords" content="html,css,定位,浮动,见解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css定位与浮动">
 <meta property="og:url" content="http://www.zengyong.xin/css定位与浮动浅析.html">
@@ -38,6 +38,8 @@
     <link rel="shortcut icon" href="/favicon.png">
 
 
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
 
 
@@ -64,7 +66,7 @@
 <script>
     var yiliaConfig = {
         fancybox: true,
-        animate: null,
+        animate: true,
         isHome: false,
         isPost: true,
         isArchive: false,
@@ -195,7 +197,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animate/">Animate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wow/">Wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git配置/">git配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html语义化/">html语义化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画框架/">动画框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小技巧/">小技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浮动/">浮动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运动/">运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animate/">Animate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wow/">Wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html语义化/">html语义化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画框架/">动画框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小技巧/">小技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浮动/">浮动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运动/">运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
                     </div>
                 </section>
                 
@@ -514,7 +516,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/webstorm浏览器预览时提示localhost连接失败.html">webstorm浏览器预览时提示localhost连接失败</a></li><li class="post-list-item"><a class="post-list-link" href="/angular杂项.html">angular杂项</a></li><li class="post-list-item"><a class="post-list-link" href="/angular控制器.html">angular控制器</a></li><li class="post-list-item"><a class="post-list-link" href="/angular学习笔记.html">angular1.6知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/webstorm配置git.html">webstorm配置git</a></li><li class="post-list-item"><a class="post-list-link" href="/闲聊canvas画布宽高设置.html">闲聊canvas画布宽高设置</a></li><li class="post-list-item"><a class="post-list-link" href="/git-node-Hexo搭建静态博客.html">git+node.js+Hexo搭建静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/html语义化.html">浅析html语义化</a></li><li class="post-list-item"><a class="post-list-link" href="/字体图标的那些事.html">字体图标的那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/javascript回弹运动.html">js运动之回弹运动</a></li><li class="post-list-item"><a class="post-list-link" href="/javascript闭包.html">js闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-scrollReveal.html">框架之scrollReveal</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-Wow.html">框架之Wow</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-animate.html">CSS3动画框架之Animate</a></li><li class="post-list-item"><a class="post-list-link" href="/css定位与浮动浅析.html">css定位与浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/为什么开git博客.html">为什么要开Blog</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/webstorm小技巧整理.html">webstorm小技巧整理</a></li><li class="post-list-item"><a class="post-list-link" href="/angular杂项.html">angular杂项</a></li><li class="post-list-item"><a class="post-list-link" href="/angular控制器及数据通信.html">angular控制器及数据通信</a></li><li class="post-list-item"><a class="post-list-link" href="/angular学习笔记.html">angular1.6知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/闲聊canvas画布宽高设置.html">闲聊canvas画布宽高设置</a></li><li class="post-list-item"><a class="post-list-link" href="/git-node-Hexo搭建静态博客.html">git+node.js+Hexo搭建静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/html语义化.html">浅析html语义化</a></li><li class="post-list-item"><a class="post-list-link" href="/字体图标的那些事.html">字体图标的那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/javascript回弹运动.html">js运动之回弹运动</a></li><li class="post-list-item"><a class="post-list-link" href="/javascript闭包.html">js闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-scrollReveal.html">框架之scrollReveal</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-Wow.html">框架之Wow</a></li><li class="post-list-item"><a class="post-list-link" href="/框架合集-animate.html">CSS3动画框架之Animate</a></li><li class="post-list-item"><a class="post-list-link" href="/css定位与浮动浅析.html">css定位与浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/为什么开git博客.html">为什么要开Blog</a></li></ul>
 
 
 

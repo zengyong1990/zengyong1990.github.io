@@ -40,6 +40,8 @@
 
 
 
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
 
 
     <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
@@ -53,6 +55,8 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
+    <style> .article { opacity: 0;} </style>
+
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
@@ -65,7 +69,7 @@
 <script>
     var yiliaConfig = {
         fancybox: true,
-        animate: null,
+        animate: true,
         isHome: true,
         isPost: false,
         isArchive: false,
@@ -196,7 +200,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animate/">Animate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wow/">Wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git配置/">git配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html语义化/">html语义化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画框架/">动画框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小技巧/">小技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浮动/">浮动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运动/">运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animate/">Animate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wow/">Wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html语义化/">html语义化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scrollReveal/">scrollReveal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画框架/">动画框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/定位/">定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小技巧/">小技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浮动/">浮动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运动/">运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
                     </div>
                 </section>
                 
@@ -301,10 +305,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-webstorm浏览器预览时提示localhost连接失败" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-webstorm小技巧整理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/webstorm浏览器预览时提示localhost连接失败.html" class="article-date">
+      <a href="/webstorm小技巧整理.html" class="article-date">
       <time datetime="2017-06-22T02:02:18.000Z" itemprop="datePublished">2017-06-22</time>
 </a>
 
@@ -320,7 +324,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/webstorm浏览器预览时提示localhost连接失败.html">webstorm浏览器预览时提示localhost连接失败</a>
+      <a class="article-title" href="/webstorm小技巧整理.html">webstorm小技巧整理</a>
     </h1>
   
 
@@ -330,7 +334,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>webstorm浏览器预览时提示localhost连接失败，以下为解决方案<br>
+              <p>webstorm是一款非常强大的前端编辑器，内置的插件能让我们进行高效的项目开发。这里整理一下个人使用ws的一些小技巧，不定期进行更新。<br>
           
       
     </div>
@@ -350,7 +354,7 @@
 
       
         <p class="article-more-link">
-          <a href="/webstorm浏览器预览时提示localhost连接失败.html#more">阅读全文 >></a>
+          <a href="/webstorm小技巧整理.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -437,10 +441,10 @@
 
 
   
-    <article id="post-angular控制器" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-angular控制器及数据通信" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/angular控制器.html" class="article-date">
+      <a href="/angular控制器及数据通信.html" class="article-date">
       <time datetime="2017-06-15T07:02:18.000Z" itemprop="datePublished">2017-06-15</time>
 </a>
 
@@ -456,7 +460,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/angular控制器.html">angular控制器</a>
+      <a class="article-title" href="/angular控制器及数据通信.html">angular控制器及数据通信</a>
     </h1>
   
 
@@ -466,7 +470,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p> 探究angular控制器，本文主要说明控制器间如何进行数据通信。<br>
+              <p> 探究angular控制器，本文主要说明控制器及控制器之间进行数据通信。<br>
           
       
     </div>
@@ -486,7 +490,7 @@
 
       
         <p class="article-more-link">
-          <a href="/angular控制器.html#more">阅读全文 >></a>
+          <a href="/angular控制器及数据通信.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -573,74 +577,6 @@
 
 
   
-    <article id="post-webstorm配置git" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/webstorm配置git.html" class="article-date">
-      <time datetime="2017-05-06T09:02:18.000Z" itemprop="datePublished">2017-05-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/webstorm配置git.html">webstorm配置git</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>一直在用webstorm，这里简单整理下webstorm配置git的步骤<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/git/">git</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git配置/">git配置</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/webstorm配置git.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-闲聊canvas画布宽高设置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -691,6 +627,74 @@
       
         <p class="article-more-link">
           <a href="/闲聊canvas画布宽高设置.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="[post]-git-node-Hexo搭建静态博客" class="article article-type-[post]" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/git-node-Hexo搭建静态博客.html" class="article-date">
+      <time datetime="2017-02-11T13:48:18.000Z" itemprop="datePublished">2017-02-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/git-node-Hexo搭建静态博客.html">git+node.js+Hexo搭建静态博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>早前用git+node.js+hexo搭建了一个静态博客，总之兜兜转转一大圈，因为无人一起讨论，所以也走了不少弯路，俗话说的好：<code>在技术的世界里如果没经历过绝望，就说明你折腾的还不够</code>。言归正传，前人栽树后人乘凉，今天在这里简单的讲解下博客搭建过程以及搭建过程中可能会遇到的问题。个人能力有限，本文不会就底层进行深入剖析。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/博客搭建/">博客搭建</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/见解/">见解</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/git-node-Hexo搭建静态博客.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

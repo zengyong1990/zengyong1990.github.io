@@ -16,17 +16,17 @@
 <meta name="keywords" content="zengyong,曾勇,html5,html,css3动画,js进阶,javascript教程,node.js,前端学习,studyhtml,曾勇的博客" />
 
 
-<meta name="description" content="闭包作为js中的重点也是难点,困扰了不少人,前人栽树后人乘凉,这些天拜读了多位大神级人物关于闭包的解析,故此站在其他巨人的肩膀上我在这里做一次基础性的总结">
-<meta name="keywords" content="javascript,闭包,js">
+<meta name="description" content="探究angular控制器，本文主要说明控制器及控制器之间进行数据通信。">
+<meta name="keywords" content="angular">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js闭包">
-<meta property="og:url" content="http://www.zengyong.xin/javascript闭包.html">
+<meta property="og:title" content="angular控制器及数据通信">
+<meta property="og:url" content="http://www.zengyong.xin/angular控制器及数据通信.html">
 <meta property="og:site_name" content="我会变得更好|因为我从未止步">
-<meta property="og:description" content="闭包作为js中的重点也是难点,困扰了不少人,前人栽树后人乘凉,这些天拜读了多位大神级人物关于闭包的解析,故此站在其他巨人的肩膀上我在这里做一次基础性的总结">
-<meta property="og:updated_time" content="2017-06-15T06:22:03.587Z">
+<meta property="og:description" content="探究angular控制器，本文主要说明控制器及控制器之间进行数据通信。">
+<meta property="og:updated_time" content="2017-10-17T09:04:34.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js闭包">
-<meta name="twitter:description" content="闭包作为js中的重点也是难点,困扰了不少人,前人栽树后人乘凉,这些天拜读了多位大神级人物关于闭包的解析,故此站在其他巨人的肩膀上我在这里做一次基础性的总结">
+<meta name="twitter:title" content="angular控制器及数据通信">
+<meta name="twitter:description" content="探究angular控制器，本文主要说明控制器及控制器之间进行数据通信。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>js闭包 | 我会变得更好|因为我从未止步</title>
+<title>angular控制器及数据通信 | 我会变得更好|因为我从未止步</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -300,11 +300,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-javascript闭包" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-angular控制器及数据通信" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/javascript闭包.html" class="article-date">
-      <time datetime="2016-06-05T13:48:18.000Z" itemprop="datePublished">2016-06-05</time>
+      <a href="/angular控制器及数据通信.html" class="article-date">
+      <time datetime="2017-06-15T07:02:18.000Z" itemprop="datePublished">2017-06-15</time>
 </a>
 
 
@@ -319,7 +319,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js闭包
+      angular控制器及数据通信
     </h1>
   
 
@@ -328,13 +328,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+    <a class="article-category-link" href="/categories/angular/">angular</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -344,63 +344,44 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>闭包作为js中的重点也是难点,困扰了不少人,前人栽树后人乘凉,这些天拜读了多位大神级人物关于闭包的解析,故此站在其他巨人的肩膀上我在这里做一次基础性的总结</p>
-<a id="more"></a>
-<h2 id="百度解释"><a href="#百度解释" class="headerlink" title="百度解释"></a>百度解释</h2><blockquote>
-<p>闭包是指可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。“闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）</p>
-</blockquote>
-<ul>
-<li>百度的解释比较官方,个人觉得算是比较好懂,当然是相对于有基础的friends而言,我相信很多人看了这解释也是云里雾里,话不多说我们来剖析下到底什么是闭包.</li>
-</ul>
-<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><h3 id="变量作用域-1"><a href="#变量作用域-1" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>在说闭包之前,我们先说一个概念—变量的作用域,直白点来说变量作用域就是指变量的作用范围,在js中变量的作用域无非以下两种:</p>
-<ul>
-<li>全局变量<blockquote>
-<p>demo1</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	alert(a); </div><div class="line">&#125;</div><div class="line">getNum();<span class="comment">//1000</span></div></pre></td></tr></table></figure>
-<ul>
-<li>局部变量<blockquote>
-<p>demo2</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    alert(a);</div><div class="line">&#125;</div><div class="line">getNum();<span class="comment">//1000;</span></div><div class="line">alert(a); <span class="comment">// a is not defined</span></div></pre></td></tr></table></figure>
-<p>通过以上的例子说明了至少两个问题:</p>
-<ol>
-<li>全局变量可以在函数内部进行访问</li>
-<li><p>局部变量是在函数内部定义的,并且在函数外部无法直接访问</p>
-<ul>
-<li>由此引出了我们需要解决的问题,我们想在<code>函数外部</code>获取到函数内部的变量如何去做?<br>在解决这个问题之前,我们先来解决另外一个问题,如何获取函数内部的变量–&gt;我们可以通过在函数内部再定义一个函数来解决.</li>
-</ul>
-</li>
-</ol>
+        <p> 探究angular控制器，本文主要说明控制器及控制器之间进行数据通信。<br><a id="more"></a></p>
 <blockquote>
-<p>demo3<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(a); <span class="comment">//1000    </span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>首先说明————-以下观点纯属个人看法，说错了别打我</p>
 </blockquote>
-<p>既然我们能够通过定义子函数来获取函数内部的变量,那么只需要借助于return返回值,将该函数返回出去,我们就不就可以在函数外部获取到函数内部的变量的了吗?废话不多说,直接试一试.</p>
-<blockquote>
-<p>demo4<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1000</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(a);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> getA;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> temp = getNum();</div><div class="line">temp(); <span class="comment">//1000;</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>果然我们在函数外部通过return获取到了函数内部的变量.</p>
-<h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><h3 id="刚才演示的demo4就是闭包"><a href="#刚才演示的demo4就是闭包" class="headerlink" title="刚才演示的demo4就是闭包"></a>刚才演示的<strong>demo4</strong>就是闭包</h3><ol>
-<li>我们通过观察demo4可以发现,闭包其实就是一个函数,是一个什么函数呢?一个<code>有权限访问其他函数作用域中变量的函数</code>.</li>
-<li>js中闭包这个函数比较特殊,因为刚才我们说到了js中正常的情况下在函数外部是无法访问函数内部的变量.要想访问,我们必须使用函数套函数的方式进行实现,所以说闭包给人的直观感觉就是<code>定义在一个函数内部的函数</code>.</li>
-</ol>
-<h2 id="那么闭包有什么作用呢"><a href="#那么闭包有什么作用呢" class="headerlink" title="那么闭包有什么作用呢?"></a>那么闭包有什么作用呢?</h2><ol>
-<li>通过闭包我们可以获取到函数内部的变量</li>
-<li>使变量在内存中一直存在,就是延长局部变量的生命周期,这又牵扯到一个问题:js垃圾回收机制.简单来说,局部变量在函数调用后就会被销毁.要想再函数调用后不被销毁,那么我们就可以使用闭包,这点既可以说是闭包的优点也算它的缺点.我们可以通过以下代码来说明这个问题:<blockquote>
-<p>demo5</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">    nAdd=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;n+=<span class="number">1</span>&#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(n);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> result=f1();</div><div class="line">result(); <span class="comment">// 999</span></div><div class="line">nAdd();</div><div class="line">result(); <span class="comment">// 1000</span></div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<p>通过该例可以看出在函数调用后,变量n并没有被销毁,而是仍然存在于内存中,result调用了两次,实质上result就是f2的闭包函数.<br><b style="color:skyblue">可能有人会有疑问:为什么变量n没有被销毁呢?</b></p>
-<ul>
-<li>因为f2被赋予result,而result是全局函数,只要window不关闭,那么他就不会消失,所以导致了f2一直存在在内存中,而f2是在f1中定义的,就是说f2是依赖f1生活,所以f2不死,f1也不会消亡,所以其内部变量n也会一直存在.</li>
+<h2 id="为什么要使用控制器"><a href="#为什么要使用控制器" class="headerlink" title="为什么要使用控制器"></a>为什么要使用控制器</h2><ul>
+<li>angular真的很奇怪，它不能直接与js进行交互，为了让js与angular能够实现交互，这时控制器诞生了。比如如下的demo1，直接在ng-click中写alert是无效的，因此我们需要改版为demo2。</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于闭包,个人理解的也不够深刻,只能根据他人的解释然后进行浅显的解读,以后会继续进行补充,此文纯属抛砖引入.</p>
+<h3 id="demo1"><a href="#demo1" class="headerlink" title="demo1"></a>demo1</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点我弹窗"</span> <span class="attr">ng-click</span>=<span class="string">"alert(1)"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="demo2"><a href="#demo2" class="headerlink" title="demo2"></a>demo2</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点我弹窗"</span> <span class="attr">ng-click</span>=<span class="string">"showModel()"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>,[]);</div><div class="line">  app.controller(<span class="string">'zyCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">      $scope.showModel = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          alert(<span class="number">1</span>);</div><div class="line">      &#125;</div><div class="line">  &#125;])</div></pre></td></tr></table></figure>
+<ul>
+<li>观察上述代码：我们通过app.controller(‘zyCtrl’,[‘$scope’,function ($scope) {}])定义了一个控制器，这个控制器名字是zyCtrl，但是后面的数组是什么？官方学名叫<code>依赖注入</code>，我理解的是控制器需要什么，就注入什么服务。当然依赖注入还有另外一种写法—–<code>推断式注入</code>：app.controller(‘zyCtrl’,function($scope){}),但是不推荐使用，因为上线时我们的代码需要丑化，所以这个过程只适用于未经过压缩和混淆的代码。关于注入方式可以参考这篇文章&gt;&gt;<a href="http://blog.csdn.net/luo_xinran/article/details/52153830" title="依赖注入的方式" target="_blank" rel="external">依赖注入的方式</a></li>
+</ul>
+<h2 id="控制器间的数据通信"><a href="#控制器间的数据通信" class="headerlink" title="控制器间的数据通信"></a>控制器间的数据通信</h2><p>控制器作为view与model交互的纽带，当项目达到一定的程度，自然而然的牵涉到控制器间的数据通信。这里总结了几种控制器间的数据通信方法</p>
+<ul>
+<li>创建一个服务factory作为媒介进行传递</li>
+<li>通过$scope作用域继承关系</li>
+<li>基于事件$on,$emit,$boardcast</li>
+</ul>
+<h3 id="创建一个服务factory作为媒介进行通信"><a href="#创建一个服务factory作为媒介进行通信" class="headerlink" title="创建一个服务factory作为媒介进行通信"></a>创建一个服务factory作为媒介进行通信</h3><p>这里主要利用了angular的服务是一个单例，我们只需要将创建的服务注入到相应的控制器中，就可以利用这个单例进行数据的传递。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn2"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.factory(<span class="string">"myService"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">btn</span>:<span class="string">'我是服务，一个单例哟'</span></div><div class="line">    &#125;;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope,myService</span>) </span>&#123;</div><div class="line">    $scope.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        myService.btn = $scope.btn1;</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope,myService</span>) </span>&#123;</div><div class="line">    $scope.btn2 = myService.btn;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn2 = myService.btn;</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h3 id="通过-scope作用域继承关系通信"><a href="#通过-scope作用域继承关系通信" class="headerlink" title="通过$scope作用域继承关系通信"></a>通过$scope作用域继承关系通信</h3><p>这种其实不必多说，就是利用了作用域，向上查找。有两种情况：</p>
+<ul>
+<li>传递的值为值类型 修改父的子会改，修改子的父不变 <code>解决方法：</code>子控制器使用$scope.$parent</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn1 = <span class="string">"我被老爸点了"</span>；</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.btn1 = <span class="string">"我被孩子点了"</span>； <span class="comment">//解决方案 $scope.$parent.btn1 = "我被孩子点了"；</span></div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<ul>
+<li>传递的值为引用类型 双向绑定</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"ctrlConfig.btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"ctrlConfig.btn1"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.ctrlConfig = &#123;&#125;;</div><div class="line">    $scope.ctrlConfig.btn1 = <span class="string">"我是btn1"</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.ctrlConfig.btn1 = <span class="string">"我被爹点了"</span></div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.ctrlConfig.btn1 = <span class="string">"我被儿子点了"</span></div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<p>我们可以利用引用类型的特性，再顶层创建一个总控制器，定义一个配置属性，该属性为引用类型{}，然后其他的子类就可以在他的基础上添加属性和方法，其他的控制器可以直接使用该属性上的属性何方法了，也就实现了控制器间的数据传递。</p>
+<h3 id="基于事件-on-emit-boardcast通信"><a href="#基于事件-on-emit-boardcast通信" class="headerlink" title="基于事件$on,$emit,$boardcast通信"></a>基于事件$on,$emit,$boardcast通信</h3><p>向上广播$emit  向下广播$boardcast  接收广播$on 如果是兄弟关系（a,b）的控制器数据交互，那么我们可以通过a向父$emit，父接收到，然后向b发送$boardcast</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son1()"</span> <span class="attr">ng-bind</span>=<span class="string">"name"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">ng-controller</span>=<span class="string">"sonCtrl2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"son2()"</span> <span class="attr">ng-bind</span>=<span class="string">"son2Name"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">app.controller(<span class="string">'allCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.$on(<span class="string">"fatherOn"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e,newV</span>) </span>&#123;</div><div class="line">        $scope.$broadcast(<span class="string">"sonOn"</span>,newV);</div><div class="line">    &#125;)</div><div class="line">&#125;])</div><div class="line">app.controller(<span class="string">"sonCtrl1"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.name = <span class="string">'我是第一个孩子'</span>;</div><div class="line">    $scope.son1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $scope.$emit(<span class="string">"fatherOn"</span>,$scope.name);</div><div class="line">    &#125;</div><div class="line">&#125;]).controller(<span class="string">"sonCtrl2"</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">    $scope.son2Name = <span class="string">'我是第二个孩子'</span>;</div><div class="line">    $scope.$on(<span class="string">"sonOn"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e,newV</span>)</span>&#123;</div><div class="line">        $scope.son2Name = newV;</div><div class="line">    &#125;)</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>控制器这块的数据通信非常重要，刚开始学的时候遇到了不少坑，但是都一一解决了，如果后期遇到其他关于控制器方面的问题，会及时在这里进行补充。</p>
 
       
     </div>
@@ -409,13 +390,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/javascript闭包.html">js闭包</a></p>
+        <p><span>本文标题:</span><a href="/angular控制器及数据通信.html">angular控制器及数据通信</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Zengyong</a></p>
-        <p><span>发布时间:</span>2016-06-05, 21:48:18</p>
-        <p><span>最后更新:</span>2017-06-15, 14:22:03</p>
+        <p><span>发布时间:</span>2017-06-15, 15:02:18</p>
+        <p><span>最后更新:</span>2017-10-17, 17:04:34</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/javascript闭包.html" title="js闭包">http://www.zengyong.xin/javascript闭包.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.zengyong.xin/javascript闭包.html　　作者: Zengyong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/angular控制器及数据通信.html" title="angular控制器及数据通信">http://www.zengyong.xin/angular控制器及数据通信.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.zengyong.xin/angular控制器及数据通信.html　　作者: Zengyong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -428,15 +409,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/javascript回弹运动.html">
-                    js运动之回弹运动
+                <a href="/angular杂项.html">
+                    angular杂项
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/框架合集-scrollReveal.html">
-                    框架之scrollReveal
+                <a href="/angular学习笔记.html">
+                    angular1.6知识点总结
                 </a>
             </div>
         
@@ -448,7 +429,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#百度解释"><span class="toc-number">1.</span> <span class="toc-text">百度解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量作用域"><span class="toc-number">2.</span> <span class="toc-text">变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量作用域-1"><span class="toc-number">2.1.</span> <span class="toc-text">变量作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是闭包"><span class="toc-number">3.</span> <span class="toc-text">什么是闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#刚才演示的demo4就是闭包"><span class="toc-number">3.1.</span> <span class="toc-text">刚才演示的demo4就是闭包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#那么闭包有什么作用呢"><span class="toc-number">4.</span> <span class="toc-text">那么闭包有什么作用呢?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要使用控制器"><span class="toc-number">1.</span> <span class="toc-text">为什么要使用控制器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#demo1"><span class="toc-number">1.1.</span> <span class="toc-text">demo1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#demo2"><span class="toc-number">1.2.</span> <span class="toc-text">demo2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制器间的数据通信"><span class="toc-number">2.</span> <span class="toc-text">控制器间的数据通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个服务factory作为媒介进行通信"><span class="toc-number">2.1.</span> <span class="toc-text">创建一个服务factory作为媒介进行通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过-scope作用域继承关系通信"><span class="toc-number">2.2.</span> <span class="toc-text">通过$scope作用域继承关系通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于事件-on-emit-boardcast通信"><span class="toc-number">2.3.</span> <span class="toc-text">基于事件$on,$emit,$boardcast通信</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol>
         
     </div>
     <style>
@@ -484,7 +465,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"js闭包　| 我会变得更好|因为我从未止步　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"angular控制器及数据通信　| 我会变得更好|因为我从未止步　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -502,7 +483,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/javascript回弹运动.html" title="上一篇: js运动之回弹运动">
+            <a href="/angular杂项.html" title="上一篇: angular杂项">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -510,7 +491,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/框架合集-scrollReveal.html" title="下一篇: 框架之scrollReveal">
+            <a href="/angular学习笔记.html" title="下一篇: angular1.6知识点总结">
                 <i class="fa fa-angle-right"></i>
             </a>
         
